@@ -1,3 +1,10 @@
 // import './src/styles/global.css';
 require ('./src/styles/global.css');
-require ('./node_modules/bootstrap/dist/css/bootstrap.css');
+// require ('./node_modules/bootstrap/dist/css/bootstrap.css');
+require ('./src/styles/style.css');
+require ('./src/styles/styleSwitcher.css');
+require ('./src/styles/skins/blue.css');
+require ('./src/styles/skins/green.css');
+require ('./src/styles/skins/orange.css');
+require ('./src/styles/skins/pink.css');
+require ('./src/styles/skins/yellow.css');

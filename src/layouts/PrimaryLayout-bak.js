@@ -9,8 +9,12 @@ const PrimaryLayout = (props) => {
           <SEO />
           <Header></Header>
           <main>
-            <div className={props.column}>
-                {props.children}
+            <div className="container">
+              <div className="row justify-content-md center">
+                  <div className={props.column}>
+                      {props.children}
+                  </div>
+              </div>
             </div>
           </main>
           <Footer></Footer>
