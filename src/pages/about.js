@@ -1,10 +1,173 @@
 import React from "react";
 import PrimaryLayout from '../layouts/PrimaryLayout';
+import { Link } from 'gatsby';
 
-export default function About() {
+export default function About({data}) {
   return (
     <PrimaryLayout>
-      <h1>About Us</h1>
-      <p>May musical arrival beloved luckily adapted him. Shyness mention married son she his started now. Rose if as past near were. To graceful he elegance oh moderate attended entrance pleasure. Vulgar saw fat sudden edward way played either. Thoughts smallest at or peculiar relation breeding produced an. At depart spirit on stairs. She the either are wisdom praise things she before. Be mother itself vanity favour do me of. Begin sex was power joy after had walls miles. Left till here away at to whom past. Feelings laughing at no wondered repeated provided finished. It acceptance thoroughly my advantages everything as. Are projecting inquietude affronting preference saw who. Marry of am do avoid ample as. Old disposal followed she ignorant desirous two has. Called played entire roused though for one too. He into walk roof made tall cold he. Feelings way likewise addition wandered contempt bed indulged. </p>
+      <section className="about section" id="about">
+        <div className="container">
+          <div className="row">
+            <div className="section-title padd-15">
+              <h1>About me</h1>
+            </div>
+          </div>
+          <div className="row">
+            <div className="about-content padd-15">
+              <div className="row">
+                <div className="about-text padd-15">
+                  <h2>Sthefano Carvalho, Growth Marketer and <span>Full Stack Developer</span></h2>
+                  <p>Tech professional passionate about solving problems. After 7 years of experience in the industrial sector, dealing with Business Strategy and Business Intelligence, I decided to create an agency called <a href="https://masteradin.com/" target="_blank" rel="noopener noreferrer"><strong>Masteradin</strong></a>, focused on process automation and digital growth. For almost 2 years, I have been creating solutions with Python, for scripting, web scraping and automated tests (Selenium), and Javascript, for backend (NodeJS), frontend (React) and mobile (React Native) development.</p>
+                </div>
+              </div>
+              <div className="row">
+                <div className="personal-info padd-15">
+                  <div className="row">
+                    <div className="info-item padd-15">
+                      <p>Birthday: <span>December 28th, 1992</span></p>
+                    </div>
+                    <div className="info-item padd-15">
+                      <p>Age: <span>27</span></p>
+                    </div>
+                    <div className="info-item padd-15">
+                      <p>Portfolio: <span><a href="/portfolio">my work</a></span></p>
+                    </div>
+                    <div className="info-item padd-15">
+                      <p>Email: <span><a href="mailto:sthefano@masteradin.com">my e-mail</a></span></p>
+                    </div>
+                    <div className="info-item padd-15">
+                      <p>Location: <span><a href="https://goo.gl/maps/92hFkkeWKkvypprh9">São Paulo-SP, Brazil</a></span></p>
+                    </div>
+                    <div className="info-item padd-15">
+                      <p>Freelance: <span>Available</span></p>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="buttons padd-15">
+                      <a href="#" className="btn">Download CV</a>
+                      <a href="#" className="btn">Hire me</a>
+                    </div>
+                  </div>
+                </div>
+                <div className="skills padd-15">
+                  <div className="row">
+                    <div className="skill-item padd-15">
+                      <h5>Python</h5>
+                      <div className="progress">
+                        <div className="progress-in" style={{width: "80%"}}></div>
+                        <div className="skill-percent">80%</div>
+                      </div>
+                    </div>
+                    <div className="skill-item padd-15">
+                      <h5>Javascript</h5>
+                      <div className="progress">
+                        <div className="progress-in" style={{width: "80%"}}></div>
+                        <div className="skill-percent">80%</div>
+                      </div>
+                    </div>
+                    <div className="skill-item padd-15">
+                      <h5>ReactJS</h5>
+                      <div className="progress">
+                        <div className="progress-in" style={{width: "70%"}}></div>
+                        <div className="skill-percent">70%</div>
+                      </div>
+                    </div>
+                    <div className="skill-item padd-15">
+                      <h5>React Native</h5>
+                      <div className="progress">
+                        <div className="progress-in" style={{width: "50%"}}></div>
+                        <div className="skill-percent">50%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            
+            <div className="row">
+              <div className="education padd-15">
+                <h3 className="title">Education</h3>
+                <div className="row">
+                  <div className="timeline-box padd-15">
+                    <div className="timeline shadow-dark">
+                      {/* <!-- Timeline education item --> */}
+                      <div className="timeline-item">
+                        <div className="circle-dot"></div>
+                        <h6 className="timeline-date">
+                          <i className="fa fa-calendar"></i>
+                          2009-2014
+                        </h6>
+                        <h4 className="timeline-title">Economics</h4>
+                        <p className="timeline-text">Studies of Economics Science. Main topics: Finance, History, Statistics, Econometrics.</p>
+                      </div>
+                      {/* <!-- Timeline education item --> */}
+                      <div className="timeline-item">
+                        <div className="circle-dot"></div>
+                        <h6 className="timeline-date">
+                          <i className="fa fa-calendar"></i>
+                          2009-2014
+                        </h6>
+                        <h4 className="timeline-title">Economics</h4>
+                        <p className="timeline-text">Studies of Economics Science. Main topics: Finance, History, Statistics, Econometrics.</p>
+                      </div>
+                      {/* <!-- Timeline education item --> */}
+                      <div className="timeline-item">
+                        <div className="circle-dot"></div>
+                        <h6 className="timeline-date">
+                          <i className="fa fa-calendar"></i>
+                          2009-2014
+                        </h6>
+                        <h4 className="timeline-title">Economics</h4>
+                        <p className="timeline-text">Studies of Economics Science. Main topics: Finance, History, Statistics, Econometrics.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="experience padd-15">
+                <h3 className="title">Experience</h3>
+                <div className="row">
+                  <div className="timeline-box padd-15">
+                    <div className="timeline shadow-dark">
+                      {/* <!-- Timeline education item --> */}
+                      <div className="timeline-item">
+                        <div className="circle-dot"></div>
+                        <h6 className="timeline-date">
+                          <i className="fa fa-calendar"></i>
+                          2009-2014
+                        </h6>
+                        <h4 className="timeline-title">Economics</h4>
+                        <p className="timeline-text">Studies of Economics Science. Main topics: Finance, History, Statistics, Econometrics.</p>
+                      </div>
+                      {/* <!-- Timeline education item --> */}
+                      <div className="timeline-item">
+                        <div className="circle-dot"></div>
+                        <h6 className="timeline-date">
+                          <i className="fa fa-calendar"></i>
+                          2009-2014
+                        </h6>
+                        <h4 className="timeline-title">Economics</h4>
+                        <p className="timeline-text">Studies of Economics Science. Main topics: Finance, History, Statistics, Econometrics.</p>
+                      </div>
+                      {/* <!-- Timeline education item --> */}
+                      <div className="timeline-item">
+                        <div className="circle-dot"></div>
+                        <h6 className="timeline-date">
+                          <i className="fa fa-calendar"></i>
+                          2009-2014
+                        </h6>
+                        <h4 className="timeline-title">Economics</h4>
+                        <p className="timeline-text">Studies of Economics Science. Main topics: Finance, History, Statistics, Econometrics.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     </PrimaryLayout>
-)}
+  )
+};

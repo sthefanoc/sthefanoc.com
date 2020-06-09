@@ -55,6 +55,12 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: 'gatsby-plugin-load-script',
+      options: {
+        src: '/script.js', // Change to the script filename
+      },
+    },
     `gatsby-plugin-offline`
   ]
 }

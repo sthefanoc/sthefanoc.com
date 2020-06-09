@@ -1,3 +1,10 @@
+const logoTest = document.querySelector(".logo");
+if(logoTest){
+    logoTest.addEventListener("mouseenter",() => {
+        console.log('aeee');
+})
+};
+
 // Portfolio Item Filter
 
 const filterContainer = document.querySelector(".portfolio-filter");
@@ -42,7 +49,7 @@ for (let i=0; i<totalFilterBtn; i++){
         })
     }
 
-    function prevItem(){
+    const prevItem = function(){
         if(itemIndex === 0){
             itemIndex=totalPortfolioItems-1;
         } else {
@@ -50,7 +57,7 @@ for (let i=0; i<totalFilterBtn; i++){
         }
         changeItem();
     }
-    function nextItem(){
+    const nextItem = function (){
         if(itemIndex === totalPortfolioItems-1){
             itemIndex=0;
         } else {
@@ -59,10 +66,10 @@ for (let i=0; i<totalFilterBtn; i++){
         changeItem();
     }
 
-    function toggleLightbox(){
+    const toggleLightbox = function (){
         lightbox.classList.toggle("open");
     }
-    function changeItem(){
+    const changeItem = function (){
         const imgSrc=portfolioItems[itemIndex].querySelector(".portfolio-img img").getAttribute("src");
         lightboxImg.src=imgSrc;
         lightboxText.innerHTML=portfolioItems[itemIndex].querySelector("h4").innerHTML;
@@ -81,7 +88,7 @@ if (lightbox){
 
 // Aside navbar
 const nav=document.querySelector('.nav');
-const navList=nav.querySelectorAll('li');
+const navList=nav ? nav.querySelectorAll('li') : [];
 const totalNavList=navList.length;
 for (let k=0;k<totalNavList;k++){
     const a=navList[k].querySelector("a");
@@ -109,11 +116,13 @@ for (let k=0;k<totalNavList;k++){
 const navTogglerBtn=document.querySelector(".nav-toggler");
 const aside=document.querySelector(".aside");
 
-navTogglerBtn.addEventListener("click",() => {
-    asideSectionTogglerBtn();
+if(navTogglerBtn){
+    navTogglerBtn.addEventListener("click",() => {
+        asideSectionTogglerBtn();
 })
+}
 
-function asideSectionTogglerBtn(){
+const asideSectionTogglerBtn = function (){
     const sectionList=document.querySelectorAll(".section");
     aside.classList.toggle("open");
     navTogglerBtn.classList.toggle("open");
