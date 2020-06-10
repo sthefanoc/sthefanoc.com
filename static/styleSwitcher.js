@@ -1,7 +1,12 @@
+const a = function (test){
+    console.log('Testing functions StyleSwticher ',test)
+};
+
+
 const anotherLogoTest = document.querySelector(".logo");
 if(anotherLogoTest){
     anotherLogoTest.addEventListener("mouseenter",() => {
-        console.log('aeee novo arquivo');
+        console.log('StyleSwitcher file!');
 })
 };
 // color selection
@@ -22,15 +27,16 @@ const totalLinks=links.length;
 // }
 
 const setActiveStyle = function (color){
-    for(let i=0;i<totalLinks;i++){
-        console.log(color);
-        if(color === links[i].getAttribute('title')){
-            console.log('yes!')
-        } else {
-            console.log('no...')
-        }
-    }
+    console.log('The color you chose is ', color)
 }
+
+const colorBtns = document.querySelectorAll(".style-switcher li a");
+for(let i=0;i<colorBtns.length;i++){
+    colorBtns[i].addEventListener("click", () => {
+        setActiveStyle(colorBtns[i].title)
+    })    
+}
+
 // skin selection
 const bodySkin=document.querySelectorAll(".body-skin");
 const totalBodySkin=bodySkin.length;
@@ -49,3 +55,5 @@ if(document.querySelector(".toggle-style-switcher")){
         document.querySelector(".style-switcher").classList.toggle("open");
     })
 }
+
+

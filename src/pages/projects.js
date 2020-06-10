@@ -10,7 +10,7 @@ import project6 from '../../static/portfolio/6.jpg';
 import Helmet from "react-helmet";
 import { withPrefix } from "gatsby";
 
-export default function About({data}) {
+export default function Projects({data}) {
   return (
     <PrimaryLayout>
       <section className="portfolio section" id="portfolio">
@@ -126,7 +126,7 @@ export default function About({data}) {
         <div className="lightbox">
           <div className="lightbox-content">
             <div className="lightbox-close">&times;</div>
-            <img src="images/portfolio/1.jpg" alt="Name of The Project" className="lightbox-img" onclick="nextItem()" />
+            <img src="images/portfolio/1.jpg" alt="Name of The Project" className="lightbox-img next-item" onclick="nextItem()" />
             <div className="lightbox-caption">
               <div className="caption-text">Project # 1</div>
               <div className="caption-counter">1 of 6</div>

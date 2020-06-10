@@ -9,10 +9,10 @@ const path = require('path');
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "New Try with Helmet",
-    description:"This is an awesome description. And we're going to see more!",
-    keywords:"gatsby, great, eay, awesome",
-    image:"/static/gatsby.jpg",
+    title: "SthefanoC | Dev & Growth",
+    description:"Sthefano Carvalho website. Product Developer and Growth. Focused on creating valuable solutions to society.",
+    keywords:"sthefano, sthefanoc, development, fullstack, growth, growth marketing, react, react developer",
+    image:"/static/sthefanoc.png",
     url:'http://sthefanoc.com/'
   },
   plugins: [
@@ -55,12 +55,6 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    {
-      resolve: 'gatsby-plugin-load-script',
-      options: {
-        src: '/script.js', // Change to the script filename
-      },
-    },
     `gatsby-plugin-offline`
   ]
 }
@@ -71,3 +65,10 @@ module.exports = {
   <meta name="keywords" content="gatsby, awesome, eay" />
   <meta name="robots" content="index,follow" />
 </Helmet> */}
+
+// {
+//   resolve: 'gatsby-plugin-load-script',
+//   options: {
+//     src: '/script.js', // Change to the script filename
+//   },
+// },

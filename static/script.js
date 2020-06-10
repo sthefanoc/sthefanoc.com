@@ -1,9 +1,20 @@
 const logoTest = document.querySelector(".logo");
 if(logoTest){
     logoTest.addEventListener("mouseenter",() => {
-        console.log('aeee');
+        console.log('Script file!');
 })
 };
+
+const lalala = function (){
+    console.log('agora vai!')
+}
+let btns = document.querySelectorAll(".btn");
+if(btns.length){
+    btns[0].addEventListener("click", () => {
+        lalala();
+    })
+}
+
 
 // Portfolio Item Filter
 
@@ -71,9 +82,29 @@ for (let i=0; i<totalFilterBtn; i++){
     }
     const changeItem = function (){
         const imgSrc=portfolioItems[itemIndex].querySelector(".portfolio-img img").getAttribute("src");
+        const imgAlt=portfolioItems[itemIndex].querySelector(".portfolio-img img").getAttribute("alt");
         lightboxImg.src=imgSrc;
+        lightboxImg.alt=imgAlt;
         lightboxText.innerHTML=portfolioItems[itemIndex].querySelector("h4").innerHTML;
         lightboxCounter.innerHTML= (itemIndex+1) + " of " + totalPortfolioItems;
+    }
+
+    const nextItems = document.querySelectorAll(".next-item");
+    if(nextItems.length){
+        for(let n=0;n<nextItems.length;n++){
+            nextItems[n].addEventListener("click", ()=> {
+                nextItem();
+            })
+        }
+    }
+
+    const prevItems = document.querySelectorAll(".prev-item");
+    if(prevItems.length){
+        for(let n=0;n<prevItems.length;n++){
+            prevItems[n].addEventListener("click", ()=> {
+                nextItem();
+            })
+        }
     }
 
 // close lightbox
@@ -87,31 +118,32 @@ if (lightbox){
 }
 
 // Aside navbar
-const nav=document.querySelector('.nav');
-const navList=nav ? nav.querySelectorAll('li') : [];
-const totalNavList=navList.length;
-for (let k=0;k<totalNavList;k++){
-    const a=navList[k].querySelector("a");
-    
-    a.addEventListener("click",() => {
-        for(let l=0;l<totalNavList;l++){
-            navList[l].querySelector("a").classList.remove("active");
-        }
-        const sectionList=document.querySelectorAll(".section");
-        for(let m=0;m<sectionList.length;m++){
-            if(sectionList[m].id === a.href.split("#")[1]){
-                sectionList[m].classList.remove("hidden");
-            } else {
-                sectionList[m].classList.add("hidden");
-            }
-        }
 
-        a.classList.add("active");
-        if(window.innerWidth < 1200){
-            asideSectionTogglerBtn();
-        }
-    })
-}
+// const nav=document.querySelector('.nav');
+// const navList=nav ? nav.querySelectorAll('a') : [];
+// const totalNavList=navList.length;
+// for (let k=0;k<totalNavList;k++){
+//     const a=navList[k].querySelector("a");
+    
+//     a.addEventListener("click",() => {
+//         for(let l=0;l<totalNavList;l++){
+//             navList[l].querySelector("a").classList.remove("active");
+//         }
+//         const sectionList=document.querySelectorAll(".section");
+//         for(let m=0;m<sectionList.length;m++){
+//             if(sectionList[m].id === a.href.split("#")[1]){
+//                 sectionList[m].classList.remove("hidden");
+//             } else {
+//                 sectionList[m].classList.add("hidden");
+//             }
+//         }
+
+//         a.classList.add("active");
+//         if(window.innerWidth < 1200){
+//             asideSectionTogglerBtn();
+//         }
+//     })
+// }
 
 const navTogglerBtn=document.querySelector(".nav-toggler");
 const aside=document.querySelector(".aside");
