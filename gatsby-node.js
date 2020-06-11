@@ -26,7 +26,7 @@ return graphql(`
 `).then(result => {
         result.data.allWordpressPost.nodes.forEach((node) => {
             createPage({
-                path: node.slug,
+                path: 'blog/' + node.slug,
                 component: path.resolve('./src/layouts/BlogPostLayout.js'),
                 context: {
                     slug: node.slug

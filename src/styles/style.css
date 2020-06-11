@@ -878,14 +878,20 @@ input, textarea, select{
 
 .blog .container{
     padding-bottom: 40px;
+    
 }
-.blog .blog-item{
+.blog .container .blog-item{
+    display: inline-block;
+    -webkit-display: inline-block;
+    -moz-display: inline-block;
+    -ms--display: inline-block;
+    justify-content: space-between;
     flex:0 0 33.33%;
     -ms-flex: 0 0 33.33%;
     max-width: 33.33%;
     margin-bottom: 30px;
     cursor: pointer;
-    ;
+    
 }
 .blog .blog-item-inner{
     border-radius: 10px;
@@ -898,7 +904,10 @@ input, textarea, select{
     overflow: hidden;
 }
 .blog .blog-item-inner .blog-img img{
-    width: 100%;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    height:250px;
     display: block;
     transition: all 0.5s ease;
     -webkit-transition: all 0.5s ease;
@@ -1144,7 +1153,11 @@ body.dark .shadow-dark{
 @media (max-width: 991px){
     .portfolio .portfolio-item,
     .service .service-item,
-    .blog .blog-item{
+    .blog .container .blog-item{
+        display: inline-block;
+        -webkit-display: inline-block;
+        -moz-display: inline-block;
+        -ms--display: inline-block;
         -ms-flex: 0 0 50%;
         flex: 0 0 50%;
         max-width: 50%;
@@ -1157,6 +1170,10 @@ body.dark .shadow-dark{
     .about .about-content .skills,
     .about .about-content .personal-info,
     .contact .contact-form .col-6{
+        display: inline-block;
+        -webkit-display: inline-block;
+        -moz-display: inline-block;
+        -ms--display: inline-block;
         -ms-flex: 0 0 100%;
         flex: 0 0 100%;
         max-width: 100%;
@@ -1169,8 +1186,12 @@ body.dark .shadow-dark{
 @media (max-width: 575px){
     .portfolio .portfolio-item,
     .service .service-item,
-    .blog .blog-item,
+    .blog .container .blog-item,
     .contact .contact-info-item{
+        display: inline-block;
+        -webkit-display: inline-block;
+        -moz-display: inline-block;
+        -ms--display: inline-block;
         -ms-flex: 0 0 100%;
         flex: 0 0 100%;
         max-width: 100%;

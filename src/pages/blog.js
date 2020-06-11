@@ -24,6 +24,7 @@ export default function Home({data}) {
             excerpt={node.excerpt}
             readMore={node.slug}
             keywords={node.categories.map(res => res.name).join(', ')}
+            categories={node.categories.map(res => res.slug).join(', ')}
             />)
             :
             (<Post
@@ -32,6 +33,7 @@ export default function Home({data}) {
               date={node.date}
               readMore={node.slug}
               keywords={node.categories.map(res => res.name).join(', ')}
+              categories={node.categories.map(res => res.slug).join(', ')}
           />)
           ))}
         </div>
@@ -47,13 +49,14 @@ export const query = graphql`
       slug
       title
       excerpt
-      date
+      date (formatString: "MMMM DD, YYYY")
       featured_media {
         source_url
         slug
       }
       categories {
         name
+        slug
       }
     }
   }
