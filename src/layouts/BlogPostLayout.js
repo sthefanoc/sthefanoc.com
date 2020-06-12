@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import BlogPost from '../components/BlogPost';
 import SEO from '../components/SEO';
 import innertext from 'innertext';
+import anotherBlogPostImage from '../../static/another-blog-post-sthefanoc.png';
 
 const BlogPostLayout = ({data}) => {
     const post = data.wordpressPost;
@@ -36,7 +37,7 @@ const BlogPostLayout = ({data}) => {
 
             <main>
                 <section className="blog-post section" id="blog-post">
-                    {(post.featured_media.source_url)
+                    {Boolean(post.featured_media)
                         ? 
                         (<BlogPost
                             image={post.featured_media.source_url}
@@ -52,6 +53,7 @@ const BlogPostLayout = ({data}) => {
                         />)
                         :
                         (<BlogPost
+                            image={anotherBlogPostImage}
                             title={post.title}
                             date={post.date}
                             date={post.date}

@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from 'gatsby';
 import PrimaryLayout from '../layouts/PrimaryLayout';
 import Post from '../components/Post';
+import anotherBlogPostImage from '../../static/another-blog-post-sthefanoc.png';
 
 export default function Home({data}) {
   // async const = correctPage() {
@@ -32,6 +33,8 @@ export default function Home({data}) {
             />)
             :
             (<Post
+              image={anotherBlogPostImage}
+              alt="Another SthefanoC.com Blog Post"
               title={node.title}
               excerpt={node.excerpt}
               date={node.date}
