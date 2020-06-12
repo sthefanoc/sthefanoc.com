@@ -162,3 +162,19 @@ const asideSectionTogglerBtn = function (){
         sectionList[i].classList.toggle("open");
     }
 }
+
+const highlightCurrentPage = async () => {
+    await new Promise((resolve)=>setTimeout(() => {
+        let currentPage='';
+        if(window.location.pathname !== "/"){
+            currentPage = window.location.pathname.split("/")[1]
+        } else {
+            currentPage = "home";
+        };
+        let currentPageClass = currentPage + "-link";
+        document.getElementsByClassName(currentPageClass)[0].setAttribute("aria-current", "page");
+        resolve();
+    }, 2000)); 
+}
+
+highlightCurrentPage();

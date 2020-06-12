@@ -38,12 +38,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby bootstrap wordpress`,
-        short_name: `GatsWordpress`,
+        name: `SthefanoC | Product Development & Growth`,
+        short_name: `SthefanoC`,
         start_url: `/`,
         background_color: `#f8f9fa`,
         theme_color: `#ffffff`,
         display: `standalone`,
+        icon: `src/images/sthefanoc-icon.png`,
       },
     },
     {

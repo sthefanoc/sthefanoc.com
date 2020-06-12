@@ -9,7 +9,7 @@ import pinkSkin from '../../static/skins/pink.css';
 
 const Color = () => {
     return (
-        <link rel="stylesheet" class="alternate-style" title="" href={{blueSkin}} type="text/css" />
+        <link rel="stylesheet" className="alternate-style" title="" href={{blueSkin}} type="text/css" />
     )
 };
 

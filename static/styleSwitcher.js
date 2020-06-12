@@ -40,15 +40,18 @@ for(let i=0;i<colorBtns.length;i++){
 // skin selection
 const bodySkin=document.querySelectorAll(".body-skin");
 const totalBodySkin=bodySkin.length;
-for(let j=0;j<totalBodySkin;j++){
-    bodySkin[j].addEventListener("change", function(){
-        if(this.value === 'dark'){
-            document.body.className="dark"
-        } else {
-            document.body.className=""
-        }
-    })
+const changeBodySkin = () =>{
+    for(let j=0;j<totalBodySkin;j++){
+        bodySkin[j].addEventListener("change", function(){
+            if(this.value === 'dark'){
+                document.body.className="dark"
+            } else {
+                document.body.className=""
+            }
+        })
+    }
 }
+
 
 if(document.querySelector(".toggle-style-switcher")){
     document.querySelector(".toggle-style-switcher").addEventListener("click", () => {

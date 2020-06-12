@@ -5,14 +5,13 @@ import { Link, withPrefix } from 'gatsby';
 class BlogRelatedPosts extends Component {
     render(){
         const data = this.props.relatedPosts;
-        console.log("related", data);
         return (
-            <div>
-                <h1>See more</h1>
+            <div className="related-posts">
+                <h3>Other posts you may like...</h3>
                 {data.map(node => (
                 Boolean(node.title)
                 ? 
-                (<post className="related-post padd-15">
+                (<article className="related-post padd-15" key={node.slug}>
                     <div className="related-post-inner shadow-dark">
                         <Link to={withPrefix(`blog/${node.slug}`)}>
                             <div className="related-post-img">
@@ -28,7 +27,7 @@ class BlogRelatedPosts extends Component {
                             </div>
                         </Link>
                     </div>
-                </post>)
+                </article>)
                 :
                 (<div>Nooooo</div>)
             ))}

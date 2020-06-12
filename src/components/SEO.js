@@ -50,14 +50,14 @@ const SEO = ({title, description, keywords, image}) => {
                         <html lang="en" />
                         <Color />
 
-                        {/* <link rel="stylesheet" class="alternate-style" title="" src={{chosenSkin}} type="text/css" /> */}
-                        {/* <link rel="stylesheet" class="alternate-style" title="pink" src={{pinkSkin}} type="text/css" /> */}
+                        {/* <link rel="stylesheet" className="alternate-style" title="" src={{chosenSkin}} type="text/css" /> */}
+                        {/* <link rel="stylesheet" className="alternate-style" title="pink" src={{pinkSkin}} type="text/css" /> */}
             
-                        {/* <link rel="stylesheet" class="alternate-style" title="blue" src={{blueSkin}} type="text/css" />
-                        <link rel="stylesheet" class="alternate-style" title="green" src={{greenSkin}} type="text/css" disabled />
-                        <link rel="stylesheet" class="alternate-style" title="orange" src={{orangeSkin}} type="text/css" disabled />
-                        <link rel="stylesheet" class="alternate-style" title="pink" src={{pinkSkin}} type="text/css" disabled /> */}
-                        {/* <link rel="stylesheet" class="alternate-style" title="yellow" src={{yellowSkin}} type="text/css" disabled /> */}
+                        {/* <link rel="stylesheet" className="alternate-style" title="blue" src={{blueSkin}} type="text/css" />
+                        <link rel="stylesheet" className="alternate-style" title="green" src={{greenSkin}} type="text/css" disabled />
+                        <link rel="stylesheet" className="alternate-style" title="orange" src={{orangeSkin}} type="text/css" disabled />
+                        <link rel="stylesheet" className="alternate-style" title="pink" src={{pinkSkin}} type="text/css" disabled /> */}
+                        {/* <link rel="stylesheet" className="alternate-style" title="yellow" src={{yellowSkin}} type="text/css" disabled /> */}
 
                         {/* Live style switcher end */}
 

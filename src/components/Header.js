@@ -4,25 +4,25 @@ import {Link} from 'gatsby';
 export default function Header(props) {
   return (
     <header>
-      <div class="aside">
+      <div className="aside">
         {/* Logo */}
-        <div class="logo">
+        <div className="logo">
           <a href="/" >SthefanoC</a>
         </div>
         {/* Nav Toggler Button */}
-        <div class="nav-toggler">
+        <div className="nav-toggler">
           <span></span>
         </div>
         {/* Nav */}
-        <div class="nav">
-          <Link as={Link} to="/" className=""><i class="fa fa-home"></i>Home</Link>
-          <Link as={Link} to="/about" className=""><i class="fa fa-user"></i>About</Link>
-          <Link as={Link} to="/services" className=""><i class="fa fa-list"></i>Services</Link>
-          <Link as={Link} to="/projects" className=""><i class="fa fa-briefcase"></i>Portfolio</Link>
-          <Link as={Link} to="/blog" className=""><i class="fa fa-envelope"></i>Blog</Link>
-          <Link as={Link} to="/contact" className=""><i class="fa fa-comments"></i>Contact</Link>
+        <div className="nav">
+          <Link as={Link} to="/" className="section-link home-link"><i className="fa fa-home"></i>Home</Link>
+          <Link as={Link} to="/about" className="section-link about-link"><i className="fa fa-user"></i>About</Link>
+          <Link as={Link} to="/services" className="section-link services-link"><i className="fa fa-list"></i>Services</Link>
+          <Link as={Link} to="/projects" className="section-link projects-link"><i className="fa fa-briefcase"></i>Portfolio</Link>
+          <Link as={Link} to="/blog" className="section-link blog-link"><i className="fa fa-envelope"></i>Blog</Link>
+          <Link as={Link} to="/contact" className="section-link contact-link"><i className="fa fa-comments"></i>Contact</Link>
         </div>
-        <div class="copyright-text">
+        <div className="copyright-text">
           Powered by <a href="https://masteradin.com/">Masteradin</a>
         </div>
       </div>

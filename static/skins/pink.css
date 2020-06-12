@@ -32,12 +32,17 @@ body.dark .portfolio .portfolio-filter button.active,
 .home .intro .social-links a,
 .section-title h1::before,
 .section-title h1::after,
+.related-posts h3::before,
+.related-posts h3::after,
 .btn,
 .about .about-content .skills .skill-item .progress .progress-in,
 .about .about-content .timeline .timeline-item::before,
 .about .about-content .timeline .circle-dot,
 .service .service-item .service-item-inner:hover .icon,
-.blog .blog-item-inner .blog-img .blog-date
+.blog .blog-item-inner .blog-img .blog-date,
+.blog-post .row .post-image img::after,
+.blog-post .related-post-inner .related-post-img .related-post-date,
+.related-post .related-post-image img::after
 {
     background-color: #ec1839;
 }

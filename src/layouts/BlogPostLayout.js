@@ -14,7 +14,6 @@ const BlogPostLayout = ({data}) => {
     const filteredRelatedPosts = relatedPosts.nodes.filter((item) => {
         let kws = item.categories;
         for(let i=0;i<kws.length;i++){
-            console.log(kws[i].name)
             if((keywords.includes(kws[i].name)) &&
                 (item.slug !== postSlug)
             ){
@@ -36,7 +35,7 @@ const BlogPostLayout = ({data}) => {
             <Header />
 
             <main>
-                <section class="blog-post section" id="blog-post">
+                <section className="blog-post section" id="blog-post">
                     {(post.featured_media.source_url)
                         ? 
                         (<BlogPost
@@ -44,6 +43,7 @@ const BlogPostLayout = ({data}) => {
                             alt={post.featured_media.slug}
                             title={post.title}
                             date={post.date}
+                            slug={post.slug}
                             excerpt={post.excerpt}
                             keywords={post.categories.map(res => res.name).join(', ')}
                             categories={post.categories.map(res => res.slug).join(', ')}
@@ -53,6 +53,7 @@ const BlogPostLayout = ({data}) => {
                         :
                         (<BlogPost
                             title={post.title}
+                            date={post.date}
                             date={post.date}
                             excerpt={post.excerpt}
                             keywords={post.categories.map(res => res.name).join(', ')}

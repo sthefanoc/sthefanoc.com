@@ -2,8 +2,13 @@ import React from 'react';
 import { Link, withPrefix } from 'gatsby';
 
 const Post =(props) => {
+    const kws = Object.values(props.keywords);
+    const kwsSlugs = Object.values(props.categories);
+
+    let k=-1;
+
     return (
-        <post className="blog-item padd-15">
+        <article className="blog-item padd-15" key={`blog-${props.readMore}`}>
             <div className="blog-item-inner shadow-dark">
                 <Link to={withPrefix(`blog/${props.readMore}`)}>
                     <div className="blog-img">
@@ -12,29 +17,23 @@ const Post =(props) => {
                         : <br />}
                         <div className="blog-date" dangerouslySetInnerHTML={{__html: props.date}} />
                     </div>
-                    <div className="blog-info">
+                </Link>
+                <div className="blog-info">
+                    <Link to={withPrefix(`blog/${props.readMore}`)}>
                         <h4 className="blog-title" dangerouslySetInnerHTML={{__html: props.title}} />
                         <p className="blog-description" dangerouslySetInnerHTML={{__html: props.excerpt}} />
-                        
-                        <p className="blog-tags">Tags: 
-                            {(props.keywords.split(', ').length = 1)
-                            ? (<a href={props.keywords}>{props.keywords}</a>)
-                            : (props.keywords.split(', ').length = 2)
-                                ? (<a href={props.keywords[0]}>{props.keywords[0]}</a>, 
-                                <a href={props.keywords[1]}>{props.keywords[1]}</a>)
-                                : (props.keywords.split(', ').length = 3)
-                                ? (<a href={props.keywords[0]}>{props.keywords[0]}</a>, 
-                                    <a href={props.keywords[1]}>{props.keywords[1]}</a>, 
-                                    <a href={props.keywords[2]}>{props.keywords[2]}</a>)
-                                : (<a href={props.keywords[0]}>{props.keywords[0]}</a>, 
-                                    <a href={props.keywords[1]}>{props.keywords[1]}</a>, 
-                                    <a href={props.keywords[2]}>{props.keywords[2]}</a>)
-                            }
-                        </p>
-                    </div>
-                </Link>
+                    </Link>
+                    
+                    <p className="blog-tags">Tags: 
+                        {kws.map(item => {
+                            k++;
+                            return (<a href={kwsSlugs[k]}key={kwsSlugs[k]}> {item} |</a>)}
+                        )}
+                    </p>
+                    
+                </div>
             </div>
-        </post>        
+        </article>        
     )
 }
 

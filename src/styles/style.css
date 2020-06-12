@@ -989,6 +989,199 @@ input, textarea, select{
     font-weight: 500;
 }
 
+/* Blog Post */
+
+.blog-post .post-date{
+    /* background-color: red; */
+    text-align: right;
+    width: 100%;
+    font-weight: 300;
+    font-size: 15px;
+    font-style: italic;
+    padding-bottom: 10px;
+    padding-right: 10%;
+    /* border-bottom: 1px solid #e8dfec; */
+}
+.blog-post .share-buttons{
+    /* background-color: gray; */
+    text-align: right;
+    width: 100%;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e8dfec;
+    align-items: right;
+    justify-items: right;
+    padding-right: 10%;
+}
+.blog-post .share-buttons i{
+    display: inline-block;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 25px;
+    margin-right: 8px;
+}
+.blog-post .row {
+    /* display: flex; */
+    padding-bottom: 30px;
+    width: 100%;
+}
+.blog-post .row .post-intro {
+    border-bottom: 1px dashed #e8dfec;
+}
+.blog-post .row .post-intro img{
+    max-height: 50vh;
+    padding-bottom: 25px;
+    float: right;
+    max-width: 50%;
+    border: 1px solid #e8dfec;
+    padding: 2px;
+
+}
+.blog-post .row .post-excerpt p{
+    /* float: right; */
+    font-style: italic;
+    max-width: 45%;
+    text-align: center;
+    padding: 70px 0;
+    font-weight: 500;
+    font-size: large;
+}
+.blog-post .blog-post-text{
+    border-bottom: 1px solid #e8dfec;
+}
+.related-posts{
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e8dfec;
+}
+.related-posts h3{
+    font-size: 25px;
+    color: #302e4d;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    margin: 0;
+    /* background-color: gray; */
+    position: relative;
+    margin-bottom: 50px;
+}
+.related-posts h3::before{
+    content: '';
+    height: 4px;
+    width: 100px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+.related-posts h3::after{
+    content: '';
+    height: 4px;
+    width: 60px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 8px;
+}
+.blog-post {
+    padding-bottom: 40px;
+    
+}
+.blog-post .related-post{
+    display: inline-block;
+    -webkit-display: inline-block;
+    -moz-display: inline-block;
+    -ms--display: inline-block;
+    justify-content: space-between;
+    flex:0 0 33.33%;
+    -ms-flex: 0 0 33.33%;
+    max-width: 33.33%;
+    margin-bottom: 30px;
+    cursor: pointer;
+    
+}
+.blog-post .related-post-inner{
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #d4d4e3;
+
+}
+.blog-post .related-post-inner .related-post-img{
+    position: relative;
+    overflow: hidden;
+}
+.blog-post .related-post-inner .related-post-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    height:125px;
+    display: block;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+.blog-post .related-post-inner:hover .related-post-img img{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+.blog-post .related-post-inner .related-post-img .related-post-date{
+    position: absolute;
+    padding: 4px 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14px;
+    left: 15px;
+    bottom: 15px;
+}
+.blog-post .related-post-inner .related-post-info{
+    padding: 30px 15px;
+    background-color: #fdf9ff;
+    max-height: 30vh;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    opacity: 0.9;
+}
+
+.blog-post .related-post-inner:hover .related-post-info{
+    opacity: 1.2;
+    max-height: none;
+    /* transform: scale(1.3);
+    -webkit-transform: scale(1.3); */
+}
+
+.blog-post .related-post-inner {
+    border   : 1px #d8d8d8;
+    position : relative;
+}
+
+.blog-post .related-post-inner:after {
+    content  : "";
+    position : absolute;
+    z-index  : 1;
+    bottom   : 0;
+    left     : 0;
+    pointer-events   : none;
+    background-image : linear-gradient(to bottom, 
+                        rgba(255,255,255, 0), 
+                        rgba(255,255,255, 1) 90%);
+    width    : 100%;
+    height   : 4em;
+}
+
+.blog-post .related-post-inner .related-post-info .blog-title{
+    font-size: 18px;
+    font-weight: 600;
+    color: #302e4d;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+
+}
+.blog-post .related-post-inner .related-post-info .related-post-description{
+    font-size: 16px;
+    line-height: 25px;
+    color: #504e70;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
 /* Contact section */
 
 .contact .contact-info-item{

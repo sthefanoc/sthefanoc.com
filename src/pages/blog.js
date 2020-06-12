@@ -4,12 +4,15 @@ import PrimaryLayout from '../layouts/PrimaryLayout';
 import Post from '../components/Post';
 
 export default function Home({data}) {
+  // async const = correctPage() {
+  //   document.getElementsByClassName('blog-link')[0].setAttribute("aria-current", "page");
+  // }
   return (
     <PrimaryLayout>
-      <section class="blog section" id="blog">
-        <div class="container">
-          <div class="row">
-            <div class="section-title padd-15">
+      <section className="blog section" id="blog">
+        <div className="container">
+          <div className="row">
+            <div className="section-title padd-15">
               <h1>Latest Blog</h1>
             </div>
           </div>
@@ -23,8 +26,9 @@ export default function Home({data}) {
             date={node.date}
             excerpt={node.excerpt}
             readMore={node.slug}
-            keywords={node.categories.map(res => res.name).join(', ')}
-            categories={node.categories.map(res => res.slug).join(', ')}
+            keywords={node.categories.map(res => res.name)}
+            categories={node.categories.map(res => res.slug)}
+            key={node.slug}
             />)
             :
             (<Post
@@ -32,8 +36,9 @@ export default function Home({data}) {
               excerpt={node.excerpt}
               date={node.date}
               readMore={node.slug}
-              keywords={node.categories.map(res => res.name).join(', ')}
-              categories={node.categories.map(res => res.slug).join(', ')}
+              keywords={node.categories.map(res => res.name)}
+              categories={node.categories.map(res => res.slug)}
+              key={node.slug}
           />)
           ))}
         </div>
