@@ -23,7 +23,8 @@ body.dark .portfolio .portfolio-filter button.active,
 .lightbox .lightbox-controls .next-item .fa,
 .blog .blog-item-inner .blog-info .blog-tags a,
 .contact .contact-info-item .icon .fa,
-.contact .contact-info-item a{
+.contact .contact-info-item a,
+.blog-post .share-buttons i{
     color: #ec1839;
 }
 .aside .nav-toggler span,

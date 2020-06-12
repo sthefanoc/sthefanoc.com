@@ -1,8 +1,5 @@
 import React from "react";
-import { graphql } from 'gatsby';
 import PrimaryLayout from '../layouts/PrimaryLayout';
-import Post from '../components/Post';
-import profilePicture from '../../static/sthefanoc.png';
 
 export default function Page404({data}) {
   return (

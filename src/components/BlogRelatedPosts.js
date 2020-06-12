@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Card, Button } from 'react-bootstrap';
 import { Link, withPrefix } from 'gatsby';
 
 class BlogRelatedPosts extends Component {
@@ -37,66 +36,3 @@ class BlogRelatedPosts extends Component {
 }
 
 export default BlogRelatedPosts;
-
-// BlogRelatedPosts.propTypes = {
-//     data: PropTypes.object.isRequired,
-//     edges: PropTypes.array,
-// }
-
-// export const relatedPostsQuery = graphql`
-//     query relatedPosts{
-//         allWordpressPost {
-//             edges {
-//                 node{
-//                     title
-//                     excerpt
-//                     slug
-//                     date
-//                     featured_media{
-//                         source_url
-//                         slug
-//                     }
-//                     categories {
-//                         name
-//                         slug
-//                     }
-//                 }
-//             }
-//         }
-//     }  
-// `
-// export const query = graphql`
-// {
-//   allWordpressPost {
-//     nodes {
-//       slug
-//       title
-//       excerpt
-//       date (formatString: "MMMM DD, YYYY")
-//       featured_media {
-//         source_url
-//         slug
-//       }
-//       categories {
-//         name
-//         slug
-//       }
-//     }
-//   }
-// }
-// ` 
-
-// import React from 'react';
-// import { Card, Button } from 'react-bootstrap';
-// import { Link, withPrefix } from 'gatsby';
-
-// const BlogRelatedPosts =(props) => {
-//     return (
-//         <div>
-//             <h1>Related posts!</h1>
-//             <div>{props.title}</div>
-//         </div>      
-//     )
-// }
-
-// export default BlogRelatedPosts;

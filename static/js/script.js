@@ -45,67 +45,67 @@ for (let i=0; i<totalFilterBtn; i++){
 
 // Portfolio Lightbox
 
-    const lightbox = document.querySelector(".lightbox");
-    const lightboxImg=document.querySelector(".lightbox-img");
-    const lightboxClose=document.querySelector(".lightbox-close");
-    const lightboxText=document.querySelector(".caption-text");
-    const lightboxCounter=document.querySelector(".caption-counter");
-    let itemIndex=0;
+const lightbox = document.querySelector(".lightbox");
+const lightboxImg=document.querySelector(".lightbox-img");
+const lightboxClose=document.querySelector(".lightbox-close");
+const lightboxText=document.querySelector(".caption-text");
+const lightboxCounter=document.querySelector(".caption-counter");
+let itemIndex=0;
 
-    for(let i=0; i<totalPortfolioItems;i++){
-        portfolioItems[i].addEventListener("click", function(){
-            itemIndex=i;
-            changeItem();
-            toggleLightbox();
+for(let i=0; i<totalPortfolioItems;i++){
+    portfolioItems[i].addEventListener("click", function(){
+        itemIndex=i;
+        changeItem();
+        toggleLightbox();
+    })
+}
+
+const prevItem = function(){
+    if(itemIndex === 0){
+        itemIndex=totalPortfolioItems-1;
+    } else {
+        itemIndex--
+    }
+    changeItem();
+}
+const nextItem = function (){
+    if(itemIndex === totalPortfolioItems-1){
+        itemIndex=0;
+    } else {
+        itemIndex++
+    }
+    changeItem();
+}
+
+const toggleLightbox = function (){
+    lightbox.classList.toggle("open");
+}
+const changeItem = function (){
+    const imgSrc=portfolioItems[itemIndex].querySelector(".portfolio-img img").getAttribute("src");
+    const imgAlt=portfolioItems[itemIndex].querySelector(".portfolio-img img").getAttribute("alt");
+    lightboxImg.src=imgSrc;
+    lightboxImg.alt=imgAlt;
+    lightboxText.innerHTML=portfolioItems[itemIndex].querySelector("h4").innerHTML;
+    lightboxCounter.innerHTML= (itemIndex+1) + " of " + totalPortfolioItems;
+}
+
+const nextItems = document.querySelectorAll(".next-item");
+if(nextItems.length){
+    for(let n=0;n<nextItems.length;n++){
+        nextItems[n].addEventListener("click", ()=> {
+            nextItem();
         })
     }
+}
 
-    const prevItem = function(){
-        if(itemIndex === 0){
-            itemIndex=totalPortfolioItems-1;
-        } else {
-            itemIndex--
-        }
-        changeItem();
+const prevItems = document.querySelectorAll(".prev-item");
+if(prevItems.length){
+    for(let n=0;n<prevItems.length;n++){
+        prevItems[n].addEventListener("click", ()=> {
+            nextItem();
+        })
     }
-    const nextItem = function (){
-        if(itemIndex === totalPortfolioItems-1){
-            itemIndex=0;
-        } else {
-            itemIndex++
-        }
-        changeItem();
-    }
-
-    const toggleLightbox = function (){
-        lightbox.classList.toggle("open");
-    }
-    const changeItem = function (){
-        const imgSrc=portfolioItems[itemIndex].querySelector(".portfolio-img img").getAttribute("src");
-        const imgAlt=portfolioItems[itemIndex].querySelector(".portfolio-img img").getAttribute("alt");
-        lightboxImg.src=imgSrc;
-        lightboxImg.alt=imgAlt;
-        lightboxText.innerHTML=portfolioItems[itemIndex].querySelector("h4").innerHTML;
-        lightboxCounter.innerHTML= (itemIndex+1) + " of " + totalPortfolioItems;
-    }
-
-    const nextItems = document.querySelectorAll(".next-item");
-    if(nextItems.length){
-        for(let n=0;n<nextItems.length;n++){
-            nextItems[n].addEventListener("click", ()=> {
-                nextItem();
-            })
-        }
-    }
-
-    const prevItems = document.querySelectorAll(".prev-item");
-    if(prevItems.length){
-        for(let n=0;n<prevItems.length;n++){
-            prevItems[n].addEventListener("click", ()=> {
-                nextItem();
-            })
-        }
-    }
+}
 
 // close lightbox
 
@@ -178,3 +178,5 @@ const highlightCurrentPage = async () => {
 }
 
 highlightCurrentPage();
+
+// Highlight the correct category

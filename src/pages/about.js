@@ -1,8 +1,5 @@
 import React,  { Component } from "react";
 import PrimaryLayout from '../layouts/PrimaryLayout';
-import { Link } from 'gatsby';
-import clickWorks from '../../static/crazy';
-
 
 class About extends Component {
   render(){
@@ -47,8 +44,8 @@ class About extends Component {
                     </div>
                     <div className="row">
                       <div className="buttons padd-15">
-                        <a href="javascript:void(0);" className="btn">Download CV</a>
-                        <a href="javascript:void(0);" className="btn">Hire me</a>
+                        <a href="#" className="btn">Download CV</a>
+                        <a href="#" className="btn">Hire me</a>
                       </div>
                     </div>
                   </div>

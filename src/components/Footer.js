@@ -1,11 +1,27 @@
 import React from "react";
 import footerStyles from './Footer.module.css';
-import { Link } from 'gatsby';
+
 
 const Footer = () => {
   return (
     <div>
-      {/* Live style switcher */}
+        {/* <!-- Lightbox start --> */}
+        <div className="lightbox">
+          <div className="lightbox-content">
+            <div className="lightbox-close">&times;</div>
+            <img src="images/portfolio/1.jpg" alt="Name of The Project" className="lightbox-img next-item" />
+            <div className="lightbox-caption">
+              <div className="caption-text">Project # 1</div>
+              <div className="caption-counter">1 of 6</div>
+            </div>
+          </div>
+          <div className="lightbox-controls">
+            <div className="prev-item" ><i className="fa fa-angle-left"></i></div>
+            <div className="next-item" ><i className="fa fa-angle-right"></i></div>
+          </div>
+        </div>
+        {/* <!-- Lightbox end --></div> */}
+        {/* Live style switcher */}
         <div className="style-switcher">
           <div className="toggle-style-switcher">
             <i className="fa fa-cog fa-spin"></i>

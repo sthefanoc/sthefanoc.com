@@ -1,16 +1,9 @@
 import React from 'react';
 import { StaticQuery, graphql, withPrefix } from 'gatsby';
 import { Helmet } from 'react-helmet';
-import Color from './Color';
-// import blueSkin from '../../static/skins/blue.css';
-// import blueSkin from '../../src/styles/skins/blue.css';
-// import greenSkin from '../../static/skins/green.css';
-// import orangeSkin from '../../src/styles/skins/orange.css';
-// import pinkSkin from '../../static/skins/pink.css';
-// // import yellowSkin from '../../src/styles/skins/yellow.css';
+
 
 const SEO = ({title, description, keywords, image}) => {
-    // const chosenSkin = blueSkin;
     
     return (
         <StaticQuery
@@ -48,23 +41,18 @@ const SEO = ({title, description, keywords, image}) => {
                             name="robots" 
                             content="index,follow" />
                         <html lang="en" />
-                        <Color />
+                        {/* <Color /> */}
 
-                        {/* <link rel="stylesheet" className="alternate-style" title="" src={{chosenSkin}} type="text/css" /> */}
-                        {/* <link rel="stylesheet" className="alternate-style" title="pink" src={{pinkSkin}} type="text/css" /> */}
-            
-                        {/* <link rel="stylesheet" className="alternate-style" title="blue" src={{blueSkin}} type="text/css" />
-                        <link rel="stylesheet" className="alternate-style" title="green" src={{greenSkin}} type="text/css" disabled />
-                        <link rel="stylesheet" className="alternate-style" title="orange" src={{orangeSkin}} type="text/css" disabled />
-                        <link rel="stylesheet" className="alternate-style" title="pink" src={{pinkSkin}} type="text/css" disabled /> */}
-                        {/* <link rel="stylesheet" className="alternate-style" title="yellow" src={{yellowSkin}} type="text/css" disabled /> */}
-
-                        {/* Live style switcher end */}
+                        <link rel="stylesheet" className="alternate-style" title="blue" href={withPrefix('styles/blue.css')} type="text/css" disabled="true"/>
+                        <link rel="stylesheet" className="alternate-style" title="pink" href={withPrefix('styles/pink.css')} type="text/css" disabled="false"/>
+                        <link rel="stylesheet" className="alternate-style" title="green" href={withPrefix('styles/green.css')} type="text/css" disabled="true"/>
+                        <link rel="stylesheet" className="alternate-style" title="yellow" href={withPrefix('styles/yellow.css')} type="text/css" disabled="true"/>
+                        <link rel="stylesheet" className="alternate-style" title="orange" href={withPrefix('styles/orange.css')} type="text/css" disabled="true"/>
 
                         {/* JS Template */}
-                        <script src={withPrefix('script.js')} type="text/javascript"></script>
+                        <script src={withPrefix('js/script.js')} type="text/javascript"></script>
                         {/* JS StyleSwitcher */}
-                        <script src={withPrefix('styleSwitcher.js')} type="text/javascript"></script>
+                        <script src={withPrefix('js/styleSwitcher.js')} type="text/javascript"></script>
                     </Helmet>
                 )
             }}

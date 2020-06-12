@@ -1,11 +1,10 @@
 import React from "react";
-import { graphql } from 'gatsby';
+import { graphql, withPrefix } from 'gatsby';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BlogPost from '../components/BlogPost';
 import SEO from '../components/SEO';
 import innertext from 'innertext';
-import anotherBlogPostImage from '../../static/another-blog-post-sthefanoc.png';
 
 const BlogPostLayout = ({data}) => {
     const post = data.wordpressPost;
@@ -53,7 +52,7 @@ const BlogPostLayout = ({data}) => {
                         />)
                         :
                         (<BlogPost
-                            image={anotherBlogPostImage}
+                            image={withPrefix('images/another-blog-post-sthefanoc.png')}
                             title={post.title}
                             date={post.date}
                             date={post.date}
