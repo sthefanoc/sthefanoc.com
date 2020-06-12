@@ -29,6 +29,7 @@
     "innertext": "^1.0.3",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.1",
+    "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0"
   },

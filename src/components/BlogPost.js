@@ -2,7 +2,8 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Link, withPrefix } from 'gatsby';
 import BlogRelatedPosts from '../components/BlogRelatedPosts'; 
-import { DiscussionEmbed } from 'disqus-react';
+import { DiscussionEmbed, CommentEmbed } from 'disqus-react';
+import ReactDisqusComments from 'react-disqus-comments';
 
 
 const BlogPost =(props) => {
@@ -12,7 +13,10 @@ const BlogPost =(props) => {
         identifier: props.slug,
         title: props.title,
         url: baseUrl + props.slug,
-    }
+    };
+    // const handleNewComment = (comment) => {
+    //     console.log(comment.text);
+    // }
     // const relatedPosts = data.allWordpressPost;
     // const copyText = (text) => {
     //     /* Select the text field */
@@ -78,10 +82,19 @@ const BlogPost =(props) => {
                         
                 </div>
                 <div className="row">
-                    <DiscussionEmbed 
+                    <DiscussionEmbed
                         shortname={disqusShortname}
                         config={disqusConfig}
                     />
+                
+                    {/* <ReactDisqusComments
+                        shortname="sthefanoc"
+                        identifier={props.slug}
+                        title={props.title}
+                        url={baseUrl + props.slug}
+                        category_id="123456"
+                        // onNewComment={this.handleNewComment}
+                        /> */}
                 </div>
             </div>
         </article>

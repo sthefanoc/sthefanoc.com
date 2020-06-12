@@ -134,7 +134,7 @@ export default function Projects({data}) {
           </div>
           <div className="lightbox-controls">
             <div className="prev-item" onclick="prevItem()" ><i className="fa fa-angle-left"></i></div>
-            <div className="next-item" onclick="nextItem()" ><i classNa="fa fa-angle-right"></i></div>
+            <div className="next-item" onclick="nextItem()" ><i className="fa fa-angle-right"></i></div>
           </div>
         </div>
         {/* <!-- Lightbox end --></div> */}

@@ -1181,6 +1181,11 @@ input, textarea, select{
     font-weight: 300;
     margin-bottom: 15px;
 }
+.blog-post .row #disqus_thread{
+    /* background-color: red; */
+    width: 100% !important;
+    background-color: #e3e3e3;
+}
 
 /* Contact section */
 
