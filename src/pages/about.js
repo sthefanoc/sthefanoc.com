@@ -1,8 +1,10 @@
 import React,  { Component } from "react";
 import PrimaryLayout from '../layouts/PrimaryLayout';
+// import { withPrefix } from 'gatsby';
 
 class About extends Component {
   render(){
+    console.log('This is the About page inside the render');
     return(
       <PrimaryLayout>
         <section className="about section" id="about">
@@ -166,6 +168,10 @@ class About extends Component {
             </div>
           </div>
         </div>
+        {/* JS Template */}
+        {/* <script src={withPrefix('js/script.js')} type="text/javascript"></script> */}
+        {/* JS StyleSwitcher */}
+        {/* <script src={withPrefix('js/styleSwitcher.js')} type="text/javascript"></script> */}
       </section>
 
       </PrimaryLayout>

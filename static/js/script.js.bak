@@ -1,3 +1,6 @@
+scriptTag = document.getElementById("script");
+scriptTag.setAttribute("class","active-script")
+
 const logoTest = document.querySelector(".logo");
 if(logoTest){
     logoTest.addEventListener("mouseenter",() => {
@@ -8,7 +11,7 @@ if(logoTest){
 const lalala = function (){
     console.log('agora vai!')
 }
-let btns = document.querySelectorAll(".btn");
+const btns = document.querySelectorAll(".btn");
 if(btns.length){
     btns[0].addEventListener("click", () => {
         lalala();
@@ -171,7 +174,7 @@ const highlightCurrentPage = async () => {
         } else {
             currentPage = "home";
         };
-        let currentPageClass = currentPage + "-link";
+        const currentPageClass = currentPage + "-link";
         document.getElementsByClassName(currentPageClass)[0].setAttribute("aria-current", "page");
         resolve();
     }, 2000)); 

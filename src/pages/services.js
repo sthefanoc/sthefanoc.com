@@ -1,8 +1,9 @@
 import React from "react";
 import PrimaryLayout from '../layouts/PrimaryLayout';
-import { Link } from 'gatsby';
+// import { withPrefix } from 'gatsby';
 
 export default function About({data}) {
+  console.log('This is the Services page');
   return (
     <PrimaryLayout>
       <section className="service section" id="services">
@@ -79,6 +80,10 @@ export default function About({data}) {
             
           </div>
         </div>
+        {/* JS Template */}
+        {/* <script src={withPrefix('js/script.js')} type="text/javascript"></script> */}
+        {/* JS StyleSwitcher */}
+        {/* <script src={withPrefix('js/styleSwitcher.js')} type="text/javascript"></script> */}
       </section>
     </PrimaryLayout>
   )

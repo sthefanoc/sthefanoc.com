@@ -1,7 +1,9 @@
 import React from "react";
 import PrimaryLayout from '../layouts/PrimaryLayout';
+// import { withPrefix } from 'gatsby';
 
 export default function Page404({data}) {
+  console.log('This is the 404 page');
   return (
     <PrimaryLayout>
       <section className="404 section" id="404">
@@ -17,6 +19,10 @@ export default function Page404({data}) {
               I couldn't find that page.
               You can look for what you want in the menu! :):)
           </p>
+        {/* JS Template */}
+        {/* <script src={withPrefix('js/script.js')} type="text/javascript"></script> */}
+        {/* JS StyleSwitcher */}
+        {/* <script src={withPrefix('js/styleSwitcher.js')} type="text/javascript"></script> */}
         </div>
       </section>
     </PrimaryLayout>

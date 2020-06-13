@@ -2,6 +2,56 @@ import React from "react";
 import {Link} from 'gatsby';
 
 export default function Header(props) {
+  console.log("There is a Header component on this page.");
+  // Testing if the page is working
+  const logoTest = document.querySelector(".logo");
+  if(logoTest){
+      logoTest.addEventListener("mouseenter",() => {
+          console.log('Script file!');
+  })
+  };
+
+  // Nav bar toggler button
+  const navTogglerBtn=document.querySelector(".nav-toggler");
+  const aside=document.querySelector(".aside");
+
+  if(navTogglerBtn){
+      navTogglerBtn.addEventListener("click",() => {
+          asideSectionTogglerBtn();
+  })
+  };
+
+  const asideSectionTogglerBtn = function (){
+      const sectionList=document.querySelectorAll(".section");
+      aside.classList.toggle("open");
+      navTogglerBtn.classList.toggle("open");
+      for(let i=0;i<sectionList.length;i++){
+          sectionList[i].classList.toggle("open");
+      }
+  };
+
+  // Highlighting current section
+  const highlightCurrentPage = async () => {
+    await new Promise((resolve)=>setTimeout(() => {
+        try {
+          let currentPage='';
+          if(window.location.pathname !== "/"){
+              currentPage = window.location.pathname.split("/")[1]
+          } else {
+              currentPage = "home";
+          };
+          const currentPageClass = currentPage + "-link";
+          document.getElementsByClassName(currentPageClass)[0].setAttribute("aria-current", "page");
+          
+        } catch {
+          document.getElementsByClassName('home-link')[0].setAttribute("aria-current", "page");
+        }
+        resolve();
+    }, 500)); 
+  };
+  highlightCurrentPage();
+
+
   return (
     <header>
       <div className="aside">

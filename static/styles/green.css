@@ -7,13 +7,13 @@
     border-bottom: 4px solid #72b626;
 }
 
-.aside .nav li a:hover,
-body.dark .aside .nav li a:hover,
-.aside .nav li a.active,
-body.dark .aside .nav li a.active,
+.aside .nav a:hover,
+body.dark .aside .nav a:hover,
+.aside .nav a[aria-current="page"],
+body.dark .aside .nav a[aria-current="page"],
 .aside .copyright-text a,
 .about .about-content .about-text p strong,
-.about .about-content .about-text h3 span,
+.about .about-content .about-text h2 span,
 .about .about-content .personal-info .info-item a,
 .service .service-item .service-item-inner .icon .fa,
 body.dark .portfolio .portfolio-filter button.active,
@@ -23,21 +23,27 @@ body.dark .portfolio .portfolio-filter button.active,
 .lightbox .lightbox-controls .next-item .fa,
 .blog .blog-item-inner .blog-info .blog-tags a,
 .contact .contact-info-item .icon .fa,
-.contact .contact-info-item a{
+.contact .contact-info-item a,
+.blog-post .share-buttons i{
     color: #72b626;
 }
 .aside .nav-toggler span,
 .aside .nav-toggler span::before,
 .aside .nav-toggler span::after,
 .home .intro .social-links a,
-.section-title h2::before,
-.section-title h2::after,
+.section-title h1::before,
+.section-title h1::after,
+.related-posts h3::before,
+.related-posts h3::after,
 .btn,
 .about .about-content .skills .skill-item .progress .progress-in,
 .about .about-content .timeline .timeline-item::before,
 .about .about-content .timeline .circle-dot,
 .service .service-item .service-item-inner:hover .icon,
-.blog .blog-item-inner .blog-img .blog-date
+.blog .blog-item-inner .blog-img .blog-date,
+.blog-post .row .post-image img::after,
+.blog-post .related-post-inner .related-post-img .related-post-date,
+.related-post .related-post-image img::after
 {
     background-color: #72b626;
 }

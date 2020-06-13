@@ -44,15 +44,16 @@ const SEO = ({title, description, keywords, image}) => {
                         {/* <Color /> */}
 
                         <link rel="stylesheet" className="alternate-style" title="blue" href={withPrefix('styles/blue.css')} type="text/css" disabled="true"/>
-                        <link rel="stylesheet" className="alternate-style" title="pink" href={withPrefix('styles/pink.css')} type="text/css" disabled="false"/>
+                        <link rel="stylesheet" className="alternate-style" title="pink" href={withPrefix('styles/pink.css')} type="text/css" />
                         <link rel="stylesheet" className="alternate-style" title="green" href={withPrefix('styles/green.css')} type="text/css" disabled="true"/>
                         <link rel="stylesheet" className="alternate-style" title="yellow" href={withPrefix('styles/yellow.css')} type="text/css" disabled="true"/>
                         <link rel="stylesheet" className="alternate-style" title="orange" href={withPrefix('styles/orange.css')} type="text/css" disabled="true"/>
 
+
                         {/* JS Template */}
-                        <script src={withPrefix('js/script.js')} type="text/javascript"></script>
+                        {/* <script src={withPrefix('js/script.js')} type="text/javascript" id="script"></script> */}
                         {/* JS StyleSwitcher */}
-                        <script src={withPrefix('js/styleSwitcher.js')} type="text/javascript"></script>
+                        {/* <script src={withPrefix('js/styleSwitcher.js')} type="text/javascript" id="styleSwitcher"></script> */}
                     </Helmet>
                 )
             }}

@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from 'gatsby';
+import { graphql, withPrefix } from 'gatsby';
 import PrimaryLayout from '../layouts/PrimaryLayout';
 import Post from '../components/Post';
 import anotherBlogPostImage from '../../static/images/another-blog-post-sthefanoc.png';
@@ -8,6 +8,7 @@ export default function Home({data}) {
   // async const = correctPage() {
   //   document.getElementsByClassName('blog-link')[0].setAttribute("aria-current", "page");
   // }
+  console.log('This is the Blog page');
   return (
     <PrimaryLayout>
       <section className="blog section" id="blog">
@@ -45,6 +46,10 @@ export default function Home({data}) {
           />)
           ))}
         </div>
+        {/* JS Template */}
+        {/* <script src={withPrefix('js/script.js')} type="text/javascript"></script> */}
+        {/* JS StyleSwitcher */}
+        {/* <script src={withPrefix('js/styleSwitcher.js')} type="text/javascript"></script> */}
       </section>
 
     </PrimaryLayout>

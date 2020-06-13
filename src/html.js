@@ -1,5 +1,5 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 
 export default function HTML(props) {
   return (
@@ -24,10 +24,14 @@ export default function HTML(props) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-            console.log('Plain JavaScript inside Gatsby!');
+            // console.log('script from html.js');
+            // console.log('Reloading scripts!');
+            // window.location.reload()
         `
-          }}
+        }}
         />
+        {/* <script src="js/script.js" type="text/javascript" id="script"></script>
+        <script src="js/styleSwitcher.js" type="text/javastyleSwitcher" id="script"></script> */}
       </body>
     </html>
   )

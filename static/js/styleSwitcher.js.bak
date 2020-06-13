@@ -1,6 +1,9 @@
+styleSwitcherTag = document.getElementById("styleSwitcher");
+styleSwitcherTag.setAttribute("class","active-script");
+
 
 // Testing function
-const anotherLogoTest = document.querySelector(".logo");
+anotherLogoTest = document.querySelector(".logo");
 if(anotherLogoTest){
     anotherLogoTest.addEventListener("mouseenter",() => {
         console.log('StyleSwitcher file!');

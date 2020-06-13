@@ -1,8 +1,10 @@
 import React from "react";
 import PrimaryLayout from '../layouts/PrimaryLayout';
 import profilePicture from '../../static/images/sthefanoc.png';
+// import { withPrefix } from 'gatsby';
 
 export default function Home({data}) {
+  console.log('This is the Home page');
   return (
     <PrimaryLayout>
       <section className="home section" id="home">
