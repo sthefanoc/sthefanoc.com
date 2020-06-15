@@ -1,53 +1,65 @@
-import React from "react";
+import React, { Component } from "react";
 import footerStyles from './Footer.module.css';
 import { withPrefix } from 'gatsby';
+import { render } from "react-dom";
 
 
-const Footer = () => {
-  // const requiredScritp = require('../../static/js/script.js');
-  // color selection
-  console.log("There is a Footer component on this page.");
-  const links = document.querySelectorAll('.alternate-style');
-  const totalLinks=links.length;
+class Footer extends Component {
 
-  function setActiveStyle(color){
-      for(let i=0;i<totalLinks;i++){
-          if(color === links[i].getAttribute('title')){
-              links[i].removeAttribute("disabled");
-          } else {
-              links[i].setAttribute("disabled","true");
-          }
-      }
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      skin: "",
+      theme: "",
+    };
   }
 
-  const colorBtns = document.querySelectorAll(".style-switcher li a");
-  for(let i=0;i<colorBtns.length;i++){
-      colorBtns[i].addEventListener("click", () => {
-          setActiveStyle(colorBtns[i].title)
-      })    
-  }
 
-  // skin selection
-  const bodySkin=document.querySelectorAll(".body-skin");
-  const totalBodySkin=bodySkin.length;
-  const changeBodySkin = () =>{
-      for(let j=0;j<totalBodySkin;j++){
-          bodySkin[j].addEventListener("change", function(){
-              if(this.value === 'dark'){
-                  document.body.className="dark"
-              } else {
-                  document.body.className=""
-              }
-          })
-      }
-  }
-  changeBodySkin();
+  componentDidMount() {
+    console.log("There is a Footer component on this page.");
+    const links = document.querySelectorAll('.alternate-style');
+    const totalLinks=links.length;
 
-  if(document.querySelector(".toggle-style-switcher")){
-      document.querySelector(".toggle-style-switcher").addEventListener("click", () => {
-          document.querySelector(".style-switcher").classList.toggle("open");
-      })
+    function setActiveStyle(color){
+        for(let i=0;i<totalLinks;i++){
+            if(color === links[i].getAttribute('title')){
+                links[i].removeAttribute("disabled");
+            } else {
+                links[i].setAttribute("disabled","true");
+            }
+        }
+    }
+
+    const colorBtns = document.querySelectorAll(".style-switcher li a");
+    for(let i=0;i<colorBtns.length;i++){
+        colorBtns[i].addEventListener("click", () => {
+            setActiveStyle(colorBtns[i].title)
+        })    
+    }
+
+    // skin selection
+    const bodySkin=document.querySelectorAll(".body-skin");
+    const totalBodySkin=bodySkin.length;
+    const changeBodySkin = () =>{
+        for(let j=0;j<totalBodySkin;j++){
+            bodySkin[j].addEventListener("change", function(){
+                if(this.value === 'dark'){
+                    document.body.className="dark"
+                } else {
+                    document.body.className=""
+                }
+            })
+        }
+    }
+    changeBodySkin();
+
+    if(document.querySelector(".toggle-style-switcher")){
+        document.querySelector(".toggle-style-switcher").addEventListener("click", () => {
+            document.querySelector(".style-switcher").classList.toggle("open");
+        })
+    }
   }
+  render() {
   return (
     <div>
         {/* Live style switcher */}
@@ -75,6 +87,6 @@ const Footer = () => {
         </div>
     </div>
    )
-}
+}}
 
 export default Footer;

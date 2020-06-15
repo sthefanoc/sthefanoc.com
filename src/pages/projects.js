@@ -1,8 +1,10 @@
 import React from "react";
 import PrimaryLayout from '../layouts/PrimaryLayout';
 import { withPrefix } from "gatsby";
+import { Component } from "react";
 
-export default function Projects({data}) {
+class Project extends Component {
+  componentDidMount() {
   console.log('This is the Projects page');
   const filterContainer = document.querySelector(".portfolio-filter");
   const filterBtns=filterContainer ? filterContainer.children : 0;
@@ -102,7 +104,8 @@ export default function Projects({data}) {
     }
     })
   }
-
+  }
+  render() {
   return (
     <PrimaryLayout>
       <section className="portfolio section" id="portfolio">
@@ -236,5 +239,7 @@ export default function Projects({data}) {
         {/* <script src={withPrefix('js/styleSwitcher.js')} type="text/javascript"></script> */}
       </section>
     </PrimaryLayout>
-  )
+  )}
 };
+
+export default Project;

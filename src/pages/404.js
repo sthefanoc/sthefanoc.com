@@ -1,9 +1,13 @@
 import React from "react";
 import PrimaryLayout from '../layouts/PrimaryLayout';
-// import { withPrefix } from 'gatsby';
+import { Component } from "react";
+import { withPrefix } from 'gatsby';
 
-export default function Page404({data}) {
-  console.log('This is the 404 page');
+class Page404 extends Component {
+  componentDidMount() {
+    console.log('This is the 404 page');
+  }
+  render() {
   return (
     <PrimaryLayout>
       <section className="404 section" id="404">
@@ -12,7 +16,7 @@ export default function Page404({data}) {
             <h1>This is not the page you're looking for...</h1>
           </div>
           <div className="row">
-            <img src="https://media.giphy.com/media/l2JJKs3I69qfaQleE/giphy.gif" alt=""/>
+            <img src={withPrefix('images/not-what-youre-looking-for.webp')} alt=""/>
           </div>
           <br/>
           <p>Sorry...
@@ -27,3 +31,6 @@ export default function Page404({data}) {
       </section>
     </PrimaryLayout>
 )}
+};
+
+export default Page404;

@@ -3,8 +3,10 @@ import PrimaryLayout from '../layouts/PrimaryLayout';
 // import { withPrefix } from 'gatsby';
 
 class About extends Component {
+  componentDidMount(){
+    console.log('This is the About page inside the component did mount');
+  }
   render(){
-    console.log('This is the About page inside the render');
     return(
       <PrimaryLayout>
         <section className="about section" id="about">

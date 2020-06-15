@@ -2,7 +2,7 @@ import React from "react";
 import PrimaryLayout from '../layouts/PrimaryLayout';
 // import { withPrefix } from 'gatsby';
 
-export default function About({data}) {
+export default function About() {
   console.log('This is the Services page');
   return (
     <PrimaryLayout>

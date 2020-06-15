@@ -1,56 +1,60 @@
 import React from "react";
 import {Link} from 'gatsby';
 
-export default function Header(props) {
-  console.log("There is a Header component on this page.");
-  // Testing if the page is working
-  const logoTest = document.querySelector(".logo");
-  if(logoTest){
-      logoTest.addEventListener("mouseenter",() => {
-          console.log('Script file!');
-  })
-  };
+class Header extends React.Component {
 
-  // Nav bar toggler button
-  const navTogglerBtn=document.querySelector(".nav-toggler");
-  const aside=document.querySelector(".aside");
+  componentDidMount() {
+    console.log("There is a Header component on this page.");
+    // Testing if the page is working
+    const logoTest = document.querySelector(".logo");
+    if(logoTest){
+        logoTest.addEventListener("mouseenter",() => {
+            console.log('Script file!');
+    })
+    };
 
-  if(navTogglerBtn){
-      navTogglerBtn.addEventListener("click",() => {
-          asideSectionTogglerBtn();
-  })
-  };
+    // Nav bar toggler button
+    const navTogglerBtn=document.querySelector(".nav-toggler");
+    const aside=document.querySelector(".aside");
 
-  const asideSectionTogglerBtn = function (){
-      const sectionList=document.querySelectorAll(".section");
-      aside.classList.toggle("open");
-      navTogglerBtn.classList.toggle("open");
-      for(let i=0;i<sectionList.length;i++){
-          sectionList[i].classList.toggle("open");
-      }
-  };
+    if(navTogglerBtn){
+        navTogglerBtn.addEventListener("click",() => {
+            asideSectionTogglerBtn();
+    })
+    };
 
-  // Highlighting current section
-  const highlightCurrentPage = async () => {
-    await new Promise((resolve)=>setTimeout(() => {
-        try {
-          let currentPage='';
-          if(window.location.pathname !== "/"){
-              currentPage = window.location.pathname.split("/")[1]
-          } else {
-              currentPage = "home";
-          };
-          const currentPageClass = currentPage + "-link";
-          document.getElementsByClassName(currentPageClass)[0].setAttribute("aria-current", "page");
-          
-        } catch {
-          document.getElementsByClassName('home-link')[0].setAttribute("aria-current", "page");
+    const asideSectionTogglerBtn = function (){
+        const sectionList=document.querySelectorAll(".section");
+        aside.classList.toggle("open");
+        navTogglerBtn.classList.toggle("open");
+        for(let i=0;i<sectionList.length;i++){
+            sectionList[i].classList.toggle("open");
         }
-        resolve();
-    }, 500)); 
-  };
-  highlightCurrentPage();
+    };
 
+    // Highlighting current section
+    const highlightCurrentPage = async () => {
+      await new Promise((resolve)=>setTimeout(() => {
+          try {
+            let currentPage='';
+            if(window.location.pathname !== "/"){
+                currentPage = window.location.pathname.split("/")[1]
+            } else {
+                currentPage = "home";
+            };
+            const currentPageClass = currentPage + "-link";
+            document.getElementsByClassName(currentPageClass)[0].setAttribute("aria-current", "page");
+            
+          } catch {
+            document.getElementsByClassName('home-link')[0].setAttribute("aria-current", "page");
+          }
+          resolve();
+      }, 500)); 
+    };
+    highlightCurrentPage();
+  }
+
+  render() {
 
   return (
     <header>
@@ -78,7 +82,9 @@ export default function Header(props) {
       </div>
     </header>
 )}
+}
 
+export default Header;
 {/* <header>
   <Navbar bg="light" expand="lg">
     <Navbar.Brand href="/">Crazy Gatsby</Navbar.Brand>
