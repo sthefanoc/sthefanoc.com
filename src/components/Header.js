@@ -9,7 +9,7 @@ class Header extends React.Component {
     const logoTest = document.querySelector(".logo");
     if(logoTest){
         logoTest.addEventListener("mouseenter",() => {
-            console.log('Script file!');
+            console.log('Header component!');
     })
     };
 

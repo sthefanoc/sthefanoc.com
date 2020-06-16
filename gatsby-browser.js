@@ -42,6 +42,25 @@ exports.onPreRouteUpdate = () => {
 }
 
 exports.onRouteUpdate = () => {
+  // function switchColorStorage(color) {
+  //   const links = document.querySelectorAll('.alternate-style');
+  //   const totalLinks=links.length;
+
+  //   for(let i=0;i<totalLinks;i++){
+  //     if(color === links[i].getAttribute('title')){
+  //         links[i].removeAttribute("disabled");
+  //         console.log(links[i].title, 'not disabled');
+  //     } else {
+  //         links[i].setAttribute("disabled","true");
+  //         console.log(links[i].title, 'disabled');
+  //     }
+  //   }
+  // }
+  // if(localStorage.getItem("selectedBodySkinColor")){
+  //   switchColorStorage(localStorage.getItem("selectedBodySkinColor"));
+  // } else {
+  //   switchColorStorage('blue');
+  // }
   // console.log('onRouteUpdate!');
   // setTimeout (function reloadScripts(){
   //   let head = document.getElementsByTagName('head')[0];

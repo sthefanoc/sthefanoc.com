@@ -32,6 +32,12 @@ export default function HTML(props) {
         />
         {/* <script src="js/script.js" type="text/javascript" id="script"></script>
         <script src="js/styleSwitcher.js" type="text/javastyleSwitcher" id="script"></script> */}
+
+        {/* <link rel="stylesheet" className="alternate-style" title="green" src='/styles/green.css' type="text/css" disabled />
+        <link rel="stylesheet" className="alternate-style" title="pink" src='/styles/pink.css' type="text/css" disabled />
+        <link rel="stylesheet" className="alternate-style" title="blue" src='/styles/blue.css' type="text/css" disabled />
+        <link rel="stylesheet" className="alternate-style" title="yellow" src='/styles/yellow.css' type="text/css" disabled />
+        <link rel="stylesheet" className="alternate-style" title="orange" src='/styles/orange.css' type="text/css" disabled /> */}
       </body>
     </html>
   )
