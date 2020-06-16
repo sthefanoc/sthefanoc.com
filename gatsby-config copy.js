@@ -15,7 +15,6 @@ module.exports = {
     keywords:"sthefano, sthefanoc, development, fullstack, growth, growth marketing, react, react developer",
     image:"/static/sthefanoc.png",
     url:'https://sthefanoc.com/',
-    author:'SthefanoC',
     social: [
         {
             name: 'github',
@@ -36,27 +35,7 @@ module.exports = {
     ]
   },
   plugins: [
-    `gatsby-plugin-netlify`,
-    {
-      resolve: "gatsby-plugin-netlify-cache",
-      options: {
-        cachePublic: true
-      }
-    },
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        useMozJpeg: false,
-        stripMetadata: true,
-        defaultQuality: 75,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-disqus`,
-      options: {
-        shortname: `sthefanoc`
-      }
-    },
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {

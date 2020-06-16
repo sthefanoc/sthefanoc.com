@@ -1,11 +1,12 @@
 import React from 'react';
 import BlogRelatedPosts from '../components/BlogRelatedPosts'; 
 import { DiscussionEmbed } from 'disqus-react';
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 
 
 const BlogPost =(props) => {
     const baseUrl = 'https://sthefanoc.com/';
-    const disqusShortname = 'sthefanoc';
+    // const disqusShortname = 'sthefanoc';
     const disqusConfig = {
         identifier: props.slug,
         title: props.title,
@@ -22,6 +23,9 @@ const BlogPost =(props) => {
                     <div className="section-title">
                         <h1 dangerouslySetInnerHTML={{__html:props.title}}/>
                     </div>
+                    <a href="#comment-count" className="commment-count">
+                        <CommentCount config={disqusConfig} placeholder={'...'} />
+                    </a>
                 </div>
                 <div className="row">
                     <div className="post-date">
@@ -55,8 +59,8 @@ const BlogPost =(props) => {
                 </div>
                 <div className="row">
                     <div className="post-intro">
-                        <img src={props.image} alt={props.alt || 'defaulAlt'} />
-                        <p className="post-excerpt" dangerouslySetInnerHTML={{__html:props.excerpt}}/>
+                        <img className="intro-sub-element" src={props.image} alt={props.alt || 'defaulAlt'} />
+                        <p className="post-excerpt intro-sub-element" dangerouslySetInnerHTML={{__html:props.excerpt}}/>
                     </div>
                 </div>
                 <div className="row blog-post-text" dangerouslySetInnerHTML={{__html:props.content}}/>
@@ -67,11 +71,8 @@ const BlogPost =(props) => {
                         />
                         
                 </div>
-                <div className="row">
-                    <DiscussionEmbed
-                        shortname={disqusShortname}
-                        config={disqusConfig}
-                    />
+                <div  id="comment-count" className="row">
+                    <Disqus config={disqusConfig} />
                 </div>
             </div>
         </article>

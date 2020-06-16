@@ -3,7 +3,7 @@
  @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
  /*Google fonts*/
- @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&family=Rubik:wght@700&display=swap');
+ /* @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&family=Rubik:wght@700&display=swap'); */
 
 
 /* General Style */
@@ -994,7 +994,10 @@ input, textarea, select{
 }
 
 /* Blog Post */
-
+.blog-post .disqus-comment-count{
+    font-style: italic;
+    color: #302e4d;
+}
 .blog-post .post-date{
     /* background-color: red; */
     text-align: right;
@@ -1030,30 +1033,53 @@ input, textarea, select{
     padding-bottom: 30px;
     width: 100%;
 }
+.blog-post .post-intro .intro-sub-element{
+    /* background-color: lightblue; */
+    display: block;
+    justify-content: space-evenly;
+    max-width: 45%;
+    /* -webkit-display: inline-block;
+    -moz-display: inline-block;
+    -ms--display: inline-block;
+    justify-content: space-between;
+    flex:0 0 50%;
+    -ms-flex: 0 0 50%;
+    max-width: 50%;
+    vertical-align: middle; */
+}
 .blog-post .row .post-intro {
     border-bottom: 1px dashed #e8dfec;
 }
 .blog-post .row .post-intro img{
+    display: inline-block;
+    align-items: center;
+    height: 100%;
     max-height: 50vh;
     padding-bottom: 25px;
     float: right;
-    max-width: 50%;
+    vertical-align: middle;
     border: 1px solid #e8dfec;
     padding: 2px;
     margin-bottom: 15px;
+    margin-top: 15px;
 
 }
 .blog-post .row .post-excerpt p{
     /* float: right; */
     font-style: italic;
-    max-width: 45%;
     text-align: center;
     padding: 70px 0;
     font-weight: 500;
-    font-size: large;
+    font-size: auto;
+    line-height: 50px;
+    /* background-color: red; */
 }
 .blog-post .blog-post-text{
     border-bottom: 1px solid #e8dfec;
+}
+.blog-post .blog-post-text p{
+    padding-bottom: 3vh;
+    line-height: 40px;
 }
 .related-posts{
     padding-bottom: 20px;
@@ -1412,7 +1438,8 @@ body.dark .blog-post .related-post-inner:after {
     .about .about-content .education,
     .about .about-content .skills,
     .about .about-content .personal-info,
-    .contact .contact-form .col-6{
+    .contact .contact-form .col-6,
+    .blog-post .post-intro .intro-sub-element{
         display: inline-block;
         -webkit-display: inline-block;
         -moz-display: inline-block;
