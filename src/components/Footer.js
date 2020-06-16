@@ -5,50 +5,51 @@ import { render } from "react-dom";
 
 
 class Footer extends Component {
-  if(document){
-    switchColor = (color) => {
-      console.log('Switch color function!',color);
-      localStorage.setItem("selectedBodySkinColor", color);
-
-      const changeToDark = Boolean(document.getElementsByTagName('body')[0].classList[0]);
-
-      document.location.reload()
-
-      if(changeToDark){
-        document.body.className="dark";
-      }
-
-
-      // const links = document.querySelectorAll('.alternate-style');
-      // const totalLinks=links.length;
-
-      // for(let i=0;i<totalLinks;i++){
-      //   if(color === links[i].getAttribute('title')){
-      //       links[i].removeAttribute("disabled");
-      //       console.log(links[i].title, 'not disabled');
-      //   } else {
-      //       links[i].setAttribute("disabled","true");
-      //       console.log(links[i].title, 'disabled');
-      //   }
-      // }
-    };
-    switchBodySkin = (bodyTheme) => {
-      console.log('switcher theme!', bodyTheme)
-      const bodySkin=document.querySelectorAll(".body-skin");
-      const totalBodySkin=bodySkin.length;
-      for(let j=0;j<totalBodySkin;j++){
-          if(bodyTheme === 'dark'){
-              document.body.className="dark"
-              document.querySelector('input[value="dark"]').checked="true";
-          } else {
-              document.body.className=""
-              document.querySelector('input[value="light"]').checked="true";
-          }
-      }
-    };
-  }
   
   componentDidMount() {
+    if(document){
+      this.switchColor = (color) => {
+        console.log('Switch color function!',color);
+        localStorage.setItem("selectedBodySkinColor", color);
+  
+        const changeToDark = Boolean(document.getElementsByTagName('body')[0].classList[0]);
+  
+        document.location.reload()
+  
+        if(changeToDark){
+          document.body.className="dark";
+        }
+  
+  
+        // const links = document.querySelectorAll('.alternate-style');
+        // const totalLinks=links.length;
+  
+        // for(let i=0;i<totalLinks;i++){
+        //   if(color === links[i].getAttribute('title')){
+        //       links[i].removeAttribute("disabled");
+        //       console.log(links[i].title, 'not disabled');
+        //   } else {
+        //       links[i].setAttribute("disabled","true");
+        //       console.log(links[i].title, 'disabled');
+        //   }
+        // }
+      };
+      this.switchBodySkin = (bodyTheme) => {
+        console.log('switcher theme!', bodyTheme)
+        const bodySkin=document.querySelectorAll(".body-skin");
+        const totalBodySkin=bodySkin.length;
+        for(let j=0;j<totalBodySkin;j++){
+            if(bodyTheme === 'dark'){
+                document.body.className="dark"
+                document.querySelector('input[value="dark"]').checked="true";
+            } else {
+                document.body.className=""
+                document.querySelector('input[value="light"]').checked="true";
+            }
+        }
+      };
+    }  
+
     console.log("There is a Footer component on this page.");
     const isBodyDark = document.getElementsByTagName('body')[0].classList[0];
     if(isBodyDark){

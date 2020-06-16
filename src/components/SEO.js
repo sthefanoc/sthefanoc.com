@@ -1,34 +1,66 @@
 import React from 'react';
 import { StaticQuery, graphql, withPrefix } from 'gatsby';
-import ColorStyles from '../components/ColorStyles';
 import { Helmet } from 'react-helmet';
+import { Component } from 'react';
 
 
-const SEO = ({title, description, keywords, image}) => {
-    const links = document.querySelectorAll('.alternate-style');
-    const totalLinks=links.length;
-    let selectedSkinColor = 'blue';
-
-    if(localStorage.getItem("selectedBodySkinColor")){
-        console.log(localStorage.getItem("selectedBodySkinColor"), 'is the color on localstorage');
-        selectedSkinColor = localStorage.getItem("selectedBodySkinColor");
-    } else {
-        console.log("The used color will be the default", selectedSkinColor);
+// const SEO = ({title, description, keywords, image}) => {
+class SEO extends Component{
+    constructor(props) {
+        super(props)
+        this.state = {
+          skinColor: 'blue', // or your default width here
+        }
     }
 
-    // for(let i=0;i<totalLinks;i++){
-    //   if(localStorage.getItem("selectedBodySkinColor") === links[i].getAttribute('title')){
-    //       links[i].removeAttribute("disabled");
-    //       console.log(links[i].title, 'not disabled');
-    //   } else {
-    //       links[i].setAttribute("disabled","true");
-    //       console.log(links[i].title, 'disabled');
-    //   }
-    // };
+    componentDidMount (){
+        this.defineSkinColor()
+    //     if(window){
+    //         if(localStorage.getItem("selectedBodySkinColor")){
+    //             console.log(localStorage.getItem("selectedBodySkinColor"), 'is the color on localstorage');
+    //             this.selectedSkinColor = localStorage.getItem("selectedBodySkinColor");
+    //         } else {
+    //             console.log("The used color will be the default", this.selectedSkinColor);
+    //         }
+    //     }
+    // }
+    }
 
-    
-    
-    
+    defineSkinColor = () => {
+        this.setState({ skinColor: window.localStorage.getItem("selectedBodySkinColor") || 'blue' })
+    }
+
+    render(){
+        const {title, description, keywords, image} = this.props;
+
+        // if(window){
+        //         if(localStorage.getItem("selectedBodySkinColor")){
+        //             console.log(localStorage.getItem("selectedBodySkinColor"), 'is the color on localstorage');
+        //             this.selectedSkinColor = localStorage.getItem("selectedBodySkinColor");
+        //         } else {
+        //             console.log("The used color will be the default", this.selectedSkinColor);
+        //         }
+        //     }
+
+        
+        // console.log(window);
+        // this.defineSkinColor = () => {
+        //     let selected = this.finalColorSelection;
+        //     console.log("the defined color is going to be", selected)
+        //     return selected;
+        // }
+        
+        // this.selectedSkinColor = this.defineSkinColor();
+            // for(let i=0;i<totalLinks;i++){
+            //   if(localStorage.getItem("selectedBodySkinColor") === links[i].getAttribute('title')){
+            //       links[i].removeAttribute("disabled");
+            //       console.log(links[i].title, 'not disabled');
+            //   } else {
+            //       links[i].setAttribute("disabled","true");
+            //       console.log(links[i].title, 'disabled');
+            //   }
+            // };
+   
     return (
         <StaticQuery
             query={query}
@@ -70,8 +102,8 @@ const SEO = ({title, description, keywords, image}) => {
                         <link 
                             rel="stylesheet" 
                             className="alternate-style" 
-                            title={selectedSkinColor} 
-                            href={withPrefix(`styles/${selectedSkinColor}.css`)} 
+                            title={this.state.skinColor} 
+                            href={withPrefix(`styles/${this.state.skinColor}.css`)} 
                             type="text/css" 
                         />
                         {/* <ColorStyles /> */}
@@ -91,6 +123,7 @@ const SEO = ({title, description, keywords, image}) => {
             }}
         />
     )
+}
 }
 export default SEO;
 
