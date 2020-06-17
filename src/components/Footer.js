@@ -5,21 +5,27 @@ import { render } from "react-dom";
 
 
 class Footer extends Component {
+  // componentDidUpdate(){
+    
+  // }
   
   componentDidMount() {
+    // this.reloadThemeColor =() => {
+    //   if(localStorage.getItem("selectedBodyTheme")){
+    //     if(localStorage.getItem("selectedBodyTheme") === 'dark'){
+    //       document.body.className="dark";
+    //     }
+    //   }
+    // }
+    // this.thisIsAwesome = () => {
+    //   console.log('Awesome!')
+    // }
     if(document){
       this.switchColor = (color) => {
         console.log('Switch color function!',color);
         localStorage.setItem("selectedBodySkinColor", color);
   
-        const changeToDark = Boolean(document.getElementsByTagName('body')[0].classList[0]);
-  
         document.location.reload()
-  
-        if(changeToDark){
-          document.body.className="dark";
-        }
-  
   
         // const links = document.querySelectorAll('.alternate-style');
         // const totalLinks=links.length;
@@ -36,6 +42,7 @@ class Footer extends Component {
       };
       this.switchBodySkin = (bodyTheme) => {
         console.log('switcher theme!', bodyTheme)
+        localStorage.setItem("selectedBodyTheme", bodyTheme)
         const bodySkin=document.querySelectorAll(".body-skin");
         const totalBodySkin=bodySkin.length;
         for(let j=0;j<totalBodySkin;j++){
@@ -109,7 +116,6 @@ class Footer extends Component {
     }
   }
   render() {
-    
     // const selectedBodyTheme = useState('light');
   return (
     <div>

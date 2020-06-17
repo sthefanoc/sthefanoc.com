@@ -1,7 +1,6 @@
 import React from 'react';
 import BlogRelatedPosts from '../components/BlogRelatedPosts'; 
 import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
-import contentParser from 'gatsby-wpgraphql-inline-images';
 
 
 
@@ -78,8 +77,8 @@ const BlogPost =(props) => {
                         <p className="post-excerpt intro-sub-element" dangerouslySetInnerHTML={{__html:props.excerpt}}/>
                     </div>
                 </div>
-                {/* <div className="row blog-post-text" dangerouslySetInnerHTML={{__html:props.content}}/> */}
-                <div className="row blog-post-text">{contentParser( props.content , pluginOptions)}</div>
+                <div className="row blog-post-text" dangerouslySetInnerHTML={{__html:props.content}}/>
+                {/* <div className="row blog-post-text">{contentParser( props.content , pluginOptions)}</div> */}
                 <div className="row"></div>
                 <div className="row">
                     <BlogRelatedPosts 

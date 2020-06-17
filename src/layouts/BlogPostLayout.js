@@ -29,7 +29,7 @@ const BlogPostLayout = ({data}) => {
             <SEO 
                 title={innertext(post.title)}
                 description={innertext(post.excerpt)}
-                image={post.featured_media ? post.featured_media.source_url : ''}
+                image={post.featured_media ? post.featured_media.localFile.childImageSharp.fixed.src: ''}
                 keywords={post.categories.map(res => res.name).join(', ')}
                 />
             <Header />
@@ -39,8 +39,8 @@ const BlogPostLayout = ({data}) => {
                     {Boolean(post.featured_media)
                         ? 
                         (<BlogPost
-                            image={post.featured_media.source_url}
-                            alt={post.featured_media.slug}
+                            image={post.featured_media.localFile.childImageSharp.fixed.src}
+                            alt={post.featured_media.localFile.childImageSharp.fixed.originalName}
                             title={post.title}
                             date={post.date}
                             slug={post.slug}
@@ -79,6 +79,7 @@ const BlogPostLayout = ({data}) => {
         </div>
     )
 };
+// .featured_media.localFile.childImageSharp.fixed.src
 
 export default BlogPostLayout;
 
@@ -91,8 +92,16 @@ export const query = graphql`
             slug
             date (formatString: "MMMM DD, YYYY")
             featured_media {
-                source_url
-                slug
+                localFile{
+                  childImageSharp{
+                    fixed{
+                      src
+                      width
+                      height
+                      originalName
+                    }
+                  }
+                }
             }
             categories {
                 name
@@ -106,8 +115,16 @@ export const query = graphql`
               excerpt
               date (formatString: "MMMM DD, YYYY")
               featured_media {
-                source_url
-                slug
+                localFile{
+                  childImageSharp{
+                    fixed{
+                      src
+                      width
+                      height
+                      originalName
+                    }
+                  }
+                }
               }
               categories {
                 name

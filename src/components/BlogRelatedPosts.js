@@ -15,7 +15,7 @@ class BlogRelatedPosts extends Component {
                         <Link to={withPrefix(`blog/${node.slug}`)}>
                             <div className="related-post-img">
                                 {node.featured_media
-                                ? <img src={node.featured_media.source_url} alt={node.featured_media.slug || 'defaulAlt'} />
+                                ? <img src={node.featured_media.localFile.childImageSharp.fixed.src} alt={node.featured_media.localFile.childImageSharp.fixed.originalName || 'defaulAlt'} />
                                 : <br />}
                                 <div className="related-post-date" dangerouslySetInnerHTML={{__html: node.date}} />
                             </div>

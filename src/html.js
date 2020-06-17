@@ -27,6 +27,11 @@ export default function HTML(props) {
             // console.log('script from html.js');
             // console.log('Reloading scripts!');
             // window.location.reload()
+            if(localStorage.getItem("selectedBodyTheme")){
+              if(localStorage.getItem("selectedBodyTheme") === 'dark'){
+                document.body.className="dark";
+              }
+            }
         `
         }}
         />

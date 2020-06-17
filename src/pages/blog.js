@@ -22,8 +22,8 @@ export default function Home({data}) {
             Boolean(node.featured_media)
             ? 
             (<Post
-            image={node.featured_media.source_url}
-            alt={node.featured_media.slug}
+            image={node.featured_media.localFile.childImageSharp.fixed.src}
+            alt={node.featured_media.localFile.childImageSharp.fixed.originalName}
             title={node.title}
             date={node.date}
             excerpt={node.excerpt}
@@ -64,8 +64,16 @@ export const query = graphql`
       excerpt
       date (formatString: "MMMM DD, YYYY")
       featured_media {
-        source_url
-        slug
+        localFile{
+          childImageSharp{
+            fixed(width:300, height: 300){
+              src
+              width
+              height
+              originalName
+            }
+          }
+        }
       }
       categories {
         name
