@@ -1,10 +1,15 @@
 import React from 'react';
 import BlogRelatedPosts from '../components/BlogRelatedPosts'; 
-import { DiscussionEmbed } from 'disqus-react';
-import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
+import contentParser from 'gatsby-wpgraphql-inline-images';
+
 
 
 const BlogPost =(props) => {
+    const pluginOptions = {
+        wordPressUrl: `http://wordpress.sthefanoc.com/`,
+        uploadsUrl: `http://wordpress.sthefanoc.com/wp-content/uploads/`,
+      };
     const baseUrl = 'https://sthefanoc.com/';
     // const disqusShortname = 'sthefanoc';
     const disqusConfig = {
@@ -59,11 +64,22 @@ const BlogPost =(props) => {
                 </div>
                 <div className="row">
                     <div className="post-intro">
-                        <img className="intro-sub-element" src={props.image} alt={props.alt || 'defaulAlt'} />
+                        {/* <img className="intro-sub-element" src={props.image} alt={props.alt || 'defaulAlt'} /> */}
+                        {/* <Img 
+                            className="intro-sub-element" 
+                            src={props.image} 
+                            alt={props.alt || 'defaulAlt'}
+                        /> */}
+                        <img 
+                            className="intro-sub-element" 
+                            src={props.image} 
+                            alt={props.alt || 'defaulAlt'}
+                        />
                         <p className="post-excerpt intro-sub-element" dangerouslySetInnerHTML={{__html:props.excerpt}}/>
                     </div>
                 </div>
-                <div className="row blog-post-text" dangerouslySetInnerHTML={{__html:props.content}}/>
+                {/* <div className="row blog-post-text" dangerouslySetInnerHTML={{__html:props.content}}/> */}
+                <div className="row blog-post-text">{contentParser( props.content , pluginOptions)}</div>
                 <div className="row"></div>
                 <div className="row">
                     <BlogRelatedPosts 

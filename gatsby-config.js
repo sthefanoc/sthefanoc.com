@@ -36,6 +36,15 @@ module.exports = {
     ]
   },
   plugins: [
+    {
+      resolve: 'gatsby-wpgraphql-inline-images',
+      options: {
+        wordPressUrl: `http://wordpress.sthefanoc.com/`,
+        uploadsUrl: `http://wordpress.sthefanoc.com/wp-content/uploads/`,
+        processPostTypes: ["Page", "Post"],
+        graphqlTypeName: 'WPGraphQL',
+      },
+    },
     `gatsby-plugin-netlify`,
     {
       resolve: "gatsby-plugin-netlify-cache",
@@ -132,6 +141,7 @@ module.exports = {
         baseUrl: `wordpress.sthefanoc.com`,
         protocol: `http`,
         hostingWPCOM: false,
+        useACF: true,
       },
     },
     `gatsby-plugin-react-helmet`,
