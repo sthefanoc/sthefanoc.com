@@ -1,10 +1,23 @@
 import React,  { Component } from "react";
 import PrimaryLayout from '../layouts/PrimaryLayout';
 // import { withPrefix } from 'gatsby';
+import { navigate } from 'gatsby';
 
 class About extends Component {
   componentDidMount(){
     console.log('This is the About page inside the component did mount');
+  }
+  sendMailFromAboutPage = () => {
+    localStorage.setItem('sthefanoc-sendMailFromAbout', 1);
+    navigate('/contact');
+  }
+  sendCVFromAboutPage = () => {
+    localStorage.setItem('sthefanoc-sendCVFromAbout', 1);
+    navigate('/contact');
+  }
+  hireMeFromAboutPage = () => {
+    localStorage.setItem('sthefanoc-hireMeFromAbout', 1);
+    navigate('/contact');
   }
   render(){
     return(
@@ -34,10 +47,10 @@ class About extends Component {
                         <p>Age: <span>27</span></p>
                       </div>
                       <div className="info-item padd-15">
-                        <p>Portfolio: <span><a href="/portfolio">my work</a></span></p>
+                        <p>Portfolio: <span><a href="/projects">my work</a></span></p>
                       </div>
                       <div className="info-item padd-15">
-                        <p>Email: <span><a href="mailto:sthefano@masteradin.com">my e-mail</a></span></p>
+                        <p>Email: <span><a onClick={this.sendMailFromAboutPage} href="#">my e-mail</a></span></p>
                       </div>
                       <div className="info-item padd-15">
                         <p>Location: <span><a href="https://goo.gl/maps/92hFkkeWKkvypprh9">São Paulo-SP, Brazil</a></span></p>
@@ -48,8 +61,8 @@ class About extends Component {
                     </div>
                     <div className="row">
                       <div className="buttons padd-15">
-                        <a href="#" className="btn">Download CV</a>
-                        <a href="#" className="btn">Hire me</a>
+                        <a href="#" onClick={this.sendCVFromAboutPage} className="btn">Download CV</a>
+                        <a href="#" onClick={this.hireMeFromAboutPage} className="btn">Hire me</a>
                       </div>
                     </div>
                   </div>

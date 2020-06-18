@@ -69,7 +69,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `http://www.sthefanoc.com`,
+        siteUrl: `https://www.sthefanoc.com`,
       },
     },
     {
