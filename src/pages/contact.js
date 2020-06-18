@@ -41,7 +41,7 @@ export default function Contact() {
             <form 
               className="contact-form padd-15"
               name="contact-form"
-              method="post"
+              method="POST"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               >
@@ -71,7 +71,8 @@ export default function Contact() {
               </div>
               <div className="row">
                 <div className="col-12 padd-15">
-                  <button onClick={() => alert('Message received! I\'ll respond as soon as possible!')} type="submit" className="btn">Send message</button>
+                  <button type="submit" className="btn" >Send message</button>
+                  {/* <button type="submit" className="btn" onClick={() => alert('Message received! I\'ll respond as soon as possible!')}>Send message</button> */}
                 </div>
               </div>
             </form>
