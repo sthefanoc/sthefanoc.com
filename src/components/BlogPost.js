@@ -9,7 +9,7 @@ const BlogPost =(props) => {
         wordPressUrl: `http://wordpress.sthefanoc.com/`,
         uploadsUrl: `http://wordpress.sthefanoc.com/wp-content/uploads/`,
       };
-    const baseUrl = 'https://sthefanoc.com/';
+    const baseUrl = 'https://sthefanoc.com/blog/';
     // const disqusShortname = 'sthefanoc';
     const disqusConfig = {
         identifier: props.slug,
@@ -47,12 +47,12 @@ const BlogPost =(props) => {
                             rel="noopenner noreferrer">
                             <i className="fa fa-twitter"></i></a>
                         <a 
-                            href={"https://www.linkedin.com/shareArticle?url=" + baseUrl + props.slug + "/"} 
+                            href={"https://www.linkedin.com/shareArticle?mini=true&url=" + baseUrl + props.slug + "/&title=" + props.title + '&summary=' + props.excerpt + "&source=sthefanoc.com"}
                             target="_blank"
                             rel="noopenner noreferrer">
                             <i className="fa fa-linkedin"></i></a>
                         <a 
-                            href={"whatsapp://send?text=" + baseUrl + props.slug + "/"} 
+                            href={"https://wa.me/?text=" + baseUrl + props.slug + "/"} 
                             target="_blank"
                             rel="noopenner noreferrer">
                             <i className="fa fa-whatsapp"></i></a>

@@ -38,34 +38,40 @@ export default function Contact() {
           </div>
           {/* <!-- Contac form start --> */}
           <div className="row">
-            <form action="" className="contact-form padd-15">
+            <form 
+              className="contact-form padd-15"
+              name="contact-form"
+              method="post"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              >
               <div className="row">
                 <div className="form-item col-6 padd-15">
                   <div className="form-group">
-                    <input type="text" className="form-control" placeholder="Name*" />
+                    <input name="name" type="text" className="form-control" placeholder="Name*" />
                   </div>
                 </div>
                 <div className="form-item col-6 padd-15">
                   <div className="form-group">
-                    <input type="email" className="form-control" placeholder="Email*" />
+                    <input name="email" type="email" className="form-control" placeholder="Email*" />
                   </div>
                 </div>
               </div>
               <div className="row">
                 <div className="form-item col-12 padd-15">
                   <div className="form-group">
-                    <input type="text" className="form-control" placeholder="Subject*" />
+                    <input name="subject" type="text" className="form-control" placeholder="Subject*" />
                   </div>
                 </div>
                 <div className="form-item col-12 padd-15">
                   <div className="form-group">
-                    <textarea type="text" className="form-control" placeholder="Your message*"></textarea>
+                    <textarea name="message" type="text" className="form-control" placeholder="Your message*"></textarea>
                   </div>
                 </div>
               </div>
               <div className="row">
                 <div className="col-12 padd-15">
-                  <button type="submit" className="btn">Send message</button>
+                  <button onClick={() => alert('Message received! I\'ll respond as soon as possible!')} type="submit" className="btn">Send message</button>
                 </div>
               </div>
             </form>
