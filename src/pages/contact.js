@@ -100,8 +100,8 @@ export default class Contact extends Component {
           {/* <!-- Contac form start --> */}
           <div className="row">
             <form 
-              className="contact-sthefano-form padd-15"
-              name="contact-form"
+              className="contact-form padd-15"
+              name="contact-sthefano-form"
               method="POST"
               data-netlify="true"
               onSubmit={this.handleSubmit}
