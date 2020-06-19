@@ -3,12 +3,43 @@ import PrimaryLayout from '../layouts/PrimaryLayout';
 // import { withPrefix } from 'gatsby';
 
 export default class Contact extends Component {
-  state = {
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+  constructor(props) {
+    super(props);
+    this.submitForm = this.submitForm.bind(this);
+    this.state = {
+      status: "",
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    };
   }
+
+  submitForm(ev) {
+    ev.preventDefault();
+    const form = ev.target;
+    const data = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        form.reset();
+        this.setState({ status: "SUCCESS" });
+      } else {
+        this.setState({ status: "ERROR" });
+      }
+    };
+    xhr.send(data);
+  }
+
+  // state = {
+  //   name: '',
+  //   email: '',
+  //   subject: '',
+  //   message: ''
+  // }
 
   handleInputChange = event => {
     const target = event.target
@@ -73,6 +104,7 @@ export default class Contact extends Component {
     }
   }
   render() {
+    const { status } = this.state;
   return (
     <PrimaryLayout>
       <section className="contact section" id="contact">
@@ -108,9 +140,9 @@ export default class Contact extends Component {
           {/* <!-- Contac form start --> */}
           <div className="row">
             <form 
-              method="post" 
-              data-netlify="true" 
-              name="contact-sthefanoc"
+              onSubmit={this.submitForm}
+              action="https://formspree.io/xleplbpw" 
+              method="POST"
               className="contact-form padd-15"
               >
               <div className="row">
@@ -128,6 +160,7 @@ export default class Contact extends Component {
                 </div>
                 <div className="form-item col-6 padd-15">
                   <div className="form-group">
+                    <input type="text" name="_gotcha" className="hidden" />
                     <input 
                       name="email" 
                       type="email" 
@@ -168,7 +201,9 @@ export default class Contact extends Component {
               <div className="row">
                 <div className="col-12 padd-15">
                   {/* <button type="submit" className="btn" >Send message</button> */}
-                  <button type="submit" className="btn">Send message</button>
+                  {status === "SUCCESS" ? <p>Message sent!</p> : <button type="submit" onClick={alert('Message sent! I will respond as soon as possible!')} className="btn" >Send message</button>}
+                  {status === "ERROR" && <p>Ooops! There was an error.</p>}
+                  {/* <button type="submit" className="btn">Send message</button> */}
                 </div>
               </div>
             </form>

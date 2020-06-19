@@ -1302,7 +1302,16 @@ input, textarea, select{
     height: 50px;
     padding: 0 50px;
 }
-
+.contact .contact-form p{
+    color: red;
+    font-size: large;
+    font-weight: 500;
+    height: 5vh;
+    /* background-color: white; */
+    border-radius: 10%;
+    text-align: center;
+    /* border: 3px solid #d4d4e3; */
+}
 /* Dark Body */
 body.dark{
     /* Testing if this comment is added */
