@@ -30,6 +30,8 @@ export default class Contact extends Component {
     const sendMeYourEmailMessage = document.querySelector('textarea[name="message"]');
     sendMeYourEmailSubject.value = 'Sthefano, please send me your e-mail';
     sendMeYourEmailMessage.value = 'Hello, Sthefano. I\'m on your website. I have just clicked the option to get your email. Thanks.' ;
+    this.state.subject = sendMeYourEmailSubject.value;
+    this.state.message = sendMeYourEmailMessage.value;
   }
   sendMeYourPhone = () => {
     alert('Great! You want to call me. I will gladly send you my phone number :)\n\nBut this is a pretty private information... So I ask you your name and e-mail in exchange. \nIs that ok?\n\nIf it is, just send me a message below. Thanks!');
@@ -37,6 +39,8 @@ export default class Contact extends Component {
     const sendMeYourPhoneMessage = document.querySelector('textarea[name="message"]');
     sendMeYourPhoneSubject.value = 'Sthefano, please send me your phone number';
     sendMeYourPhoneMessage.value = 'Hello, Sthefano. I\'m on your website. I have just clicked the option to get your phone number. Thanks.' ;
+    this.state.subject = sendMeYourPhoneSubject.value;
+    this.state.message = sendMeYourPhoneMessage.value;
   }
   sendMeYourCV = () => {
     alert('You want to take a look at my CV! Great!\n\nBut hey... This file has a lot of sensitive information about me... So can I ask you for your name and e-mail in exchange?\n\nIf I can, just complete the message below. Thank you.');
@@ -44,6 +48,8 @@ export default class Contact extends Component {
     const sendMeYourCVMessage = document.querySelector('textarea[name="message"]');
     sendMeYourCVSubject.value = 'Sthefano, please send me your CV';
     sendMeYourCVMessage.value = 'Hello, Sthefano. I\'m on your website. I have just clicked the option to get your CV. Thanks.' ;
+    this.state.subject = sendMeYourCVSubject.value;
+    this.state.message = sendMeYourCVMessage.value;
   }
   hireMe = () => {
     alert('Awesome! You are interested in hiring me! I\'m glad :)\n\nSend me some information about your project! And soon I\'ll contact you.\n\nIf it is, just tell me the details below. Thanks!');
@@ -51,6 +57,8 @@ export default class Contact extends Component {
     const hireMeMessage = document.querySelector('textarea[name="message"]');
     hireMeSubject.value = 'Sthefano, I want to hire your services';
     hireMeMessage.value = 'Hello, Sthefano. I\'m on your website. I have just clicked the option to hire you.\nHere are the details of my project: \n\n\n\nLet\'s talk? Thank you.';
+    this.state.subject = hireMeSubject.value;
+    this.state.message = hireMeMessage.value;
   }
   componentDidMount(){
     if(Number(localStorage.getItem('sthefanoc-sendMailFromAbout'))){
@@ -100,11 +108,10 @@ export default class Contact extends Component {
           {/* <!-- Contac form start --> */}
           <div className="row">
             <form 
+              method="post" 
+              data-netlify="true" 
+              name="contact-sthefanoc"
               className="contact-form padd-15"
-              name="contact-sthefano-form"
-              method="POST"
-              data-netlify="true"
-              onSubmit={this.handleSubmit}
               >
               <div className="row">
                 <div className="form-item col-6 padd-15">
