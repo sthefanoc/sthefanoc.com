@@ -1,6 +1,7 @@
 import React from 'react';
 import BlogRelatedPosts from '../components/BlogRelatedPosts'; 
 import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
+import { Link } from 'gatsby';
 
 
 
@@ -24,6 +25,11 @@ const BlogPost =(props) => {
         <article>
             <div className="container">
                 <div className="row">
+                    <Link to="/blog" className="back-to-blog">
+                        <i className="fa fa-arrow-circle-left" aria-hidden="true" />
+                        <p>Back to Blog</p>
+                    </Link>
+                    
                     <div className="section-title">
                         <h1 dangerouslySetInnerHTML={{__html:props.title}}/>
                     </div>

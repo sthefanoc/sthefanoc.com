@@ -997,6 +997,26 @@ input, textarea, select{
 }
 
 /* Blog Post */
+.blog-post .back-to-blog{
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    right: 10%;
+    z-index: 10;
+}
+.blog-post .back-to-blog p{
+    font-style: italic;
+    text-decoration: underline;
+    font-weight: 300;
+    display: flex;
+    align-content: flex-end;
+    font-size: 15px;
+}
+.blog-post .back-to-blog i{
+    margin-right: 5px;
+    font-size: 3vh;
+    text-decoration: unset;
+}
 .blog-post .disqus-comment-count{
     font-style: italic;
     color: #302e4d;
@@ -1329,6 +1349,7 @@ body.dark .about .about-content .timeline,
 body.dark .aside{
     background-color: #222222;
 }
+body.dark .blog-post .back-to-blog,
 body.dark .blog-post .disqus-comment-count,
 body.dark .blog-post .row #disqus_thread,
 body.dark .blog-post h3,

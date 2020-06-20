@@ -6,7 +6,7 @@
     border-right: 4px solid #fa5b0f;
     border-bottom: 4px solid #fa5b0f;
 }
-
+.blog-post .back-to-blog i,
 .aside .nav a:hover,
 body.dark .aside .nav a:hover,
 .aside .nav a[aria-current="page"],

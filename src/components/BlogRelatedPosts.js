@@ -6,7 +6,9 @@ class BlogRelatedPosts extends Component {
         const data = this.props.relatedPosts;
         return (
             <div className="related-posts">
+                {data.length ?
                 <h3>Other posts you may like...</h3>
+                : <h3 className="hidden">No related posts available</h3>}
                 {data.map(node => (
                 Boolean(node.title)
                 ? 

@@ -35,16 +35,6 @@ export default function HTML(props) {
         `
         }}
         />
-        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169694089-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'UA-169694089-1');
-        </script>
-
         {/* <script src="js/script.js" type="text/javascript" id="script"></script>
         <script src="js/styleSwitcher.js" type="text/javastyleSwitcher" id="script"></script> */}
 

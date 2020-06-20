@@ -25,7 +25,9 @@ class Footer extends Component {
         console.log('Switch color function!',color);
         localStorage.setItem("selectedBodySkinColor", color);
   
-        document.location.reload()
+        document.location.reload();
+
+        document.querySelector(".style-switcher").classList.toggle("open");
   
         // const links = document.querySelectorAll('.alternate-style');
         // const totalLinks=links.length;
@@ -40,20 +42,34 @@ class Footer extends Component {
         //   }
         // }
       };
+      this.updateBodySkinToLight = () => {
+        console.log('gonna change to light');
+        localStorage.setItem("selectedBodyTheme", 'light');
+        document.body.className="";
+        document.querySelector('input[value="light"]').checked="true";
+      };
+      this.updateBodySkinToDark = () => {
+        console.log('gonna change to dark');
+        localStorage.setItem("selectedBodyTheme", 'dark');
+        document.body.className="dark"
+        document.querySelector('input[value="dark"]').checked="true";
+      };
       this.switchBodySkin = (bodyTheme) => {
         console.log('switcher theme!', bodyTheme)
         localStorage.setItem("selectedBodyTheme", bodyTheme)
-        const bodySkin=document.querySelectorAll(".body-skin");
-        const totalBodySkin=bodySkin.length;
-        for(let j=0;j<totalBodySkin;j++){
-            if(bodyTheme === 'dark'){
-                document.body.className="dark"
-                document.querySelector('input[value="dark"]').checked="true";
-            } else {
-                document.body.className=""
-                document.querySelector('input[value="light"]').checked="true";
-            }
+        // const bodySkin=document.querySelectorAll(".body-skin");
+        // const totalBodySkin=bodySkin.length;
+        // for(let j=0;j<totalBodySkin;j++){
+        if(bodyTheme === 'dark'){
+            console.log('gonna change to dark!');
+            document.body.className="dark"
+            document.querySelector('input[value="dark"]').checked="true";
+        } else {
+            console.log('gonna change to light!');
+            document.body.className="";
+            document.querySelector('input[value="light"]').checked="true";
         }
+        // }
       };
     }  
 
@@ -140,7 +156,7 @@ class Footer extends Component {
               name="body-style" 
               value="light" 
               defaultChecked="true" 
-              onChange={ () => this.switchBodySkin('light')} 
+              onClick={() => this.updateBodySkinToLight()} 
               />
              Light
           </label>
@@ -151,7 +167,7 @@ class Footer extends Component {
               name="body-style" 
               value="dark" 
               // defaultChecked="false" 
-              onChange={ () => this.switchBodySkin('dark')} 
+              onClick={() => this.updateBodySkinToDark()} 
               />
              Dark
           </label>
