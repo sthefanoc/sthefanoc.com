@@ -4,44 +4,28 @@ import { withPrefix } from 'gatsby';
 import { render } from "react-dom";
 
 
-class Footer extends Component {
-  // componentDidUpdate(){
-    
-  // }
-  
+class Footer extends Component {    
   componentDidMount() {
-    // this.reloadThemeColor =() => {
-    //   if(localStorage.getItem("selectedBodyTheme")){
-    //     if(localStorage.getItem("selectedBodyTheme") === 'dark'){
-    //       document.body.className="dark";
-    //     }
-    //   }
-    // }
-    // this.thisIsAwesome = () => {
-    //   console.log('Awesome!')
-    // }
     if(document){
       this.switchColor = (color) => {
         console.log('Switch color function!',color);
         localStorage.setItem("selectedBodySkinColor", color);
+        
+        // document.location.reload();
   
-        document.location.reload();
-
-        document.querySelector(".style-switcher").classList.toggle("open");
+        const links = document.querySelectorAll('.alternate-style');
   
-        // const links = document.querySelectorAll('.alternate-style');
-        // const totalLinks=links.length;
-  
-        // for(let i=0;i<totalLinks;i++){
-        //   if(color === links[i].getAttribute('title')){
-        //       links[i].removeAttribute("disabled");
-        //       console.log(links[i].title, 'not disabled');
-        //   } else {
-        //       links[i].setAttribute("disabled","true");
-        //       console.log(links[i].title, 'disabled');
-        //   }
-        // }
+        for(let i=0;i<links.length;i++){
+          if(color === links[i].getAttribute('title')){
+              links[i].disabled=false;
+              console.log(links[i].title, 'not disabled');
+          } else {
+            links[i].disabled=true;
+            console.log(links[i].title, 'disabled');
+          }
+        }
       };
+
       this.updateBodySkinToLight = () => {
         console.log('gonna change to light');
         localStorage.setItem("selectedBodyTheme", 'light');
@@ -81,12 +65,6 @@ class Footer extends Component {
       document.querySelector('input[value="light"]').checked="true";
     };
     
-    const colors = document.querySelectorAll(".alternate-style");
-    
-    for(let i=0;i<colors.length;i++){
-      console.log(colors[i].title, colors[i].disabled)
-    }
-
     // Style Switcher Meachanism
     
     // const links = document.querySelectorAll('.alternate-style');

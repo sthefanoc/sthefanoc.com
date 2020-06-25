@@ -27,7 +27,7 @@ const Post =(props) => {
                     <p className="blog-tags">Tags: 
                         {kws.map(item => {
                             k++;
-                            return (<a href={kwsSlugs[k]}key={kwsSlugs[k]}> {item} |</a>)}
+                            return (<Link to={'blog/' + kwsSlugs[k]} key={kwsSlugs[k]}> {item} |</Link>)}
                         )}
                     </p>
                     

@@ -16,13 +16,18 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({graphql, actions}) => {
 const { createPage } = actions;
 return graphql(`
-    {
-        allWordpressPost {
-            nodes {
-              slug
-            }
-        }
-    }      
+{
+    allWordpressPost {
+      nodes {
+        slug
+      }
+    }
+    allWordpressCategory {
+      nodes {
+        slug
+      }
+    }
+  }      
 `).then(result => {
         result.data.allWordpressPost.nodes.forEach((node) => {
             createPage({
@@ -33,5 +38,55 @@ return graphql(`
                 }
             })
         })
+        result.data.allWordpressCategory.nodes.forEach((node) => {
+            createPage({
+                path: 'blog/' + node.slug,
+                component: path.resolve('./src/layouts/BlogPostCategoryLayout.js'),
+                context: {
+                    slug: node.slug
+                }
+            })
+        })
     })
-}
+};
+
+// exports.createPages = ({graphql, actions}) => {
+//     const { createPage } = actions;
+//     const postsData = data.allWordpressPost;
+//     const categoryData = data.allWordpressCategory;
+//     return graphql(`
+    // {
+    //     allWordpressPost {
+    //       nodes {
+    //         slug
+    //       }
+    //     }
+    //     allWordpressCategory {
+    //       nodes {
+    //         slug
+    //       }
+    //     }
+    //   }      
+//     `).then(result => {
+//             result.postsData.nodes.forEach((node) => {
+//                 createPage({
+//                     path: 'blog/' + node.slug,
+//                     component: path.resolve('./src/layouts/BlogPostLayout.js'),
+//                     context: {
+//                         slug: node.slug
+//                     }
+//                 })
+//             })
+//         })
+//     .then(result => {
+//         result.categoryData.nodes.forEach((node) => {
+//             createPage({
+//                 path: 'blog/' + node.slug,
+//                 component: path.resolve('./src/layouts/BlogPostCategoryLayout.js'),
+//                 context: {
+//                     slug: node.slug
+//                 }
+//             })
+//         })
+//     })
+// }

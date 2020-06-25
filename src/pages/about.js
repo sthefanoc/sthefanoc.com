@@ -1,11 +1,33 @@
 import React,  { Component } from "react";
 import PrimaryLayout from '../layouts/PrimaryLayout';
+import SkillsChart from '../components/SkillsChart'
 // import { withPrefix } from 'gatsby';
-import { navigate } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 
 class About extends Component {
   componentDidMount(){
     console.log('This is the About page inside the component did mount');
+
+
+
+    this.getRealTimeAge = () => {
+      let age = document.querySelector('span[class="live-age"]');
+      let now = new Date();
+      let birthday = new Date(1992,11,28,10,30);
+      let realTimeAge = new Date(now - birthday);
+      let year = realTimeAge.getUTCFullYear() -1970;
+      let month = realTimeAge.getUTCMonth();
+      // let day = realTimeAge.getUTCDay();
+      // let hour = realTimeAge.getUTCHours();
+      // let minute = realTimeAge.getUTCMinutes();
+      // let seconds = realTimeAge.getUTCSeconds();
+      // age.textContent = `${year} years, ${month} months, ${day} days, ${hour} hours, ${minute} minutes, ${seconds} seconds`
+      age.textContent = `${year} years, ${month} months`
+    };
+
+    // setInterval(this.getRealTimeAge, 1000);
+    this.getRealTimeAge();
+    
   }
   sendMailFromAboutPage = () => {
     localStorage.setItem('sthefanoc-sendMailFromAbout', 1);
@@ -44,7 +66,7 @@ class About extends Component {
                         <p>Birthday: <span>December 28th, 1992</span></p>
                       </div>
                       <div className="info-item padd-15">
-                        <p>Age: <span>27</span></p>
+                        <p>Age: <span className="live-age">27</span></p>
                       </div>
                       <div className="info-item padd-15">
                         <p>Portfolio: <span><a href="/projects">my work</a></span></p>
@@ -67,7 +89,8 @@ class About extends Component {
                     </div>
                   </div>
                   <div className="skills padd-15">
-                    <div className="row">
+                    <SkillsChart />
+                    {/* <div className="row">
                       <div className="skill-item padd-15">
                         <h5>Python</h5>
                         <div className="progress">
@@ -96,7 +119,7 @@ class About extends Component {
                           <div className="skill-percent">50%</div>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
               </div>
               
@@ -175,6 +198,93 @@ class About extends Component {
                           <h4 className="timeline-title">Economics</h4>
                           <p className="timeline-text">Studies of Economics Science. Main topics: Finance, History, Statistics, Econometrics.</p>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="certifications">
+                <h3 className="title">Certifications</h3>
+                  <div className="row">
+                    <div className="certifications-box padd-15">
+                      <div className="timeline shadow-dark">
+                        {/* <!-- Timeline education item --> */}
+                        <div className="timeline-item">
+                          <div className="circle-dot"></div>
+                          <h6 className="timeline-date">
+                            <i className="fa fa-calendar"></i>
+                            Jun 2020
+                          </h6>
+                          <h6 className="certification-duration">
+                            <i className="fa fa-clock-o"></i>
+                            100h
+                          </h6>
+                          <h4 className="timeline-title">Bootcamp Python Fullstack</h4>
+                          <p className="timeline-text">Bootcamp teaching Javascript and technologies related to python for backend.</p>
+                          <div className="certification-links">
+                            <Link to='/blog' className="related-blog-post"><i className="fa fa-file-text"></i></Link>
+                            <a href="" className="certificate"><i className="fa fa-certificate"></i></a>
+                          </div>
+                        </div>
+                        {/* <!-- Timeline education item --> */}
+                        {/* <!-- Timeline education item --> */}
+                        <div className="timeline-item">
+                          <div className="circle-dot"></div>
+                          <h6 className="timeline-date">
+                            <i className="fa fa-calendar"></i>
+                            Jun 2020
+                          </h6>
+                          <h6 className="certification-duration">
+                            <i className="fa fa-clock-o"></i>
+                            100h
+                          </h6>
+                          <h4 className="timeline-title">Bootcamp Python Fullstack</h4>
+                          <p className="timeline-text">Bootcamp teaching Javascript and technologies related to python for backend.</p>
+                          <div className="certification-links">
+                            <Link to='/blog' className="related-blog-post"><i className="fa fa-file-text"></i></Link>
+                            <a href="" className="certificate"><i className="fa fa-certificate"></i></a>
+                          </div>
+                        </div>
+                        {/* <!-- Timeline education item --> */}
+                        {/* <!-- Timeline education item --> */}
+                        <div className="timeline-item">
+                          <div className="circle-dot"></div>
+                          <h6 className="timeline-date">
+                            <i className="fa fa-calendar"></i>
+                            Jun 2020
+                          </h6>
+                          <h6 className="certification-duration">
+                            <i className="fa fa-clock-o"></i>
+                            100h
+                          </h6>
+                          <h4 className="timeline-title">Bootcamp Python Fullstack</h4>
+                          <p className="timeline-text">Bootcamp teaching Javascript and technologies related to python for backend.</p>
+                          <div className="certification-links">
+                            <Link to='/blog' className="related-blog-post"><i className="fa fa-file-text"></i></Link>
+                            <a href="" className="certificate"><i className="fa fa-certificate"></i></a>
+                          </div>
+                        </div>
+                        {/* <!-- Timeline education item --> */}
+                        {/* <!-- Timeline education item --> */}
+                        <div className="timeline-item">
+                          <div className="circle-dot"></div>
+                          <h6 className="timeline-date">
+                            <i className="fa fa-calendar"></i>
+                            Jun 2020
+                          </h6>
+                          <h6 className="certification-duration">
+                            <i className="fa fa-clock-o"></i>
+                            100h
+                          </h6>
+                          <h4 className="timeline-title">Bootcamp Python Fullstack</h4>
+                          <p className="timeline-text">Bootcamp teaching Javascript and technologies related to python for backend.</p>
+                          <div className="certification-links">
+                            <Link to='/blog' className="related-blog-post"><i className="fa fa-file-text"></i></Link>
+                            <a href="" className="certificate"><i className="fa fa-certificate"></i></a>
+                          </div>
+                        </div>
+                        {/* <!-- Timeline education item --> */}
                       </div>
                     </div>
                   </div>

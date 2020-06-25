@@ -14,53 +14,28 @@ class SEO extends Component{
     }
 
     componentDidMount (){
-        this.defineSkinColor()
-    //     if(window){
-    //         if(localStorage.getItem("selectedBodySkinColor")){
-    //             console.log(localStorage.getItem("selectedBodySkinColor"), 'is the color on localstorage');
-    //             this.selectedSkinColor = localStorage.getItem("selectedBodySkinColor");
-    //         } else {
-    //             console.log("The used color will be the default", this.selectedSkinColor);
-    //         }
-    //     }
-    // }
+        this.defineSkinColor();
+        setTimeout(this.defineSkinColor,500);
     }
 
     defineSkinColor = () => {
-        this.setState({ skinColor: window.localStorage.getItem("selectedBodySkinColor") || 'blue' })
+        this.setState({ skinColor: window.localStorage.getItem("selectedBodySkinColor") || 'blue' });
+        const links = document.querySelectorAll('.alternate-style');
+  
+        for(let i=0;i<links.length;i++){
+          if(this.state.skinColor === links[i].getAttribute('title')){
+              links[i].disabled=false;
+            //   console.log(links[i].title, 'not disabled');
+          } else {
+            links[i].disabled=true;
+            //   console.log(links[i].title, 'disabled');
+          }
+        }
     }
 
     render(){
         const {title, description, keywords, image} = this.props;
 
-        // if(window){
-        //         if(localStorage.getItem("selectedBodySkinColor")){
-        //             console.log(localStorage.getItem("selectedBodySkinColor"), 'is the color on localstorage');
-        //             this.selectedSkinColor = localStorage.getItem("selectedBodySkinColor");
-        //         } else {
-        //             console.log("The used color will be the default", this.selectedSkinColor);
-        //         }
-        //     }
-
-        
-        // console.log(window);
-        // this.defineSkinColor = () => {
-        //     let selected = this.finalColorSelection;
-        //     console.log("the defined color is going to be", selected)
-        //     return selected;
-        // }
-        
-        // this.selectedSkinColor = this.defineSkinColor();
-            // for(let i=0;i<totalLinks;i++){
-            //   if(localStorage.getItem("selectedBodySkinColor") === links[i].getAttribute('title')){
-            //       links[i].removeAttribute("disabled");
-            //       console.log(links[i].title, 'not disabled');
-            //   } else {
-            //       links[i].setAttribute("disabled","true");
-            //       console.log(links[i].title, 'disabled');
-            //   }
-            // };
-   
     return (
         <StaticQuery
             query={query}
@@ -99,25 +74,54 @@ class SEO extends Component{
                         <html lang="en" />
                         {/* <Color /> */}
 
-                        <link 
+                        {/* <link 
                             rel="stylesheet" 
                             className="alternate-style" 
                             title={this.state.skinColor} 
                             href={withPrefix(`styles/${this.state.skinColor}.css`)} 
                             type="text/css" 
+                        /> */}
+                        <link 
+                            rel="stylesheet" 
+                            className="alternate-style" 
+                            title='pink' 
+                            href={withPrefix(`styles/pink.css`)} 
+                            type="text/css"
+                            disabled={(this.state.skinColor === 'pink') ? false : true } 
                         />
-                        {/* <ColorStyles /> */}
-
-                        {/* <link rel="stylesheet" className="alternate-style" title="green" href={withPrefix('styles/green.css')} type="text/css" disabled />
-                        <link rel="stylesheet" className="alternate-style" title="pink" href={withPrefix('styles/pink.css')} type="text/css" disabled />
-                        <link rel="stylesheet" className="alternate-style" title="blue" href={withPrefix('styles/blue.css')} type="text/css" disabled />
-                        <link rel="stylesheet" className="alternate-style" title="yellow" href={withPrefix('styles/yellow.css')} type="text/css" disabled />
-                        <link rel="stylesheet" className="alternate-style" title="orange" href={withPrefix('styles/orange.css')} type="text/css" disabled /> */}
+                        <link 
+                            rel="stylesheet" 
+                            className="alternate-style" 
+                            title='blue' 
+                            href={withPrefix(`styles/blue.css`)} 
+                            type="text/css" 
+                            disabled={(this.state.skinColor === 'blue') ? false : true } 
+                        />
+                        <link 
+                            rel="stylesheet" 
+                            className="alternate-style" 
+                            title='orange' 
+                            href={withPrefix(`styles/orange.css`)} 
+                            type="text/css" 
+                            disabled={(this.state.skinColor === 'orange') ? false : true } 
+                        />
+                        <link 
+                            rel="stylesheet" 
+                            className="alternate-style" 
+                            title='yellow' 
+                            href={withPrefix(`styles/yellow.css`)} 
+                            type="text/css" 
+                            disabled={(this.state.skinColor === 'yellow') ? false : true } 
+                        />
+                        <link 
+                            rel="stylesheet" 
+                            className="alternate-style" 
+                            title='green' 
+                            href={withPrefix(`styles/green.css`)} 
+                            type="text/css" 
+                            disabled={(this.state.skinColor === 'green') ? false : true } 
+                        />
                         
-                        {/* JS Template */}
-                        {/* <script src={withPrefix('js/script.js')} type="text/javascript" id="script"></script> */}
-                        {/* JS StyleSwitcher */}
-                        {/* <script src={withPrefix('js/styleSwitcher.js')} type="text/javascript" id="styleSwitcher"></script> */}
                     </Helmet>
                 )
             }}
