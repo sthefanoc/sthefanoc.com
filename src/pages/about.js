@@ -1,8 +1,7 @@
 import React,  { Component } from "react";
 import PrimaryLayout from '../layouts/PrimaryLayout';
 import SkillsChart from '../components/SkillsChart'
-// import { withPrefix } from 'gatsby';
-import { Link, navigate } from 'gatsby';
+import { Link, navigate, withPrefix } from 'gatsby';
 
 class About extends Component {
   componentDidMount(){
@@ -134,10 +133,10 @@ class About extends Component {
                           <div className="circle-dot"></div>
                           <h6 className="timeline-date">
                             <i className="fa fa-calendar"></i>
-                            2009-2014
+                            2018-2019
                           </h6>
-                          <h4 className="timeline-title">Economics</h4>
-                          <p className="timeline-text">Studies of Economics Science. Main topics: Finance, History, Statistics, Econometrics.</p>
+                          <h4 className="timeline-title">Computer Science | UFABC (Brazil)</h4>
+                          <p className="timeline-text">Incomplete Bachelor's degree com computer science. Progamming logic, algoriths, Mathematics and Physics.</p>
                         </div>
                         {/* <!-- Timeline education item --> */}
                         <div className="timeline-item">
@@ -146,7 +145,7 @@ class About extends Component {
                             <i className="fa fa-calendar"></i>
                             2009-2014
                           </h6>
-                          <h4 className="timeline-title">Economics</h4>
+                          <h4 className="timeline-title">Economics | Mackenzie (Brazil)</h4>
                           <p className="timeline-text">Studies of Economics Science. Main topics: Finance, History, Statistics, Econometrics.</p>
                         </div>
                         {/* <!-- Timeline education item --> */}
@@ -154,10 +153,10 @@ class About extends Component {
                           <div className="circle-dot"></div>
                           <h6 className="timeline-date">
                             <i className="fa fa-calendar"></i>
-                            2009-2014
+                            2007-2009
                           </h6>
-                          <h4 className="timeline-title">Economics</h4>
-                          <p className="timeline-text">Studies of Economics Science. Main topics: Finance, History, Statistics, Econometrics.</p>
+                          <h4 className="timeline-title">High School | Colégio Santo Américo (Brazil)</h4>
+                          <p className="timeline-text">Graduated on a scholarship studying in one of the best education institutions of the country.</p>
                         </div>
                       </div>
                     </div>
@@ -173,30 +172,30 @@ class About extends Component {
                           <div className="circle-dot"></div>
                           <h6 className="timeline-date">
                             <i className="fa fa-calendar"></i>
-                            2009-2014
+                            2018-to date
                           </h6>
-                          <h4 className="timeline-title">Economics</h4>
-                          <p className="timeline-text">Studies of Economics Science. Main topics: Finance, History, Statistics, Econometrics.</p>
+                          <h4 className="timeline-title">Cofounder | Masteradin</h4>
+                          <p className="timeline-text">Process automation with Python. Growth oriented Web Development. SEO, SEM, Social Media, Link Building.</p>
                         </div>
                         {/* <!-- Timeline education item --> */}
                         <div className="timeline-item">
                           <div className="circle-dot"></div>
                           <h6 className="timeline-date">
                             <i className="fa fa-calendar"></i>
-                            2009-2014
+                            2014-2018
                           </h6>
-                          <h4 className="timeline-title">Economics</h4>
-                          <p className="timeline-text">Studies of Economics Science. Main topics: Finance, History, Statistics, Econometrics.</p>
+                          <h4 className="timeline-title">Business Intelligence Analyst | Unilever</h4>
+                          <p className="timeline-text">Business Analytics. Investment analysis. Dashboard development. Implementation of business tools.</p>
                         </div>
                         {/* <!-- Timeline education item --> */}
                         <div className="timeline-item">
                           <div className="circle-dot"></div>
                           <h6 className="timeline-date">
                             <i className="fa fa-calendar"></i>
-                            2009-2014
+                            2012-2013
                           </h6>
-                          <h4 className="timeline-title">Economics</h4>
-                          <p className="timeline-text">Studies of Economics Science. Main topics: Finance, History, Statistics, Econometrics.</p>
+                          <h4 className="timeline-title">Customer Marketing Intern | Unilever</h4>
+                          <p className="timeline-text">Channel strategy. Visibility and Offers. Sales Point Operations. Financial management.</p>
                         </div>
                       </div>
                     </div>
@@ -204,89 +203,82 @@ class About extends Component {
                 </div>
               </div>
               <div className="row">
-                <div className="certifications">
-                <h3 className="title">Certifications</h3>
+                <div className="certifications padd-15">
+                  <h3 className="title">Certifications</h3>
                   <div className="row">
                     <div className="certifications-box padd-15">
                       <div className="timeline shadow-dark">
-                        {/* <!-- Timeline education item --> */}
-                        <div className="timeline-item">
-                          <div className="circle-dot"></div>
-                          <h6 className="timeline-date">
-                            <i className="fa fa-calendar"></i>
-                            Jun 2020
-                          </h6>
-                          <h6 className="certification-duration">
-                            <i className="fa fa-clock-o"></i>
-                            100h
-                          </h6>
-                          <h4 className="timeline-title">Bootcamp Python Fullstack</h4>
-                          <p className="timeline-text">Bootcamp teaching Javascript and technologies related to python for backend.</p>
-                          <div className="certification-links">
-                            <Link to='/blog' className="related-blog-post"><i className="fa fa-file-text"></i></Link>
-                            <a href="" className="certificate"><i className="fa fa-certificate"></i></a>
+                        {/* <!-- Timeline education item start --> */}
+                        <div className="certitication-item padd-15">
+                          <div className="row time-details">
+                            <div className="row certification-date"><i className="fa fa-calendar"></i>Jun 2020</div> 
+                            <div className="row certification-duration"><i className="fa fa-clock-o"></i>100h</div> 
                           </div>
-                        </div>
-                        {/* <!-- Timeline education item --> */}
-                        {/* <!-- Timeline education item --> */}
-                        <div className="timeline-item">
-                          <div className="circle-dot"></div>
-                          <h6 className="timeline-date">
-                            <i className="fa fa-calendar"></i>
-                            Jun 2020
-                          </h6>
-                          <h6 className="certification-duration">
-                            <i className="fa fa-clock-o"></i>
-                            100h
-                          </h6>
-                          <h4 className="timeline-title">Bootcamp Python Fullstack</h4>
-                          <p className="timeline-text">Bootcamp teaching Javascript and technologies related to python for backend.</p>
-                          <div className="certification-links">
-                            <Link to='/blog' className="related-blog-post"><i className="fa fa-file-text"></i></Link>
-                            <a href="" className="certificate"><i className="fa fa-certificate"></i></a>
+                          <div className="row certification-details">
+                            <div className="row certification-image">
+                              <img src={withPrefix('portfolio/1.jpg')} alt="Project #1" />
+                            </div>
+                            <div className="row certification-info">
+                              <Link to='/blog' className="timeline-title">Bootcamp Python Fullstack</Link>
+                              <p className="timeline-text">Bootcamp teaching Javascript and technologies related to python for backend.</p>
+                            </div>
                           </div>
+                          <div className="row certification-links">
+                              <Link to='/blog' className="row related-blog-post"><i className="fa fa-file-text"></i>Post</Link>
+                              <a href="" className="row certificate"><i className="fa fa-certificate"></i>Certificate</a>
+                            </div>
                         </div>
-                        {/* <!-- Timeline education item --> */}
-                        {/* <!-- Timeline education item --> */}
-                        <div className="timeline-item">
-                          <div className="circle-dot"></div>
-                          <h6 className="timeline-date">
-                            <i className="fa fa-calendar"></i>
-                            Jun 2020
-                          </h6>
-                          <h6 className="certification-duration">
-                            <i className="fa fa-clock-o"></i>
-                            100h
-                          </h6>
-                          <h4 className="timeline-title">Bootcamp Python Fullstack</h4>
-                          <p className="timeline-text">Bootcamp teaching Javascript and technologies related to python for backend.</p>
-                          <div className="certification-links">
-                            <Link to='/blog' className="related-blog-post"><i className="fa fa-file-text"></i></Link>
-                            <a href="" className="certificate"><i className="fa fa-certificate"></i></a>
+                        {/* <!-- Timeline education item end --> */}
+                        {/* <!-- Timeline education item start --> */}
+                        <div className="certitication-item padd-15">
+                          <div className="row time-details">
+                            <div className="row certification-date"><i className="fa fa-calendar"></i>May 2020</div> 
+                            <div className="row certification-duration"><i className="fa fa-clock-o"></i>17h</div> 
                           </div>
-                        </div>
-                        {/* <!-- Timeline education item --> */}
-                        {/* <!-- Timeline education item --> */}
-                        <div className="timeline-item">
-                          <div className="circle-dot"></div>
-                          <h6 className="timeline-date">
-                            <i className="fa fa-calendar"></i>
-                            Jun 2020
-                          </h6>
-                          <h6 className="certification-duration">
-                            <i className="fa fa-clock-o"></i>
-                            100h
-                          </h6>
-                          <h4 className="timeline-title">Bootcamp Python Fullstack</h4>
-                          <p className="timeline-text">Bootcamp teaching Javascript and technologies related to python for backend.</p>
-                          <div className="certification-links">
-                            <Link to='/blog' className="related-blog-post"><i className="fa fa-file-text"></i></Link>
-                            <a href="" className="certificate"><i className="fa fa-certificate"></i></a>
+                          <div className="row certification-details">
+                            <div className="row certification-image">
+                              <img src={withPrefix('portfolio/1.jpg')} alt="Project #1" />
+                            </div>
+                            <div className="row certification-info">
+                              <Link to='/blog' className="timeline-title">Bootcamp Become Remote</Link>
+                              <p className="timeline-text">Bootcamp techniques to become a better remote worker. Focus on communication and technologies available to increase productivity.</p>
+                            </div>
                           </div>
+                          <div className="row certification-links">
+                              <Link to='/blog' className="row related-blog-post"><i className="fa fa-file-text"></i>Post</Link>
+                              <a href="" className="row certificate"><i className="fa fa-certificate"></i>Certificate</a>
+                            </div>
                         </div>
-                        {/* <!-- Timeline education item --> */}
+                        {/* <!-- Timeline education item end --> */}
+                        {/* <!-- Timeline education item start --> */}
+                        <div className="certitication-item padd-15">
+                          <div className="row time-details">
+                            <div className="row certification-date"><i className="fa fa-calendar"></i>Jun 2020</div> 
+                            <div className="row certification-duration"><i className="fa fa-clock-o"></i>100h</div> 
+                          </div>
+                          <div className="row certification-details">
+                            <div className="row certification-image">
+                              <img src={withPrefix('portfolio/1.jpg')} alt="Project #1" />
+                            </div>
+                            <div className="row certification-info">
+                              <Link to='/blog' className="timeline-title">Bootcamp Python Fullstack</Link>
+                              <p className="timeline-text">Bootcamp teaching Javascript and technologies related to python for backend.</p>
+                            </div>
+                          </div>
+                          <div className="row certification-links">
+                              <Link to='/blog' className="row related-blog-post"><i className="fa fa-file-text"></i>Post</Link>
+                              <a href="" className="row certificate"><i className="fa fa-certificate"></i>Certificate</a>
+                            </div>
+                        </div>
+                        {/* <!-- Timeline education item end --> */}
+
+      
                       </div>
                     </div>
+                  </div>
+                  <div className="all-certificates">
+                  <Link to='/about' onClick={()=>{alert("Soon I'll have the complete list!")}} className="see-all-certificates"><i className="fa fa-hand-o-right"></i>See all certificates</Link> 
+                    
                   </div>
                 </div>
               </div>

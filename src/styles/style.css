@@ -590,15 +590,120 @@ input, textarea, select{
     margin: 0;
 }
 .about .certifications{
-    background-color: lightcoral;
     padding-top: 30px;
     flex: 0 0 100%;
     -ms-flex: 0 0 100%;
     width: 100%;
     margin-top: 30px;
-
+    text-align: left;
+    max-width: 100%;
+    
+}
+.about .certifications .timeline{
+    border-radius: 5%;
+}
+.about .certifications .certitication-item{
+    
+    /* display: inline-block; */
+    padding-left: 37px;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    margin-left: 0;
+    margin-right: 0;
+    border-bottom: 1px dashed #e8dfec;
+}
+.about .certifications .certitication-item .certification-image{
+    width: 20%;
+    justify-content: left;
+    padding-left: 15px;
+}
+.about .certifications .certitication-item .certification-info{
+    display: inline-block;
+    width: 80%;
+    margin-right: 20px;
+    padding-left: 2%;
+}
+.about .certifications .certitication-item .certification-info .timeline-text{
+    padding-top: 10px;
+}
+.about .certifications .certitication-item .time-details .row{
+    display: inline;
+    padding-bottom: 10px;
+    font-size: 16px;
+    line-height: 25px;
+    color: #504e70;
+    margin: 0;
+}
+.about .certifications .certitication-item .time-details i{
+    margin-right: 10px;
+}
+.about .certifications .certitication-item .time-details .certification-date{
+    padding-left: 0%;
+    width: 50%;
+    text-align: left;
+}
+.about .certifications .certitication-item .time-details .certification-duration{
+    font-weight: 500;
+    padding-right: 5%;
+    width: 50%;
+    text-align: right;
+}
+.about .about-content .certifications .certitication-item img{
+    border-radius: 50%;
+    max-height: auto;
+    width: 10vw;
+    border: 4px solid;
+    object-fit: fill;
 }
 
+
+.about .certifications .certitication-item:last-child{
+    padding-bottom: 0px;
+    border-bottom: 2px solid transparent;
+}
+
+.about .certifications .certitication-item .certification-links {
+    text-align: right;
+    font-size: 15px;
+    font-weight: 500;
+    align-content: right;
+    padding-left: 80%;
+}
+.about .certifications .certitication-item .certification-links .row{
+    padding-top: 10px;
+    display: inline;
+    
+    
+}
+.about .certifications .certitication-item .certification-links .row i{
+    margin-right: 10px;
+}
+.about .certifications .certitication-item .certification-links a{
+    border:none;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0 10px;
+    color: #302e4d;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    padding-bottom: 2px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.about .certifications .all-certificates{
+    font-size: 15px;
+    font-weight: 600;
+    text-align: right;
+    padding-top: 3%;
+    padding-right: 5%;
+    text-decoration: underline;
+}
+.about .certifications .all-certificates i{
+    margin-right: 10px;
+}
 
 
 
@@ -1424,6 +1529,7 @@ body.dark .blog .blog-item-inner .blog-info .blog-title,
 body.dark .portfolio .portfolio-filter button,
 body.dark .service .service-item .service-item-inner h4,
 body.dark .about .about-content .timeline .timeline-title,
+body.dark .about .about-content .timeline a,
 body.dark .about .about-content h3.title,
 body.dark .about .about-content .skills .skill-chart,
 body.dark .about .about-content .skills .skill-item h5,
@@ -1445,6 +1551,8 @@ body.dark .blog .blog-item-inner .blog-info .blog-description,
 body.dark .service .service-item .service-item-inner p,
 body.dark .about .about-content .timeline .timeline-text,
 body.dark .about .about-content .timeline .timeline-date,
+body.dark .about .about-content .timeline .certification-date,
+body.dark .about .about-content .timeline .certification-duration,
 body.dark .about .about-content .skills .skill-item .skill-percent,
 body.dark .about .about-content .personal-info .info-item p span,
 body.dark .about .about-content .about-text p,
@@ -1560,6 +1668,16 @@ body.dark .blog-post .related-post-inner:after {
     }
     .portfolio .portfolio-filter .button{
         margin-bottom: 10px;
+    }
+    .about .about-content .certifications .certitication-item img{
+        display: none;
+    }
+    .about .about-content .certifications .certification-links{
+        padding-left: 40%;
+    }
+    .about .about-content .certifications .certitication-item {
+        padding-left: 5%;
+        margin-left: 0;
     }
 }
 

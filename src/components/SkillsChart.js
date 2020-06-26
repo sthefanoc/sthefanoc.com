@@ -33,7 +33,7 @@ class SkillsChart extends Component {
             return selectedSchemeColor;
         }
         
-        selectedSchemeColor = this.getSelectedSchemeColor(finalScheme);
+        selectedSchemeColor = finalScheme ? this.getSelectedSchemeColor(finalScheme) : this.getSelectedSchemeColor('blue');
 
         let options = {
             legend: {
