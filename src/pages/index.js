@@ -1,6 +1,6 @@
 import React from "react";
 import PrimaryLayout from '../layouts/PrimaryLayout';
-import profilePicture from '../../static/images/sthefanoc.png';
+import profilePicture from '../../static/images/sthefanoc.webp';
 // import { withPrefix } from 'gatsby';
 
 export default function Home({data}) {

@@ -15,7 +15,7 @@ class SEO extends Component{
 
     componentDidMount (){
         this.defineSkinColor();
-        setTimeout(this.defineSkinColor,500);
+        setTimeout(this.defineSkinColor,100);
     }
 
     defineSkinColor = () => {

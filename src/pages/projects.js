@@ -106,6 +106,8 @@ class Project extends Component {
     }
   }
   render() {
+    const { data } = this.props;
+    console.log('aaaaaaaaa',data)
   return (
     <PrimaryLayout>
       <section className="portfolio section" id="portfolio">
@@ -125,96 +127,26 @@ class Project extends Component {
             </div>
           </div>
           <div className="row portfolio-items">
-            {/* <!-- Portfolio Item start --> */}
-            <div className="portfolio-item padd-15" data-category="python">
+          {data.allWordpressWpPortfolioItem.nodes.map(node => (
+            // Portfolio Item start
+            <div className="portfolio-item padd-15" data-category={node.programming_category}>
               <div className="portfolio-item-inner shadow-dark">
                 <div className="portfolio-img">
-                  <img src={withPrefix('portfolio/1.jpg')} alt="Project #1" />
+                  <img src={node.featured_media.localFile.childImageSharp.fixed.src} alt={node.featured_media.localFile.childImageSharp.fixed.originalName} />
                 </div>
                 <div className="portfolio-info">
-                  <h4>Project number #1</h4>
+                  <h4>{node.title}</h4>
                   <div className="icon">
                     <i className="fa fa-search"></i>
                   </div>
                 </div>
               </div>
             </div>
-            {/* <!-- Portfolio Item end --> */}
-            {/* <!-- Portfolio Item start --> */}
-            <div className="portfolio-item padd-15" data-category="reactjs">
-              <div className="portfolio-item-inner shadow-dark">
-                <div className="portfolio-img">
-                  <img src={withPrefix('portfolio/2.jpg')} alt="Project #2" />
-                </div>
-                <div className="portfolio-info">
-                  <h4>Another project day</h4>
-                  <div className="icon">
-                    <i className="fa fa-search"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* <!-- Portfolio Item end --> */}
-            {/* <!-- Portfolio Item start --> */}
-            <div className="portfolio-item padd-15" data-category="javascript">
-              <div className="portfolio-item-inner shadow-dark">
-                <div className="portfolio-img">
-                  <img src={withPrefix('portfolio/3.jpg')} alt="Project #3" />
-                </div>
-                <div className="portfolio-info">
-                  <h4>Crazy Javascript project</h4>
-                  <div className="icon">
-                    <i className="fa fa-search"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* <!-- Portfolio Item end --> */}
-            {/* <!-- Portfolio Item start --> */}
-            <div className="portfolio-item padd-15" data-category="python">
-              <div className="portfolio-item-inner shadow-dark">
-                <div className="portfolio-img">
-                  <img src={withPrefix('portfolio/4.jpg')} alt="Project #4" />
-                </div>
-                <div className="portfolio-info">
-                  <h4>Such pythoh</h4>
-                  <div className="icon">
-                    <i className="fa fa-search"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* <!-- Portfolio Item end --> */}
-            {/* <!-- Portfolio Item start --> */}
-            <div className="portfolio-item padd-15" data-category="react-native">
-              <div className="portfolio-item-inner shadow-dark">
-                <div className="portfolio-img">
-                  <img src={withPrefix('portfolio/5.jpg')} alt="Project #5" />
-                </div>
-                <div className="portfolio-info">
-                  <h4>Many programming</h4>
-                  <div className="icon">
-                    <i className="fa fa-search"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* <!-- Portfolio Item end --> */}
-            {/* <!-- Portfolio Item start --> */}
-            <div className="portfolio-item padd-15" data-category="reactjs">
-              <div className="portfolio-item-inner shadow-dark">
-                <div className="portfolio-img">
-                  <img src={withPrefix('portfolio/6.jpg')} alt="Project #6" />
-                </div>
-                <div className="portfolio-info">
-                  <h4>WOW</h4>
-                  <div className="icon">
-                    <i className="fa fa-search"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* <!-- Portfolio Item end --> */}
+            // Portfolio Item end
+          ))}
+            
+            
+            
           </div>
         </div>
         {/* <!-- Lightbox start --> */}
@@ -243,3 +175,34 @@ class Project extends Component {
 };
 
 export default Project;
+
+export const query = graphql`
+{
+  allWordpressWpPortfolioItem{
+    nodes{
+      title
+      short_name
+      content
+      featured_media{
+          localFile{
+            childImageSharp{
+              fixed(width:800, height: 800){
+                src
+                width
+                height
+                originalName
+              }
+            }
+          }
+        }
+      programming_category
+      main_language
+      libraries_used
+      frameworks_used
+      blog_post
+      github_repo
+      live_project
+    }
+  }
+}
+`

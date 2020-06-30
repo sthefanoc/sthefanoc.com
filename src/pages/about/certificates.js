@@ -24,7 +24,7 @@ const Certificates = ({data}) => {
                       <div className="certificate-container">
                         <div className="certificate-box-item">
                           <div className="certificate-preview">
-                            <img src={node.featured_media.localFile.childImageSharp.fixed.src} alt="Project #1" />
+                            <img src={node.featured_media.localFile.childImageSharp.fixed.src} alt={node.featured_media.localFile.childImageSharp.fixed.originalName} />
                             <p>{node.teaching_institution}</p>
                             <h2>{node.short_name}</h2>
                             <a href={node.course_link} rel="external" target="_blank">Course link <i className="fa fa-hand-o-right"></i></a>
