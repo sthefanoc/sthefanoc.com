@@ -41,6 +41,8 @@ class About extends Component {
     navigate('/contact');
   }
   render(){
+    const { data } = this.props;
+    console.log('aaaaaaaaa',data)
     return(
       <PrimaryLayout>
         <section className="about section" id="about">
@@ -89,36 +91,6 @@ class About extends Component {
                   </div>
                   <div className="skills padd-15">
                     <SkillsChart />
-                    {/* <div className="row">
-                      <div className="skill-item padd-15">
-                        <h5>Python</h5>
-                        <div className="progress">
-                          <div className="progress-in" style={{width: "80%"}}></div>
-                          <div className="skill-percent">80%</div>
-                        </div>
-                      </div>
-                      <div className="skill-item padd-15">
-                        <h5>Javascript</h5>
-                        <div className="progress">
-                          <div className="progress-in" style={{width: "80%"}}></div>
-                          <div className="skill-percent">80%</div>
-                        </div>
-                      </div>
-                      <div className="skill-item padd-15">
-                        <h5>ReactJS</h5>
-                        <div className="progress">
-                          <div className="progress-in" style={{width: "70%"}}></div>
-                          <div className="skill-percent">70%</div>
-                        </div>
-                      </div>
-                      <div className="skill-item padd-15">
-                        <h5>React Native</h5>
-                        <div className="progress">
-                          <div className="progress-in" style={{width: "50%"}}></div>
-                          <div className="skill-percent">50%</div>
-                        </div>
-                      </div>
-                    </div> */}
                   </div>
               </div>
               
@@ -209,75 +181,35 @@ class About extends Component {
                     <div className="certifications-box padd-15">
                       <div className="timeline shadow-dark">
                         {/* <!-- Timeline education item start --> */}
-                        <div className="certitication-item padd-15">
-                          <div className="row time-details">
-                            <div className="row certification-date"><i className="fa fa-calendar"></i>Jun 2020</div> 
-                            <div className="row certification-duration"><i className="fa fa-clock-o"></i>100h</div> 
+                        {data.allWordpressWpCertificateItem.nodes.map(node => (
+                          <div className="certitication-item padd-15">
+                            <div className="row time-details">
+                              <div className="row certification-date"><i className="fa fa-calendar"></i>{node.course_completion}</div> 
+                              <div className="row certification-duration"><i className="fa fa-clock-o"></i>{node.course_duration}h</div> 
+                            </div>
+                            <div className="row certification-details">
+                              <div className="row certification-image">
+                                <img src={node.featured_media.localFile.childImageSharp.fixed.src}alt={node.featured_media.localFile.childImageSharp.fixed.originalName} />
+                              </div>
+                              <div className="row certification-info">
+                                <Link to={node.blog_post} className="timeline-title">{node.title}</Link>
+                                <p className="timeline-text" dangerouslySetInnerHTML={{__html: node.content}}/>
+                              </div>
+                            </div>
+                            <div className="row certification-links">
+                                <Link to={node.blog_post} className="row related-blog-post"><i className="fa fa-file-text"></i>Post</Link>
+                                <a href={node.certificate_link} target="_blank" rel="noopener noreferrer" className="row certificate"><i className="fa fa-certificate"></i>Certificate</a>
+                              </div>
                           </div>
-                          <div className="row certification-details">
-                            <div className="row certification-image">
-                              <img src={withPrefix('portfolio/1.jpg')} alt="Project #1" />
-                            </div>
-                            <div className="row certification-info">
-                              <Link to='/blog' className="timeline-title">Bootcamp Python Fullstack</Link>
-                              <p className="timeline-text">Bootcamp teaching Javascript and technologies related to python for backend.</p>
-                            </div>
-                          </div>
-                          <div className="row certification-links">
-                              <Link to='/blog' className="row related-blog-post"><i className="fa fa-file-text"></i>Post</Link>
-                              <a href="" className="row certificate"><i className="fa fa-certificate"></i>Certificate</a>
-                            </div>
-                        </div>
-                        {/* <!-- Timeline education item end --> */}
-                        {/* <!-- Timeline education item start --> */}
-                        <div className="certitication-item padd-15">
-                          <div className="row time-details">
-                            <div className="row certification-date"><i className="fa fa-calendar"></i>May 2020</div> 
-                            <div className="row certification-duration"><i className="fa fa-clock-o"></i>17h</div> 
-                          </div>
-                          <div className="row certification-details">
-                            <div className="row certification-image">
-                              <img src={withPrefix('portfolio/1.jpg')} alt="Project #1" />
-                            </div>
-                            <div className="row certification-info">
-                              <Link to='/blog' className="timeline-title">Bootcamp Become Remote</Link>
-                              <p className="timeline-text">Bootcamp techniques to become a better remote worker. Focus on communication and technologies available to increase productivity.</p>
-                            </div>
-                          </div>
-                          <div className="row certification-links">
-                              <Link to='/blog' className="row related-blog-post"><i className="fa fa-file-text"></i>Post</Link>
-                              <a href="" className="row certificate"><i className="fa fa-certificate"></i>Certificate</a>
-                            </div>
-                        </div>
-                        {/* <!-- Timeline education item end --> */}
-                        {/* <!-- Timeline education item start --> */}
-                        <div className="certitication-item padd-15">
-                          <div className="row time-details">
-                            <div className="row certification-date"><i className="fa fa-calendar"></i>Jun 2020</div> 
-                            <div className="row certification-duration"><i className="fa fa-clock-o"></i>100h</div> 
-                          </div>
-                          <div className="row certification-details">
-                            <div className="row certification-image">
-                              <img src={withPrefix('portfolio/1.jpg')} alt="Project #1" />
-                            </div>
-                            <div className="row certification-info">
-                              <Link to='/blog' className="timeline-title">Bootcamp Python Fullstack</Link>
-                              <p className="timeline-text">Bootcamp teaching Javascript and technologies related to python for backend.</p>
-                            </div>
-                          </div>
-                          <div className="row certification-links">
-                              <Link to='/blog' className="row related-blog-post"><i className="fa fa-file-text"></i>Post</Link>
-                              <a href="" className="row certificate"><i className="fa fa-certificate"></i>Certificate</a>
-                            </div>
-                        </div>
-                        {/* <!-- Timeline education item end --> */}
+
+                        ))}
 
       
                       </div>
                     </div>
                   </div>
                   <div className="all-certificates">
-                  <Link to='/about' onClick={()=>{alert("Soon I'll have the complete list!")}} className="see-all-certificates"><i className="fa fa-hand-o-right"></i>See all certificates</Link> 
+                  <Link to='/about/certificates' className="see-all-certificates"><i className="fa fa-hand-o-right"></i>See all certificates</Link> 
                     
                   </div>
                 </div>
@@ -297,3 +229,48 @@ class About extends Component {
 }
 
 export default About;
+
+
+export const query = graphql`
+{
+    allWordpressWpCertificateItem{
+      nodes{
+        short_name
+        title
+        content
+        excerpt
+        featured_media{
+          localFile{
+            childImageSharp{
+              fixed(width:300, height: 300){
+                src
+                width
+                height
+                originalName
+              }
+            }
+          }
+        }
+        teaching_institution
+        course_link
+        blog_post
+        certificate_link
+        course_completion
+        course_duration
+        is_priority_course
+        featured_media{
+          localFile{
+            childImageSharp{
+              fixed(width:300, height: 300){
+                src
+                width
+                height
+                originalName
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`

@@ -649,11 +649,11 @@ input, textarea, select{
     text-align: right;
 }
 .about .about-content .certifications .certitication-item img{
-    border-radius: 50%;
+    border-radius: 10%;
     max-height: auto;
     width: 10vw;
     border: 4px solid;
-    object-fit: fill;
+    object-fit: scale-down;
 }
 
 
@@ -704,6 +704,142 @@ input, textarea, select{
 .about .certifications .all-certificates i{
     margin-right: 10px;
 }
+
+/* Certificates sub-section */
+.certificates .search-box{
+    padding-bottom: 40px;
+}
+
+.certificates {
+	/* display: flex;
+	align-items: center;
+	justify-content: center;
+    flex-direction: column;
+    position: relative; */
+	/* min-height: 100vh; */
+	margin: 0;
+}
+.certificates .certificate-container {
+    width: 100%;
+}
+.certificates .certificate-container .certificate-box-item {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	display: flex;
+	max-width: 100%;
+	margin: 0px 20px 0px 20px;
+	overflow: hidden;
+    width: auto;
+    margin-bottom: 3%;
+}
+.certificates .certificate-container .certificate-box-item p {
+	opacity: 0.6;
+    margin: 0;
+    font-size: 12px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+.certificates .certificate-container .certificate-box-item h6 {
+	opacity: 0.6;
+	margin: 0;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.certificates .certificate-container .certificate-box-item h2 {
+	letter-spacing: 1px;
+	margin: 10px 0;
+}
+
+.certificates .certificate-container .certificate-box-item .certificate-preview {
+	background-color: #2A265F;
+	color: #fff;
+	padding: 30px;
+	width: 30%;
+}
+.certificates .certificate-container .certificate-box-item .certificate-preview img{
+    max-width: 100%;
+    position: relative;
+    display: none;
+    border-radius: 10%;
+    padding-bottom: 20%;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.certificates .certificate-container .certificate-box-item:hover .certificate-preview img{
+    display: flex;
+    padding-bottom: 1%;
+}
+.certificates .certificate-container .certificate-box-item .certificate-preview a {
+	color: #fff;
+	display: inline-block;
+	font-size: 12px;
+	/* opacity: 0.6; */
+	margin-top: 30px;
+	text-decoration: none;
+}
+
+.certificates .certificate-container .certificate-box-item .certificate-details {
+	padding: 30px;
+	position: relative;
+	width: 100%;
+}
+
+.certificates .certificate-container .certificate-box-item .progress-container {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	text-align: right;
+	width: 150px;
+}
+
+
+.certificates .certificate-container .certificate-box-item .certificate-hours {
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: 1px;
+}
+
+.certificates .certificate-container .certificate-box-item p{
+    opacity: 1;
+    padding-top: 10px;
+}
+
+.certificates .certificate-container .certificate-box-item .certificate-btns{
+    padding-top: 10px;
+    position: relative;
+    width: 100%;
+    text-align: end;
+}
+.certificates .certificate-container .certificate-box-item .certificate-btns .certificate-blog-post{
+    position: relative;
+    margin-left: 10px;
+}
+.certificates .certificate-container .certificate-box-item .certificate-btns .certificate-link{
+    position: relative;
+    margin-left: 10px;
+}
+/* .btn {
+	background-color: #2A265F;
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 25px;
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+	letter-spacing: 1px;
+} */
+
+
+
+
+
+
+
 
 
 
@@ -1508,6 +1644,7 @@ body.dark{
 body.dark .section{
     background-color: #151515;
 }
+body.dark .certificates .certificate-container .certificate-box-item,
 body.dark .blog-post .row #disqus_thread,
 body.dark .blog-post .related-post-inner .related-post-info,
 body.dark .contact .contact-form .form-item .form-control,
@@ -1517,6 +1654,7 @@ body.dark .about .about-content .timeline,
 body.dark .aside{
     background-color: #222222;
 }
+body.dark .certificates .certificate-container .certificate-box-item,
 body.dark .blog-post .back-to-blog,
 body.dark .blog-post .disqus-comment-count,
 body.dark .blog-post .row #disqus_thread,

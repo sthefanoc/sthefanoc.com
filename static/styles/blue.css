@@ -6,6 +6,7 @@
     border-right: 4px solid #2196f3;
     border-bottom: 4px solid #2196f3;
 }
+.certificates .certificate-container .certificate-box-item .progress-container,
 .blog-post .back-to-blog i,
 .aside .nav a:hover,
 body.dark .aside .nav a:hover,
@@ -37,6 +38,7 @@ body.dark .portfolio .portfolio-filter button.active,
 .blog-post .share-buttons i{
     color: #2196f3;
 }
+.certificates .certificate-container .certificate-box-item .certificate-preview,
 .aside .nav-toggler span,
 .aside .nav-toggler span::before,
 .aside .nav-toggler span::after,
