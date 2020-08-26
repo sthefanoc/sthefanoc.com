@@ -6,7 +6,8 @@
     border-right: 4px solid #ffb400;
     border-bottom: 4px solid #ffb400;
 }
-.blog-post .back-to-blog i,
+.certificates .certificate-container .certificate-box-item .progress-container,
+.blog-post .back-to-blog svg,
 .aside .nav a:hover,
 body.dark .aside .nav a:hover,
 .aside .nav a[aria-current="page"],
@@ -25,18 +26,20 @@ body.dark .about .about-content .skills .skill-chart .skill-filter button:hover,
 .about .about-content .about-text p strong,
 .about .about-content .about-text h2 span,
 .about .about-content .personal-info .info-item a,
-.service .service-item .service-item-inner .icon .fa,
+.service .service-item .service-item-inner .icon svg,
 body.dark .portfolio .portfolio-filter button.active,
 .portfolio .portfolio-filter button.active,
-.portfolio .portfolio-item .portfolio-info .icon .fa,
-.lightbox .lightbox-controls .prev-item .fa,
-.lightbox .lightbox-controls .next-item .fa,
+.portfolio .portfolio-item .portfolio-info .icon svg,
+.lightbox .lightbox-controls .prev-item svg,
+.lightbox .lightbox-controls .next-item svg,
 .blog .blog-item-inner .blog-info .blog-tags a,
-.contact .contact-info-item .icon .fa,
+.contact .contact-info-item .icon svg,
 .contact .contact-info-item a,
-.blog-post .share-buttons i{
+.blog-post .share-buttons svg{
     color: #ffb400;
 }
+.lightbox.open .lightbox-content .lightbox-caption .project-links a,
+.certificates .certificate-container .certificate-box-item .certificate-preview,
 .aside .nav-toggler span,
 .aside .nav-toggler span::before,
 .aside .nav-toggler span::after,
@@ -55,8 +58,7 @@ body.dark .portfolio .portfolio-filter button.active,
 .blog .blog-item-inner .blog-img .blog-date,
 .blog-post .row .post-image img::after,
 .blog-post .related-post-inner .related-post-img .related-post-date,
-.related-post .related-post-image img::after
-{
+.related-post .related-post-image img::after{
     background-color: #ffb400;
 }
 .about .about-content .certifications .certitication-item img,

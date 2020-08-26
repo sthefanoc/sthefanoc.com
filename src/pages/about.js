@@ -2,6 +2,10 @@ import React,  { Component } from "react";
 import PrimaryLayout from '../layouts/PrimaryLayout';
 import SkillsChart from '../components/SkillsChart'
 import { Link, navigate, withPrefix } from 'gatsby';
+import ReactTooltip from "react-tooltip";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInfoCircle, faCalendarAlt, faCertificate, faHandPointRight, faFileAlt } from '@fortawesome/free-solid-svg-icons';
+
 
 class About extends Component {
   componentDidMount(){
@@ -56,6 +60,7 @@ class About extends Component {
               <div className="about-content padd-15">
                 <div className="row">
                   <div className="about-text padd-15">
+                    {/* <h2>Sthefano Carvalho, Growth Marketer and <span>Full Stack Developer</span></h2> */}
                     <h2>Sthefano Carvalho, Growth Marketer and <span>Full Stack Developer</span></h2>
                     <p>Tech professional passionate about solving problems. After 7 years of experience in the industrial sector, dealing with Business Strategy and Business Intelligence, I decided to create an agency called <a href="https://masteradin.com/" target="_blank" rel="noopener noreferrer"><strong>Masteradin</strong></a>, focused on process automation and digital growth. For almost 2 years, I have been creating solutions with Python, for scripting, web scraping and automated tests (Selenium), and Javascript, for backend (NodeJS), frontend (React) and mobile (React Native) development.</p>
                   </div>
@@ -67,7 +72,8 @@ class About extends Component {
                         <p>Birthday: <span>December 28th, 1992</span></p>
                       </div>
                       <div className="info-item padd-15">
-                        <p>Age: <span className="live-age">27</span></p>
+                        <ReactTooltip />
+                        <p>Age: <span className="live-age">27</span><FontAwesomeIcon icon={faInfoCircle} data-tip="Yes, this is code."/></p>
                       </div>
                       <div className="info-item padd-15">
                         <p>Portfolio: <span><a href="/projects">my work</a></span></p>
@@ -104,32 +110,44 @@ class About extends Component {
                         <div className="timeline-item">
                           <div className="circle-dot"></div>
                           <h6 className="timeline-date">
-                            <i className="fa fa-calendar"></i>
+                            {/* <i className="fa fa-calendar">faCalendar</i> */}
+                            <FontAwesomeIcon icon={faCalendarAlt} />
+                            2020-2020
+                          </h6>
+                          <h4 className="timeline-title">Growth Marketing Minidegree | CXL Institute</h4>
+                          <p className="timeline-text">Title of Growth Marketing Specialist for Analytics, experimentation, and growth marketing training.</p>
+                        </div>
+                        {/* <!-- Timeline education item --> */}
+                        {/* <!-- Timeline education item --> */}
+                        <div className="timeline-item">
+                          <div className="circle-dot"></div>
+                          <h6 className="timeline-date">
+                            <FontAwesomeIcon icon={faCalendarAlt} />
                             2018-2019
                           </h6>
                           <h4 className="timeline-title">Computer Science | UFABC (Brazil)</h4>
-                          <p className="timeline-text">Incomplete Bachelor's degree com computer science. Progamming logic, algoriths, Mathematics and Physics.</p>
+                          <p className="timeline-text">Incomplete Bachelor's degree com computer science. Progamming logic, algorithms, Mathematics and Physics.</p>
                         </div>
                         {/* <!-- Timeline education item --> */}
                         <div className="timeline-item">
                           <div className="circle-dot"></div>
                           <h6 className="timeline-date">
-                            <i className="fa fa-calendar"></i>
+                            <FontAwesomeIcon icon={faCalendarAlt} />
                             2009-2014
                           </h6>
                           <h4 className="timeline-title">Economics | Mackenzie (Brazil)</h4>
                           <p className="timeline-text">Studies of Economics Science. Main topics: Finance, History, Statistics, Econometrics.</p>
                         </div>
                         {/* <!-- Timeline education item --> */}
-                        <div className="timeline-item">
+                        {/* <div className="timeline-item">
                           <div className="circle-dot"></div>
                           <h6 className="timeline-date">
-                            <i className="fa fa-calendar"></i>
+                            <FontAwesomeIcon icon={faCalendarAlt} />
                             2007-2009
                           </h6>
                           <h4 className="timeline-title">High School | Colégio Santo Américo (Brazil)</h4>
                           <p className="timeline-text">Graduated on a scholarship studying in one of the best education institutions of the country.</p>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </div>
@@ -143,7 +161,7 @@ class About extends Component {
                         <div className="timeline-item">
                           <div className="circle-dot"></div>
                           <h6 className="timeline-date">
-                            <i className="fa fa-calendar"></i>
+                            <FontAwesomeIcon icon={faCalendarAlt} />
                             2018-to date
                           </h6>
                           <h4 className="timeline-title">Cofounder | Masteradin</h4>
@@ -153,7 +171,7 @@ class About extends Component {
                         <div className="timeline-item">
                           <div className="circle-dot"></div>
                           <h6 className="timeline-date">
-                            <i className="fa fa-calendar"></i>
+                            <FontAwesomeIcon icon={faCalendarAlt} />
                             2014-2018
                           </h6>
                           <h4 className="timeline-title">Business Intelligence Analyst | Unilever</h4>
@@ -163,7 +181,7 @@ class About extends Component {
                         <div className="timeline-item">
                           <div className="circle-dot"></div>
                           <h6 className="timeline-date">
-                            <i className="fa fa-calendar"></i>
+                            <FontAwesomeIcon icon={faCalendarAlt} />
                             2012-2013
                           </h6>
                           <h4 className="timeline-title">Customer Marketing Intern | Unilever</h4>
@@ -184,7 +202,7 @@ class About extends Component {
                         {data.allWordpressWpCertificateItem.nodes.map(node => (
                           <div className="certitication-item padd-15">
                             <div className="row time-details">
-                              <div className="row certification-date"><i className="fa fa-calendar"></i>{node.course_completion}</div> 
+                              <div className="row certification-date"><FontAwesomeIcon icon={faCalendarAlt} />{node.course_completion}</div> 
                               <div className="row certification-duration"><i className="fa fa-clock-o"></i>{node.course_duration}h</div> 
                             </div>
                             <div className="row certification-details">
@@ -197,8 +215,8 @@ class About extends Component {
                               </div>
                             </div>
                             <div className="row certification-links">
-                                <Link to={node.blog_post} className="row related-blog-post"><i className="fa fa-file-text"></i>Post</Link>
-                                <a href={node.certificate_link} target="_blank" rel="noopener noreferrer" className="row certificate"><i className="fa fa-certificate"></i>Certificate</a>
+                                <Link to={node.blog_post} className="row related-blog-post"><FontAwesomeIcon icon={faFileAlt} />Post</Link>
+                                <a href={node.certificate_link} target="_blank" rel="noopener noreferrer" className="row certificate"><FontAwesomeIcon icon={faCertificate} />Certificate</a>
                               </div>
                           </div>
 
@@ -209,7 +227,7 @@ class About extends Component {
                     </div>
                   </div>
                   <div className="all-certificates">
-                  <Link to='/about/certificates' className="see-all-certificates"><i className="fa fa-hand-o-right"></i>See all certificates</Link> 
+                  <Link to='/about/certificates' className="see-all-certificates"><FontAwesomeIcon icon={faHandPointRight} />See all certificates</Link> 
                     
                   </div>
                 </div>

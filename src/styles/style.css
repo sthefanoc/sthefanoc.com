@@ -1,6 +1,6 @@
 
  /*Font Awesome Free Icon*/
- @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+ /* @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"); */
 
  /*Google fonts*/
  /* @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&family=Rubik:wght@700&display=swap'); */
@@ -262,7 +262,7 @@ input, textarea, select{
     padding-left: 5px;
     opacity: 1.0;
 } */
-.aside .nav a .fa{
+.aside .nav a svg{
     margin-right: 5px;
 }
 .aside .copyright-text{
@@ -406,6 +406,12 @@ input, textarea, select{
     max-width: 40%;
     margin-top: 40px;
     /* background-color: blue; */
+}
+.about .about-content .skills .skills-title{
+    font-size: 20px;
+}
+.about .about-content svg{
+    margin-left: 10px;
 }
 .about .about-content .skills .skill-chart{
     /* background-color: lightcoral; */
@@ -573,7 +579,7 @@ input, textarea, select{
     margin-bottom: 12px;
     color: #504e70;
 }
-.about .about-content .timeline .timeline-date .fa{
+.about .about-content .timeline .timeline-date svg{
     margin-right: 5px;
 }
 .about .about-content .timeline .timeline-title{
@@ -634,7 +640,7 @@ input, textarea, select{
     color: #504e70;
     margin: 0;
 }
-.about .certifications .certitication-item .time-details i{
+.about .certifications .certitication-item .time-details svg{
     margin-right: 10px;
 }
 .about .certifications .certitication-item .time-details .certification-date{
@@ -654,8 +660,13 @@ input, textarea, select{
     width: 10vw;
     border: 2px solid;
     object-fit: scale-down;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
 }
-
+.about .about-content .certifications .certitication-item:hover img{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
 
 .about .certifications .certitication-item:last-child{
     padding-bottom: 0px;
@@ -675,7 +686,7 @@ input, textarea, select{
     
     
 }
-.about .certifications .certitication-item .certification-links .row i{
+.about .certifications .certitication-item .certification-links svg{
     margin-right: 10px;
 }
 .about .certifications .certitication-item .certification-links a{
@@ -701,7 +712,7 @@ input, textarea, select{
     padding-right: 5%;
     text-decoration: underline;
 }
-.about .certifications .all-certificates i{
+.about .certifications .all-certificates svg{
     margin-right: 10px;
 }
 
@@ -888,14 +899,17 @@ input, textarea, select{
     border-radius: 50%;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
-.service .service-item .service-item-inner .icon .fa{
+.service .service-item .service-item-inner .icon svg{
     font-size: 40px;
     line-height: 60px;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
-.service .service-item .service-item-inner:hover .icon .fa{
+.service .service-item .service-item-inner:hover .icon svg{
     font-size: 25px;
     color: #ffffff;
 }
@@ -1043,13 +1057,16 @@ input, textarea, select{
     transform: translateX(20px);
     -webkit-transform: translateX(20px);
     opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 .portfolio .portfolio-item-inner:hover .portfolio-info .icon{
     transform: translateX(0px);
     -webkit-transform: translateX(0px);
     opacity: 1;
 }
-.portfolio .portfolio-item .portfolio-info .icon .fa{
+.portfolio .portfolio-item .portfolio-info .icon svg{
     line-height: 40px;
 }
 
@@ -1084,10 +1101,14 @@ input, textarea, select{
     max-height: 450px;
     cursor: pointer;
     display: block;
-    padding: 30px 0;
+    padding: 30px 0 10px 30px;
 }
 .lightbox .lightbox-content{
     position: relative;
+    max-width: 40vw;
+    z-index: 2;
+    /* display: flex;
+    flex-direction: column; */
     /* transition: all 0.5s ease;
     -webkit-transition: all 0.5s ease;
     transform: scale(0.8);
@@ -1098,6 +1119,69 @@ input, textarea, select{
     -webkit-transform: scale(1); */
     animation: lightboxImage .5s ease;
 }
+.lightbox.open .lightbox-content .lightbox-caption{
+    
+    /* padding-top: 10%; */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: unset;
+}
+.lightbox.open .lightbox-content .lightbox-caption .caption-text{
+    padding-top: 2%;
+    font-weight: 600;
+    font-size: larger;
+    /* padding-top: 10%; */
+}
+.lightbox.open .lightbox-content .lightbox-caption .caption-counter{
+    position: absolute;
+    right: 0;
+    cursor: none;
+}
+.lightbox.open .lightbox-content .lightbox-caption .project-description{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-style: italic;
+}
+.lightbox.open .lightbox-content .lightbox-caption .project-tech{
+    font-weight: 500;
+}
+.lightbox.open .lightbox-content{
+    /* visibility: hidden; */
+}
+.lightbox.open .lightbox-content .lightbox-caption .project-links{
+    /* justify-items: center; */
+    padding-top: 5%;
+    /* position: absolute; */
+    right: 0;
+    visibility: visible;
+    
+}
+.lightbox.open .lightbox-content .lightbox-caption .project-links a{
+    cursor: pointer;
+    font-size: 22px;
+    padding: 10px 10px 10px 10px;
+    text-align: right;
+    height: 35px;   
+    width: 35px;
+    line-height: 35px;
+    color: #ffffff;
+    margin: 0 6px;
+    border-radius: 50%;
+    text-decoration: none;
+    /* transition: all 0.3s ease;
+    transition: ease-in-out 0.3s; */
+    cursor: pointer;
+    /* z-index: 1110; */
+}
+
+   
+.lightbox.open .lightbox-content .lightbox-caption .project-links a:hover{
+    /* -webkit-transform: scale(1.1);
+    transform: scale(1.1); */
+    /* font-size: 30px; */
+}
+   
 
 @keyframes lightboxImage{
     0%{
@@ -1162,6 +1246,9 @@ input, textarea, select{
     z-index: 110;
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 .lightbox .lightbox-controls .prev-item:active,
 .lightbox .lightbox-controls .next-item:active{
@@ -1321,7 +1408,7 @@ input, textarea, select{
     align-content: flex-end;
     font-size: 15px;
 }
-.blog-post .back-to-blog i{
+.blog-post .back-to-blog svg{
     margin-right: 5px;
     font-size: 3vh;
     text-decoration: unset;
@@ -1351,7 +1438,7 @@ input, textarea, select{
     justify-items: right;
     padding-right: 10%;
 }
-.blog-post .share-buttons i{
+.blog-post .share-buttons svg{
     display: inline-block;
     align-items: center;
     justify-items: center;
@@ -1573,7 +1660,7 @@ input, textarea, select{
 .contact .contact-info-item .icon{
     display: inline-block;
 }
-.contact .contact-info-item .icon .fa{
+.contact .contact-info-item .icon svg{
     font-size: 40px;
 }
 .contact .contact-info-item h4{
@@ -1671,6 +1758,7 @@ body.dark .contact .contact-info-item h4,
 body.dark .blog .blog-item-inner .blog-info .blog-title,
 body.dark .portfolio .portfolio-filter button,
 body.dark .service .service-item .service-item-inner h4,
+body.dark .about .about-content .skills-title,
 body.dark .about .about-content .timeline .timeline-title,
 body.dark .about .about-content .timeline a,
 body.dark .about .about-content h3.title,
@@ -1822,6 +1910,21 @@ body.dark .blog-post .related-post-inner:after {
         padding-left: 5%;
         margin-left: 0;
     }
+    .lightbox .lightbox-controls .prev-item,
+    .lightbox .lightbox-controls .next-item{
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        margin-top: -20px;
+    }
+    .lightbox .lightbox-controls .prev-item{
+        left: 2%;
+    }
+    
+    .lightbox .lightbox-controls .next-item{
+        right: 2%;
+    }
 }
 
 @media (max-width: 575px){
@@ -1873,5 +1976,8 @@ body.dark .blog-post .related-post-inner:after {
         right:8%;
         display: flex;
         flex-wrap: nowrap;
+    }
+    .lightbox .lightbox-content{
+        max-width: 80vw;
     }
 }

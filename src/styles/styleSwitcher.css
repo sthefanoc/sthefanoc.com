@@ -57,8 +57,11 @@
     text-align: center;
     cursor: pointer;
     border-radius: 5px 0 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
-.style-switcher .toggle-style-switcher .fa{
+.style-switcher .toggle-style-switcher svg{
     font-size: 20px;
     line-height: 43px;
 }

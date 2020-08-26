@@ -1,5 +1,8 @@
 import React from "react";
 import {Link} from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faBriefcase, faEnvelope, faUser, faFileAlt, faCode } from '@fortawesome/free-solid-svg-icons';
+
 
 class Header extends React.Component {
 
@@ -69,12 +72,18 @@ class Header extends React.Component {
         </div>
         {/* Nav */}
         <div className="nav">
-          <Link as={Link} to="/" className="section-link home-link"><i className="fa fa-home"></i>Home</Link>
-          <Link as={Link} to="/about" className="section-link about-link"><i className="fa fa-user"></i>About</Link>
-          <Link as={Link} to="/services" className="section-link services-link"><i className="fa fa-list"></i>Services</Link>
-          <Link as={Link} to="/projects" className="section-link projects-link"><i className="fa fa-briefcase"></i>Portfolio</Link>
-          <Link as={Link} to="/blog" className="section-link blog-link"><i className="fa fa-envelope"></i>Blog</Link>
-          <Link as={Link} to="/contact" className="section-link contact-link"><i className="fa fa-comments"></i>Contact</Link>
+          <Link as={Link} to="/" className="section-link home-link">
+            <FontAwesomeIcon icon={faHome} />Home</Link>
+          <Link as={Link} to="/about" className="section-link about-link">
+            <FontAwesomeIcon icon={faUser} />About</Link>
+          <Link as={Link} to="/services" className="section-link services-link">
+            <FontAwesomeIcon icon={faBriefcase} />Services</Link>
+          <Link as={Link} to="/projects" className="section-link projects-link">
+            <FontAwesomeIcon icon={faCode} />Portfolio</Link>
+          <Link as={Link} to="/blog" className="section-link blog-link">
+            <FontAwesomeIcon icon={faFileAlt} />Blog</Link>
+          <Link as={Link} to="/contact" className="section-link contact-link">
+            <FontAwesomeIcon icon={faEnvelope} />Contact</Link>
         </div>
         <div className="copyright-text">
           Powered by <a href="https://masteradin.com/">Masteradin</a>

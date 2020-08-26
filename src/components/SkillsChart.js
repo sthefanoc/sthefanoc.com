@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-
 import Chart from 'chart.js';
+import ReactTooltip from 'react-tooltip';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 class SkillsChart extends Component {
     
@@ -51,108 +53,108 @@ class SkillsChart extends Component {
             options.legend.labels.fontColor = '#FFF'
         };
         // JS Chart
-        let ctxJS = document.getElementById('chartJS').getContext('2d');
+        let ctxMobile = document.getElementById('chartMobile').getContext('2d');
 
-        let dataJS = {
-            labels: ["ReactJS", "NodeJS", "React Native", "GatsbyJS", "NextJS"],
+        let dataMobile = {
+            labels: ["React Native", "PWA"],
             datasets: [{
                 backgroundColor: selectedSchemeColor,
                 borderColor: '#fff',
-                data: [90, 80, 50, 60, 40],
+                data: [0.4, 0.4],
             }]
         };
         
-        let chartJS = new Chart(ctxJS, {
-                data: dataJS,
+        let chartMobile = new Chart(ctxMobile, {
+                data: dataMobile,
                 type: 'polarArea',
                 options: options
         });
         
-        // Python Chart
-        let ctxPython = document.getElementById('chartPython').getContext('2d');
+        // Other Chart
+        let ctxOther = document.getElementById('chartOther').getContext('2d');
 
-        let dataPython = {
-            labels: ["Scripting", "Web Scraping", "Automated Testing", "Django"],
+        let dataOther = {
+            labels: ["Git", "Web Scraping", "Automated Testing", "SQL", "MongoBD"],
             datasets: [{
                 backgroundColor: selectedSchemeColor.slice(0,4),
                 borderColor: '#fff',
-                data: [90, 80, 50, 60],
+                data: [2, 2, 1.5, 1, 0.6],
             }],
             display: false
         };
         
-        let chartPython = new Chart(ctxPython, {
-                data: dataPython,
+        let chartOther = new Chart(ctxOther, {
+                data: dataOther,
                 type: 'polarArea',
                 options: options
         });
 
-        // Programming languages Chart
-        let ctxProgramming = document.getElementById('chartProgramming').getContext('2d');
+        // Frontend Chart
+        let ctxFrontend = document.getElementById('chartFrontend').getContext('2d');
 
-        let dataProgramming = {
-            labels: ["Python", "JavaScript", "HTML", "CSS", "SQL"],
+        let dataFrontend = {
+            labels: ["React.Js", "Gatsby.Js",'Next.Js', "HTML", "CSS"],
             datasets: [{
                 backgroundColor: selectedSchemeColor,
                 borderColor: '#fff',
-                data: [90, 80, 80, 60, 70],
+                data: [1.5, 1, 0.4,  2.5, 2.5],
             }],
             display: false
         };
         
-        let chartProgramming = new Chart(ctxProgramming, {
-                data: dataProgramming,
+        let chartFrontend = new Chart(ctxFrontend, {
+                data: dataFrontend,
                 type: 'polarArea',
                 options: options
         });
 
-        // Marketing skills chart
-        let ctxMarketing = document.getElementById('chartMarketing').getContext('2d');
+        // Backend chart
+        let ctxBackend = document.getElementById('chartBackend').getContext('2d');
 
-        let dataMarketing = {
-            labels: ["SEO", "SEM", "Link Building", "Social Media", 'CRO'],
+        let dataBackend = {
+            labels: ["Node.Js", "Express", "Django", "Flask"],
             datasets: [{
                 backgroundColor: selectedSchemeColor,
                 borderColor: '#fff',
-                data: [90, 90, 80, 50,60],
+                data: [1.2, 1, 0.6, 0.4],
             }],
             display: false
         };
         
-        let chartMarketing = new Chart(ctxMarketing, {
-                data: dataMarketing,
+        let chartBackend = new Chart(ctxBackend, {
+                data: dataBackend,
                 type: 'polarArea',
                 options: options
         });
         console.log(selectedSchemeColor);
         let body = document.addEventListener('change', ()=> {
             if(Boolean(document.querySelector('body').classList[0])){
-                chartProgramming.options.legend.labels.fontColor = '#FFF';
-                chartPython.options.legend.labels.fontColor = '#FFF';
-                chartJS.options.legend.labels.fontColor = '#FFF';
-                chartMarketing.options.legend.labels.fontColor = '#FFF';
+                chartFrontend.options.legend.labels.fontColor = '#FFF';
+                chartBackend.options.legend.labels.fontColor = '#FFF';
+                chartMobile.options.legend.labels.fontColor = '#FFF';
+                chartOther.options.legend.labels.fontColor = '#FFF';
             } else {
-                chartProgramming.options.legend.labels.fontColor = '#666';
-                chartPython.options.legend.labels.fontColor = '#666';
-                chartJS.options.legend.labels.fontColor = '#666';
-                chartMarketing.options.legend.labels.fontColor = '#666';
+                chartFrontend.options.legend.labels.fontColor = '#666';
+                chartBackend.options.legend.labels.fontColor = '#666';
+                chartMobile.options.legend.labels.fontColor = '#666';
+                chartOther.options.legend.labels.fontColor = '#666';
             }
-            chartProgramming.update();
-            chartPython.update();
-            chartJS.update();
-            chartMarketing.update();
+            chartFrontend.update();
+            chartBackend.update();
+            chartMobile.update();
+            chartOther.update();
         });
         let styleSwitcher = document.querySelector('.style-switcher');
         styleSwitcher.addEventListener('click',(e) => {
             selectedSchemeColor = this.getSelectedSchemeColor(e.target.title);
-            chartProgramming.data.datasets[0].backgroundColor = selectedSchemeColor;
-            chartPython.data.datasets[0].backgroundColor = selectedSchemeColor;
-            chartJS.data.datasets[0].backgroundColor = selectedSchemeColor;
-            chartMarketing.data.datasets[0].backgroundColor = selectedSchemeColor;
-            chartProgramming.update();
-            chartPython.update();
-            chartJS.update();
-            chartMarketing.update();
+            chartFrontend.data.datasets[0].backgroundColor = selectedSchemeColor;
+            chartBackend.data.datasets[0].backgroundColor = selectedSchemeColor;
+            chartMobile.data.datasets[0].backgroundColor = selectedSchemeColor;
+            chartOther.data.datasets[0].backgroundColor = selectedSchemeColor;
+            chartFrontend.update();
+            chartBackend.update();
+            chartMobile.update();
+            chartOther.update();
         });
         
     }
@@ -177,17 +179,27 @@ class SkillsChart extends Component {
             };
         }
         return (
-            <div className="skill-chart">
-                <div className="skill-filter padd-15">
-                    <button onClick={this.changeFilter} className="active" type="button" value="programming">Languages</button>
-                    <button onClick={this.changeFilter} type="button" value="python">Python</button>
-                    <button onClick={this.changeFilter} type="button" value="javascript">Javascript</button>
-                    <button onClick={this.changeFilter} type="button" value="marketing">Marketing</button>
+            <div className="skills-container">
+                <ReactTooltip id='global' aria-haspopup='true' >
+                    <p>I don't reaaaally believe in skill charts...</p>
+                    <p>but hey!</p>
+                    <p>they look so cool!</p>
+                    <p>And they show I can work with dinamic charts :)</p>
+                </ReactTooltip>
+                {/* data-tip="" */}
+                <h3 className="skills-title">Tech Experience (in years)<FontAwesomeIcon icon={faInfoCircle} data-tip="Yes, this is code." data-tip data-for='global'/></h3>
+                <div className="skill-chart">
+                    <div className="skill-filter padd-15">
+                        <button onClick={this.changeFilter} className="active" type="button" value="backend">Backend</button>
+                        <button onClick={this.changeFilter} type="button" value="frontend">Frontend</button>
+                        <button onClick={this.changeFilter} type="button" value="mobile">Mobile</button>
+                        <button onClick={this.changeFilter} type="button" value="other">Other</button>
+                    </div>
+                    <canvas id="chartBackend" title="backend" className='' width="20w" height="20h"></canvas>
+                    <canvas id="chartFrontend" title="frontend" className='hidden' width="20w" height="20h"></canvas>
+                    <canvas id="chartMobile" title="mobile" className='hidden' width="20w" height="20h"></canvas>
+                    <canvas id="chartOther" title="other" className='hidden' width="20w" height="20h"></canvas>
                 </div>
-                <canvas id="chartProgramming" title="programming" className='' width="25w" height="25h"></canvas>
-                <canvas id="chartJS" title="javascript" className='hidden' width="25w" height="25h"></canvas>
-                <canvas id="chartPython" title="python" className='hidden' width="25w" height="25h"></canvas>
-                <canvas id="chartMarketing" title="marketing" className='hidden' width="25w" height="25h"></canvas>
             </div>
     )}
 

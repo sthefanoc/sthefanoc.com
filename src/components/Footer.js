@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 import footerStyles from './Footer.module.css';
-import { withPrefix } from 'gatsby';
-import { render } from "react-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCog, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 
 class Footer extends Component {    
@@ -65,47 +65,20 @@ class Footer extends Component {
       document.querySelector('input[value="light"]').checked="true";
     };
     
-    // Style Switcher Meachanism
     
-    // const links = document.querySelectorAll('.alternate-style');
-    // const totalLinks=links.length;
-
-    // function setActiveStyle(color){
-    //     for(let i=0;i<totalLinks;i++){
-    //         if(color === links[i].getAttribute('title')){
-    //             links[i].removeAttribute("disabled");
-    //         } else {
-    //             links[i].setAttribute("disabled","true");
-    //         }
-    //     }
-    // }
-
-    // const colorBtns = document.querySelectorAll(".style-switcher li a");
-    // for(let i=0;i<colorBtns.length;i++){
-    //     colorBtns[i].addEventListener("click", () => {
-    //         setActiveStyle(colorBtns[i].title)
-    //     })    
-    // }
-
-    // skin selection
-    // const bodySkin=document.querySelectorAll(".body-skin");
-    // const totalBodySkin=bodySkin.length;
-    // const changeBodySkin = () =>{
-    //     for(let j=0;j<totalBodySkin;j++){
-    //         bodySkin[j].addEventListener("change", function(){
-    //             if(this.value === 'dark'){
-    //                 document.body.className="dark"
-    //             } else {
-    //                 document.body.className=""
-    //             }
-    //         })
-    //     }
-    // }
-    // changeBodySkin();
 
     if(document.querySelector(".toggle-style-switcher")){
         document.querySelector(".toggle-style-switcher").addEventListener("click", () => {
             document.querySelector(".style-switcher").classList.toggle("open");
+            if(Object.values(document.querySelector(".style-switcher").classList).includes('open')){
+              console.log('open')
+              document.querySelector('#no-spin-cog').classList.add('hidden');
+              document.querySelector('#spin-cog').classList.remove('hidden');
+            } else {
+              console.log('closed');
+              document.querySelector('#no-spin-cog').classList.remove('hidden');
+              document.querySelector('#spin-cog').classList.add('hidden');
+            }
         })
     }
   }
@@ -116,7 +89,10 @@ class Footer extends Component {
         {/* <h1>{selectedBodyTheme}</h1> */}
         <div className="style-switcher">
           <div className="toggle-style-switcher">
-            <i className="fa fa-cog fa-spin"></i>
+            <FontAwesomeIcon id="no-spin-cog" icon={faCog} />
+            <FontAwesomeIcon id="spin-cog" icon={faCog} spin className="hidden"/>
+            {/* <i id="spin-cog" className="fa fa-cog fa-spin hidden"></i>
+            <i id="no-spin-cog" className="fa fa-cog"></i> */}
           </div>
           <h5>Style Switcher</h5>
           <ul>

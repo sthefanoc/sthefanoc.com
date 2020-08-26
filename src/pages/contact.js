@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import PrimaryLayout from '../layouts/PrimaryLayout';
 // import { withPrefix } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone, faMapMarker, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
 
 export default class Contact extends Component {
   constructor(props) {
@@ -124,21 +127,24 @@ export default class Contact extends Component {
           <div className="row">
             {/* <!-- Contact info start --> */}
             <div className="contact-info-item padd-15">
-              <div className="icon"><i className="fa fa-phone"></i></div>
+              {/* <div className="icon"><FontAwesomeIcon icon={faAngleLeft} /><i className="fa fa-phone"></i></div> */}
+              <div className="icon"><FontAwesomeIcon icon={faPhone} /></div>
               <h4>Call me</h4>
               <a onClick={this.sendMeYourPhone} href="#" >my number</a>
             </div>
             {/* <!-- Contact info end --> */}
             {/* <!-- Contact info start --> */}
             <div className="contact-info-item padd-15">
-              <div className="icon"><i className="fa fa-map-marker"></i></div>
+              {/* <div className="icon"><i className="fa fa-map-marker"></i></div> */}
+              <div className="icon"><FontAwesomeIcon icon={faMapMarker} /></div>
               <h4>Visit me</h4>
               <a href="https://masteradin.com/" target="_blank" rel="noopenner noreferrer">my company</a>
             </div>
             {/* <!-- Contact info end --> */}
             {/* <!-- Contact info start --> */}
             <div className="contact-info-item padd-15">
-              <div className="icon"><i className="fa fa-envelope"></i></div>
+            <div className="icon"><FontAwesomeIcon icon={faEnvelope} /></div>
+              {/* <div className="icon"><i className="fa fa-envelope"></i></div> */}
               <h4>Send me a message</h4>
               <a onClick={this.sendMeYourEmail} href="#" >my e-mail</a>
             </div>

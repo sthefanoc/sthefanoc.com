@@ -2,6 +2,9 @@ import React from 'react';
 import BlogRelatedPosts from '../components/BlogRelatedPosts'; 
 import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
 import { Link } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDesktop, faGlobe, faMobile, faFileAlt, faRocket, faCogs, faLaptop, faMousePointer, faAngleLeft, faAngleRight, faSearch, faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faGoogle, faReact, faFacebook, faTwitter, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 
 
@@ -26,7 +29,8 @@ const BlogPost =(props) => {
             <div className="container">
                 <div className="row">
                     <Link to="/blog" className="back-to-blog">
-                        <i className="fa fa-arrow-circle-left" aria-hidden="true" />
+                        {/* <i className="fa fa-arrow-circle-left" aria-hidden="true" /> */}
+                        <FontAwesomeIcon icon={faArrowCircleLeft} aria-hidden="true" />
                         <p>Back to Blog</p>
                     </Link>
                     
@@ -46,22 +50,30 @@ const BlogPost =(props) => {
                             href={"https://facebook.com/sharer/sharer.php?u=" + baseUrl + props.slug + "/"} 
                             target="_blank" 
                             rel="noopenner noreferrer">
-                                <i className="fa fa-facebook"></i></a>
+                                {/* <i className="fa fa-facebook"></i> */}
+                                <FontAwesomeIcon icon={faFacebook} />
+                                </a>
                         <a 
                             href={"https://twitter.com/share?url=" + baseUrl + props.slug + "/" + "&text=" + props.title + "&via" + "twitterhandle"}
                             target="_blank"
                             rel="noopenner noreferrer">
-                            <i className="fa fa-twitter"></i></a>
+                            {/* <i className="fa fa-twitter"></i> */}
+                            <FontAwesomeIcon icon={faTwitter} />
+                            </a>
                         <a 
                             href={"https://www.linkedin.com/shareArticle?mini=true&url=" + baseUrl + props.slug + "/&title=" + props.title + '&summary=' + props.excerpt + "&source=sthefanoc.com"}
                             target="_blank"
                             rel="noopenner noreferrer">
-                            <i className="fa fa-linkedin"></i></a>
+                            {/* <i className="fa fa-linkedin"></i> */}
+                            <FontAwesomeIcon icon={faLinkedin} />
+                            </a>
                         <a 
                             href={"https://wa.me/?text=" + baseUrl + props.slug + "/"} 
                             target="_blank"
                             rel="noopenner noreferrer">
-                            <i className="fa fa-whatsapp"></i></a>
+                            {/* <i className="fa fa-whatsapp"></i> */}
+                            <FontAwesomeIcon icon={faWhatsapp} />
+                            </a>
                         {/* <a 
                             onClick={copyText(baseUrl + props.slug + "/")}>
                             <i className="fa fa-copy"></i></a> */}
@@ -69,10 +81,7 @@ const BlogPost =(props) => {
                 </div>
                 <div className="row">
                     <div className="post-intro">
-                        {/* <img className="intro-sub-element" src={props.image} alt={props.alt || 'defaulAlt'} /> */}
-                        {/* <Img 
-                            className="intro-sub-element" 
-                            src={props.image} 
+                        {/* <img clasThis is an imagerc={props.image} 
                             alt={props.alt || 'defaulAlt'}
                         /> */}
                         <img 
