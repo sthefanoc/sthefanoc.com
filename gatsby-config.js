@@ -162,6 +162,16 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
     },
     {
+      resolve: `gatsby-source-wordpress-experimental`,
+      options: {
+        /*
+         * The full URL of the WordPress site's GraphQL API.
+         * Example : 'https://www.example-site.com/graphql'
+         */
+        url: `https://wordpress.sthefanoc.com/graphql`,
+      },
+    },
+    {
       resolve: `gatsby-source-wordpress`,
       options: {
         baseUrl: `wordpress.sthefanoc.com`,
