@@ -3,9 +3,9 @@ import BlogRelatedPosts from '../components/BlogRelatedPosts';
 import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDesktop, faGlobe, faMobile, faFileAlt, faRocket, faCogs, faLaptop, faMousePointer, faAngleLeft, faAngleRight, faSearch, faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faDesktop, faGlobe, faMobile, faFileAlt, faRocket, faCogs, faLaptop, faMousePointer, faAngleLeft, faAngleRight, faSearch, faArrowCircleLeft, faUndoAlt, faBackward, faDemocrat, faLongArrowAltDown, faLongArrowAltLeft, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faGoogle, faReact, faFacebook, faTwitter, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-
+import ReactTooltip from "react-tooltip";
 
 
 const BlogPost =(props) => {
@@ -20,6 +20,38 @@ const BlogPost =(props) => {
         title: props.title,
         url: baseUrl + props.slug,
     };
+    // console.log('texto', props.content);
+    // const toTheTop = () => {
+    //     console.log('eaaaaaaay');
+    // };
+    //Get the button:
+    let mybutton = document.getElementById("topBtn");
+
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        try{
+            let mybutton = document.getElementById("topBtn");
+            if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+            // console.log('success!', mybutton)
+        } catch{
+            let mybutton = document.getElementById("topBtn");
+            // console.log('fail!', mybutton)
+        }
+    
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function toTheTop() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
     
     // https://blog.mailtrap.io/react-contact-form/
     // To configure e-mail
@@ -27,17 +59,20 @@ const BlogPost =(props) => {
     return (
         <article>
             <div className="container">
+                {/* <button onClick={console.log('aahskbdlkhasb')} id="topBtn" title="Go to top">Top</button> */}
+                <button onClick={() => toTheTop()} id="topBtn"><FontAwesomeIcon icon={faArrowUp} data-tip="To the top!"/></button>
                 <div className="row">
                     <Link to="/blog" className="back-to-blog">
                         {/* <i className="fa fa-arrow-circle-left" aria-hidden="true" /> */}
-                        <FontAwesomeIcon icon={faArrowCircleLeft} aria-hidden="true" />
-                        <p>Back to Blog</p>
+                        <ReactTooltip />
+                        <FontAwesomeIcon icon={faLongArrowAltLeft} aria-hidden="true" data-tip="Back to blog"/>
+                        {/* <p>Back to Blog</p> */}
                     </Link>
                     
-                    <div className="section-title">
-                        <h1 dangerouslySetInnerHTML={{__html:props.title}}/>
+                    <div className="section-title padd-15">
+                        <h1 dangerouslySetInnerHTML={{__html:props.title}} className="blog-post-title" />
                     </div>
-                    <a href="#comment-count" className="commment-count">
+                    <a href="#comment-count" className="commment-count padd-15" data-tip="See comments">
                         <CommentCount config={disqusConfig} placeholder={'...'} />
                     </a>
                 </div>
@@ -51,28 +86,28 @@ const BlogPost =(props) => {
                             target="_blank" 
                             rel="noopenner noreferrer">
                                 {/* <i className="fa fa-facebook"></i> */}
-                                <FontAwesomeIcon icon={faFacebook} />
+                                <FontAwesomeIcon data-tip="Share on Facebook" icon={faFacebook} />
                                 </a>
                         <a 
                             href={"https://twitter.com/share?url=" + baseUrl + props.slug + "/" + "&text=" + props.title + "&via" + "twitterhandle"}
                             target="_blank"
                             rel="noopenner noreferrer">
                             {/* <i className="fa fa-twitter"></i> */}
-                            <FontAwesomeIcon icon={faTwitter} />
+                            <FontAwesomeIcon data-tip="Share on Twitter" icon={faTwitter} />
                             </a>
                         <a 
                             href={"https://www.linkedin.com/shareArticle?mini=true&url=" + baseUrl + props.slug + "/&title=" + props.title + '&summary=' + props.excerpt + "&source=sthefanoc.com"}
                             target="_blank"
                             rel="noopenner noreferrer">
                             {/* <i className="fa fa-linkedin"></i> */}
-                            <FontAwesomeIcon icon={faLinkedin} />
+                            <FontAwesomeIcon data-tip="Share on LinkedIn" icon={faLinkedin} />
                             </a>
                         <a 
                             href={"https://wa.me/?text=" + baseUrl + props.slug + "/"} 
                             target="_blank"
                             rel="noopenner noreferrer">
                             {/* <i className="fa fa-whatsapp"></i> */}
-                            <FontAwesomeIcon icon={faWhatsapp} />
+                            <FontAwesomeIcon data-tip="Share on WhatsApp" icon={faWhatsapp} />
                             </a>
                         {/* <a 
                             onClick={copyText(baseUrl + props.slug + "/")}>
@@ -92,7 +127,7 @@ const BlogPost =(props) => {
                         <p className="post-excerpt intro-sub-element" dangerouslySetInnerHTML={{__html:props.excerpt}}/>
                     </div>
                 </div>
-                <div className="row blog-post-text" dangerouslySetInnerHTML={{__html:props.content}}/>
+                <div className="row blog-post-text padd-15" dangerouslySetInnerHTML={{__html:props.content}}/>
                 {/* <div className="row blog-post-text">{contentParser( props.content , pluginOptions)}</div> */}
                 <div className="row"></div>
                 <div className="row">
@@ -111,23 +146,3 @@ const BlogPost =(props) => {
 
 export default BlogPost;
 
-// export const query = graphql`
-// {
-//     allWordpressPost(filter: {categories: {elemMatch: {slug: {eq: "growth"}}}}) {
-//       nodes {
-//         slug
-//         title
-//         excerpt
-//         date
-//         featured_media {
-//           source_url
-//           slug
-//         }
-//         categories {
-//           name
-//           slug
-//         }
-//       }
-//     }
-//   }  
-// `

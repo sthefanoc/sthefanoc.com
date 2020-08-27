@@ -39,8 +39,8 @@ export default function About() {
             <div className="service-item padd-15">
               <div className="service-item-inner">
                 <div className="icon"><FontAwesomeIcon icon={faMobile} /></div>
-                <h4>React Native Development</h4>
-                <p>Development of hybrid apps compatible with Android and iOS.</p>
+                <h4>Mobile Development</h4>
+                <p>Development of hybrid apps compatible with Android and iOS using React Native or PWAs.</p>
               </div>
             </div>
             {/* <!-- Service item end --> */}

@@ -86,7 +86,7 @@ class Header extends React.Component {
             <FontAwesomeIcon icon={faEnvelope} />Contact</Link>
         </div>
         <div className="copyright-text">
-          Powered by <a href="https://masteradin.com/">Masteradin</a>
+          Powered by <a href="https://masteradin.com/" target="_blank"rel="noopenner noreferrer">Masteradin</a>
         </div>
       </div>
     </header>
