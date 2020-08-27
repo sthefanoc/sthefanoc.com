@@ -25,11 +25,16 @@ const BlogPost =(props) => {
     //     console.log('eaaaaaaay');
     // };
     //Get the button:
-    let mybutton = document.getElementById("topBtn");
+    // let mybutton = document.getElementById("topBtn");
 
 
     // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
+    
+    // window.onscroll = function() {scrollFunction()};
+
+    setTimeout(function(){ 
+        window.onscroll = function() {scrollFunction()};
+     }, 5000);
 
     function scrollFunction() {
         try{
