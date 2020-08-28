@@ -6,6 +6,7 @@ import profilePicture from '../../static/images/sthefanoc.webp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faYoutube, faInstagram, faTwitter, faDev, faMedium } from '@fortawesome/free-brands-svg-icons';
 import ReactTooltip from "react-tooltip";
+import GetImage from "../components/GetImage";
 
 
 
@@ -38,6 +39,7 @@ export default function Home({data}) {
             </div>
           </div>
         </div>
+        {/* <GetImage /> */}
       </section>
     </PrimaryLayout>
 )}

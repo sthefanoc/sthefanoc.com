@@ -176,7 +176,17 @@ module.exports = {
       options: {
         baseUrl: `wordpress.sthefanoc.com`,
         protocol: `http`,
+        plugins: [
+          {
+            resolve: `@draftbox-co/gatsby-wordpress-inline-images`,
+            options: {
+              baseUrl: `wordpress.sthefanoc.com`,
+              protocol: `http`
+            }
+          }
+        ],
         hostingWPCOM: false,
+        withWebp: true,
         useACF: true,
         includedRoutes: [
           "**/categories",

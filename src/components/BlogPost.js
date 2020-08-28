@@ -14,23 +14,12 @@ const BlogPost =(props) => {
         uploadsUrl: `http://wordpress.sthefanoc.com/wp-content/uploads/`,
       };
     const baseUrl = 'https://sthefanoc.com/blog/';
-    // const disqusShortname = 'sthefanoc';
+    
     const disqusConfig = {
         identifier: props.slug,
         title: props.title,
         url: baseUrl + props.slug,
     };
-    // console.log('texto', props.content);
-    // const toTheTop = () => {
-    //     console.log('eaaaaaaay');
-    // };
-    //Get the button:
-    // let mybutton = document.getElementById("topBtn");
-
-
-    // When the user scrolls down 20px from the top of the document, show the button
-    
-    // window.onscroll = function() {scrollFunction()};
 
     setTimeout(function(){ 
         window.onscroll = function() {scrollFunction()};
@@ -151,3 +140,14 @@ const BlogPost =(props) => {
 
 export default BlogPost;
 
+// {
+//     allWordpressWpMedia(filter: {wordpress_id: {eq: 104}}) {
+//       edges {
+//         node {
+//           title
+//           wordpress_id
+//         }
+//       }
+//     }
+    
+// }
