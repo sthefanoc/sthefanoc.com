@@ -45,12 +45,14 @@ class Project extends Component {
     const lightboxClose=document.querySelector(".lightbox-close");
     const lightboxText=document.querySelector(".caption-text");
     const lightboxCounter=document.querySelector(".caption-counter");
+    const lightboxDate=document.querySelector('.project-date');
     const lightboxDescription=document.querySelector('.project-description');
     const lightboxTechnologies=document.querySelector('.project-tech');
     const lightboxGithubRepo=document.querySelector('#github_repo');
     const lightboxLiveVersion=document.querySelector('#live_version');
     const lightboxBlogPost=document.querySelector('#blogpost');
-    let itemIndex=0;
+    
+    let itemIndex;
     let filteredItems;
     let filteredItem;
     let dataValue;
@@ -117,10 +119,12 @@ class Project extends Component {
         // const imgSrc=portfolioItems[itemIndex].querySelector(".portfolio-img img").getAttribute("src");
         const imgAlt=filteredItem.querySelector(".portfolio-img img").getAttribute("data-detailedAlt");
         // const imgAlt=portfolioItems[itemIndex].querySelector(".portfolio-img img").getAttribute("alt");
-        
+
         
         lightboxImg.src=imgSrc;
         lightboxImg.alt=imgAlt;
+        lightboxDate.innerHTML=filteredItem.getAttribute('data-date');
+        console.log('date is',lightboxDate.innerHTML);
         lightboxText.innerHTML=filteredItem.getAttribute('data-title');
         console.log('lightboxText',lightboxText.innerHTML);
         // lightboxText.innerHTML=filteredItem.querySelector("h4");
@@ -185,7 +189,7 @@ class Project extends Component {
   }
   render() {
     const { data } = this.props;
-    console.log('aaaaaaaaa',data);
+    
     // const projectsDatabase = OfflineProjects;
     let keyGenerator = -1;
 
@@ -245,6 +249,7 @@ class Project extends Component {
               data-category={node.programming_category} 
               data-value={keyGenerator+=1} 
               data-title={node.title} 
+              data-date={node.date} 
               data-content={node.content}
               data-detailed-image={node.detailed_image_name} 
               data-techs_used={node.technologies_used} 
@@ -289,6 +294,7 @@ class Project extends Component {
             <div className="lightbox-caption">
               <div className="caption-text">Project # 1</div>
               <div className="caption-counter">1 of 6</div>
+              <div className="project-date">Someday</div>
               <div className="project-description">This is a great project that does things and such. And it's really amazing and incredible and full of programming features.</div>
               <div className="project-tech">Python // Javascript // Selenium // TDD</div>
               <div className="project-links">
@@ -319,12 +325,13 @@ export default Project;
 
 export const query = graphql`
 {
-  allWordpressWpProjectItem {
+  allWordpressWpProjectItem(sort: {fields: date, order: DESC}) {
     edges {
       node {
         title
         short_name
         content
+        date(formatString: "MMMM DD, YYYY")
         programming_category
         technologies_used
         blog_post
@@ -338,20 +345,20 @@ export const query = graphql`
       }
     }
   }
-  allWordpressWpMedia{
-    edges{
-      node{
+  allWordpressWpMedia {
+    edges {
+      node {
         wordpress_id
-        localFile{
-          childImageSharp{
-              fixed(width:800, height: 650){
-                src
-                width
-                height
-                originalName
-              }
+        localFile {
+          childImageSharp {
+            fixed(width: 400, height: 325) {
+              src
+              width
+              height
+              originalName
+            }
           }
-        }   
+        }
       }
     }
   }

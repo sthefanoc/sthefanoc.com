@@ -783,6 +783,8 @@ input, textarea, select{
 	padding: 30px;
     width: 30%;
     opacity: 0.8;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 .certificates .certificate-container .certificate-box-item:hover .certificate-preview {
     opacity: 1.0;
@@ -1150,6 +1152,11 @@ input, textarea, select{
     position: relative;
     cursor: unset;
 }
+.lightbox.open .lightbox-content .lightbox-caption .project-date{
+    font-style: italic;
+    font-size: smaller;
+    padding-bottom: 20px;
+}
 .lightbox.open .lightbox-content .lightbox-caption .caption-text{
     padding-top: 2%;
     font-weight: 600;
@@ -1165,6 +1172,7 @@ input, textarea, select{
     padding-top: 2%;
     padding-bottom: 2%;
     font-style: italic;
+    padding-bottom: 20px;
 }
 .lightbox.open .lightbox-content .lightbox-caption .project-tech{
     font-weight: 500;
@@ -1330,7 +1338,7 @@ input, textarea, select{
 .blog .blog-item-inner .blog-img img{
     width:100%;
     height:100%;
-    object-fit:cover;
+    object-fit:fill;
     height:250px;
     display: block;
     transition: all 0.5s ease;
@@ -1543,16 +1551,18 @@ input, textarea, select{
     margin-top: 15px;
     margin-right: 15px;
     width:100%;
-    height:100%;
-    object-fit:cover;
-    height:45vh;
+    /* width:auto; */
+    /* height:45vh; */
+    height:auto;
+    /* height:100%; */
+    object-fit:contain;
     display: block;
     transition: all 0.5s ease;
     -webkit-transition: all 0.5s ease;
 }
 .blog-post .row .post-intro img:hover {
-    transform: scale(1.1);
-    -webkit-transform: scale(1.1);
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
 }
 .blog-post .row .post-excerpt p{
     /* float: right; */
@@ -1566,14 +1576,34 @@ input, textarea, select{
 }
 .blog-post .blog-post-text{
     border-bottom: 1px solid #e8dfec;
-    width: 65%;
+    width: 70%;
+    text-align: justify;
 }
-.blog-post .blog-post-text ul{
-    padding-left: 7%;
+.blog-post .blog-post-text a{
+    /* color: rgb(236, 24, 57); */
+    text-decoration: underline;
+}
+
+.blog-post .blog-post-text h2{
+    margin-bottom: 15px;
 }
 .blog-post .blog-post-text p{
     padding-bottom: 3vh;
     line-height: 40px;
+}
+.blog-post .blog-post-text ul{
+    width: 100%;
+    margin-bottom: 30px;
+    padding-left: 7%;
+}
+.blog-post .blog-post-text .wp-block-image{
+    width: 100%;
+    height: auto;
+    /* position: relative; */
+}
+.blog-post .blog-post-text .wp-block-image img{
+    border-radius: 10px;
+    border: 1px solid #d4d4e3;
 }
 .related-posts{
     padding-bottom: 20px;

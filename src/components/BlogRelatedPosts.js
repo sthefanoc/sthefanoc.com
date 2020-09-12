@@ -3,7 +3,8 @@ import { Link, withPrefix } from 'gatsby';
 
 class BlogRelatedPosts extends Component {
     render(){
-        const data = this.props.relatedPosts;
+        const data = this.props.relatedPosts.slice(0,3);
+
         return (
             <div className="related-posts">
                 {data.length ?
@@ -30,7 +31,7 @@ class BlogRelatedPosts extends Component {
                     </div>
                 </article>)
                 :
-                (<div>Nooooo</div>)
+                (<div>Error</div>)
             ))}
             </div>      
         )

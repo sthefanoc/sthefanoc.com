@@ -8,7 +8,8 @@ export default function Home({data}) {
   // async const = correctPage() {
   //   document.getElementsByClassName('blog-link')[0].setAttribute("aria-current", "page");
   // }
-  console.log('This is the Blog page');
+
+  console.log('Posts on this page',data);
   return (
     <PrimaryLayout>
       <section className="blog section" id="blog">
@@ -57,16 +58,16 @@ export default function Home({data}) {
 
 export const query = graphql`
 {
-  allWordpressPost {
+  allWordpressPost(sort: {fields: date, order: DESC}) {
     nodes {
       slug
       title
       excerpt
-      date (formatString: "MMMM DD, YYYY")
+      date(formatString: "MMMM DD, YYYY")
       featured_media {
-        localFile{
-          childImageSharp{
-            fixed(width:300, height: 300){
+        localFile {
+          childImageSharp {
+            fixed(width: 300, height: 300) {
               src
               width
               height

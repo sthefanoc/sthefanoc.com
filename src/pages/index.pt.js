@@ -1,7 +1,7 @@
 import React from "react";
 import PrimaryLayout from '../layouts/PrimaryLayout';
 import profilePicture from '../../static/images/sthefanoc.webp';
-// import { withPrefix } from 'gatsby';
+import { Link } from 'gatsby';
 // import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faYoutube, faInstagram, faTwitter, faDev, faMedium } from '@fortawesome/free-brands-svg-icons';
@@ -38,6 +38,7 @@ export default function Home({data}) {
                 <FontAwesomeIcon icon={faDev} /></a>
             </div>
           </div>
+          <div>Agora estou em português!</div>
         </div>
         {/* <GetImage /> */}
       </section>

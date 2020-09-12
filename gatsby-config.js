@@ -4,6 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 const path = require('path');
+const languages = require('./src/data/languages');
 
 // const siteMetadata = require('./config/metadata');
 
@@ -11,6 +12,7 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: "SthefanoC | Dev & Growth",
+    languages,
     description:"Sthefano Carvalho website. Product Developer and Growth. Focused on creating valuable solutions to society.",
     keywords:"sthefano, sthefanoc, development, fullstack, growth, growth marketing, react, react developer",
     image:"/static/sthefanoc.png",
@@ -200,6 +202,15 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyForNull: 'any',
+        langKeyDefault: languages.defaultLangKey,
+        useLangKeyLayout: true,
+        prefixDefault: false,
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
