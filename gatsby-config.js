@@ -3,8 +3,11 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
-const path = require('path');
-const languages = require('./src/data/languages');
+const path = require("path")
+const languages = require("./src/data/languages")
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 // const siteMetadata = require('./config/metadata');
 
@@ -13,29 +16,31 @@ module.exports = {
   siteMetadata: {
     title: "SthefanoC | Dev & Growth",
     languages,
-    description:"Sthefano Carvalho website. Product Developer and Growth. Focused on creating valuable solutions to society.",
-    keywords:"sthefano, sthefanoc, development, fullstack, growth, growth marketing, react, react developer",
-    image:"/static/sthefanoc.png",
-    url:'https://sthefanoc.com/',
-    author:'SthefanoC',
+    description:
+      "Sthefano Carvalho website. Product Developer and Growth. Focused on creating valuable solutions to society.",
+    keywords:
+      "sthefano, sthefanoc, development, fullstack, growth, growth marketing, react, react developer",
+    image: "/static/sthefanoc.png",
+    url: "https://sthefanoc.com/",
+    author: "SthefanoC",
     social: [
-        {
-            name: 'github',
-            url: 'https://github.com/sthefanoc'
-        },
-        {
-            name: 'linkedin',
-            url: 'https://www.linkedin.com/in/sthefanocarvalho/'
-        },
-        {
-            name: 'instagram',
-            url: 'https://www.instagram.com/sthefanocarvalho/'
-        },
-        {
-            name: 'youtube',
-            url: 'https://www.youtube.com/channel/UCgVtIe1_Uhw936xaRcrZGFg'
-        }
-    ]
+      {
+        name: "github",
+        url: "https://github.com/sthefanoc",
+      },
+      {
+        name: "linkedin",
+        url: "https://www.linkedin.com/in/sthefanocarvalho/",
+      },
+      {
+        name: "instagram",
+        url: "https://www.instagram.com/sthefanocarvalho/",
+      },
+      {
+        name: "youtube",
+        url: "https://www.youtube.com/channel/UCgVtIe1_Uhw936xaRcrZGFg",
+      },
+    ],
   },
   plugins: [
     {
@@ -69,23 +74,23 @@ module.exports = {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "UA-169694089-1",
-  
+
         // Include GTM in development.
         //
         // Defaults to false meaning GTM will only be loaded in production.
         includeInDevelopment: true,
-  
+
         // datalayer to be set before GTM is loaded
         // should be an object or a function that is executed in the browser
         //
         // Defaults to null
         defaultDataLayer: { platform: "gatsby" },
-  
+
         // Specify optional GTM environment details.
         // gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING",
         // gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME",
         // dataLayerName: "YOUR_DATA_LAYER_NAME",
-  
+
         // Name of the event that is triggered
         // on every Gatsby route change.
         //
@@ -94,20 +99,26 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-wpgraphql-inline-images',
+      resolve: "gatsby-wpgraphql-inline-images",
       options: {
         wordPressUrl: `http://wordpress.sthefanoc.com/`,
         uploadsUrl: `http://wordpress.sthefanoc.com/wp-content/uploads/`,
-        processPostTypes: ["Page", "Post","Certificates","Portfolio Items","Projects"],
-        graphqlTypeName: 'WPGraphQL',
+        processPostTypes: [
+          "Page",
+          "Post",
+          "Certificates",
+          "Portfolio Items",
+          "Projects",
+        ],
+        graphqlTypeName: "WPGraphQL",
       },
     },
     `gatsby-plugin-netlify`,
     {
       resolve: "gatsby-plugin-netlify-cache",
       options: {
-        cachePublic: true
-      }
+        cachePublic: true,
+      },
     },
     {
       resolve: `gatsby-plugin-sharp`,
@@ -120,8 +131,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: `sthefanoc`
-      }
+        shortname: `sthefanoc`,
+      },
     },
     {
       resolve: `gatsby-plugin-canonical-urls`,
@@ -139,7 +150,7 @@ module.exports = {
           },
           {
             family: `Roboto`,
-            variants: [`300`,`400`,`500`, `700`]
+            variants: [`300`, `400`, `500`, `700`],
           },
         ],
       },
@@ -183,9 +194,9 @@ module.exports = {
             resolve: `@draftbox-co/gatsby-wordpress-inline-images`,
             options: {
               baseUrl: `wordpress.sthefanoc.com`,
-              protocol: `http`
-            }
-          }
+              protocol: `http`,
+            },
+          },
         ],
         hostingWPCOM: false,
         withWebp: true,
@@ -203,13 +214,13 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-plugin-i18n',
+      resolve: "gatsby-plugin-i18n",
       options: {
-        langKeyForNull: 'any',
+        langKeyForNull: "any",
         langKeyDefault: languages.defaultLangKey,
         useLangKeyLayout: true,
         prefixDefault: false,
-      }
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -232,16 +243,18 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-offline`
-  ]
+    `gatsby-plugin-offline`,
+  ],
 }
 
-{/* <Helmet>
+{
+  /* <Helmet>
   <title>Fun Gatsby Wordpress</title>
   <meta name="description" content="!" />
   <meta name="keywords" content="gatsby, awesome, eay" />
   <meta name="robots" content="index,follow" />
-</Helmet> */}
+</Helmet> */
+}
 
 // {
 //   resolve: 'gatsby-plugin-load-script',
