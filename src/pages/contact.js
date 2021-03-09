@@ -59,40 +59,68 @@ export default class Contact extends Component {
   }
 
   handleVerificationSum = event => {
+    // event.preventDefault()
     const target = event.target
     const value = target.value
     const name = target.name
-    console.log(this.state)
-    console.log("LALALALALAAL")
     this.setState({
       [name]: value,
     })
+    console.log("THE VERIFICATION SUM IS: ", this.state.verificationSum)
   }
 
-  // generateRandomValues = () => {
-  //   const sum = document.querySelector("#verificationSum")
-  //   const firstValue = Math.floor(Math.random() * 10)
-  //   const secondValue = Math.floor(Math.random() * 10)
-  //   const result = firstValue + secondValue
-  //   this.setState({
-  //     ["verificationSumResult"]: result,
-  //   })
+  handleVerificationSumCheck = () => {
+    if (
+      Number(this.state.verificationSumResult) ==
+      Number(this.state.verificationSum)
+    ) {
+      const sumChecker = document.querySelector("#sumChecker")
+      sumChecker.style.display = "none"
+      const sendMessageBtn = document.querySelector("#send-message")
+      sendMessageBtn.style.pointerEvents = ""
+      sendMessageBtn.style.removeProperty("background-color")
+    } else {
+      alert("Please verify the sum.")
+    }
+  }
 
-  //   if (this) {
-  //     console.log("THIS EXISTS")
-  //   } else {
-  //     console.log("THIS DOES NOT EXIST!")
-  //   }
-  //   console.log("SUM", this.state.verificationSum)
-  //   console.log("RESULT", this.state.verificationSumResult)
+  generateRandomValues = () => {
+    if (!this.state.verificationSumResult) {
+      console.log(this.state.verificationSumResult, "SUM DOESNT EXIST!")
+      const sum = document.querySelector("#verificationSum")
+      const firstValue = Math.floor(Math.random() * 10)
+      const secondValue = Math.floor(Math.random() * 10)
+      const result = firstValue + secondValue
+      // this.setState({
+      //   ["verificationSumResult"]: result,
+      // })
 
-  //   sum.innerHTML = `${firstValue} + ${secondValue} = `
-  //   console.log(sum)
-  // }
+      this.setState({
+        verificationSumResult: result,
+      })
+
+      if (this) {
+        console.log("THIS EXISTS")
+      } else {
+        console.log("THIS DOES NOT EXIST!")
+      }
+      console.log("SUM", this.state.verificationSum)
+      console.log("RESULT", this.state.verificationSumResult)
+
+      sum.innerHTML = `${firstValue} + ${secondValue} = `
+      console.log(sum)
+
+      console.log(this.state.verificationSumResult, "RESULTADO")
+    } else {
+      console.log("SUM ALREADY EXISTS", this.state.verificationSumResult)
+    }
+  }
 
   componentDidMount() {
     // setTimeout(generateRandomValues,5000)
-    // this.generateRandomValues()
+    this.generateRandomValues()
+
+    // console.log(process.env.SITE_RECAPTCHA_KEY)
 
     this.handleSubmit = event => {
       event.preventDefault()
@@ -211,6 +239,7 @@ export default class Contact extends Component {
 
   render() {
     const { status } = this.state
+
     return (
       <PrimaryLayout>
         <section className="contact section" id="contact">
@@ -323,20 +352,50 @@ export default class Contact extends Component {
                       ></textarea>
                     </div>
                   </div>
-                  {/* <div className="form-item col-3 padd-15">
-                  <div className="form-group" style={{display:"flex", flexDirection: "row", paddingRight:"10px"}} onChange={this.generateRandomValues}>
-                    <div id="verificationSum" style={{width: "40%", margin:"0px 0px 25px 0px",color:"gray", fontWeight: "bold", fontSize: "1.5rem"}}>Soma:</div>
-                    <input 
-                      name="verificationSum" 
-                      type="text" 
-                      className="form-control" 
-                      placeholder="Sum*" 
-                      value={this.state.verificationSum}
-                      onChange={this.handleVerificationSum}
+                  <div className="form-item col-3 padd-15" id="sumChecker">
+                    <div
+                      className="form-group"
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        paddingRight: "10px",
+                      }}
+                      onChange={this.generateRandomValues}
+                    >
+                      <div
+                        id="verificationSum"
+                        style={{
+                          width: "40%",
+                          margin: "0px 0px 25px 0px",
+                          color: "gray",
+                          fontWeight: "bold",
+                          fontSize: "1.5rem",
+                        }}
+                      >
+                        Soma:
+                      </div>
+                      <input
+                        name="verificationSum"
+                        type="text"
+                        className="form-control"
+                        placeholder="Sum*"
+                        value={this.state.verificationSum}
+                        onChange={this.handleVerificationSum}
                       />
-                      {this.state.verificationSum == this.state.verificationSum ? <div>AAAAAAAAAAAAA</div> : <div>BBBBBBBBBB</div>}
+                      <button
+                        type="reset"
+                        className="btn secondary"
+                        onClick={this.handleVerificationSumCheck}
+                        style={{
+                          marginLeft: "10px",
+                          backgroundColor: "#DCDCDC",
+                          color: "#000",
+                        }}
+                      >
+                        Verify result
+                      </button>
+                    </div>
                   </div>
-                </div> */}
                 </div>
                 <div className="row">
                   <div className="col-12 padd-15">
@@ -346,13 +405,18 @@ export default class Contact extends Component {
                     ) : (
                       <button
                         type="submit"
-                        onClick={this.showAlert}
+                        // onClick={this.showAlert}
                         className="btn g-recaptcha"
                         id="send-message"
                         data-sitekey={process.env.SITE_RECAPTCHA_KEY}
-                        data-callback="onSubmitCaptcha"
+                        data-callback="onSubmit"
+                        data-action="submit"
+                        style={{
+                          pointerEvents: "none",
+                          backgroundColor: "gray",
+                        }}
                       >
-                        Send message
+                        SEND MESSAGE
                       </button>
                     )}
                     {/* {status === "SUCCESS" ? <p>Message sent!</p> : <button type="submit" className="btn" >Send message</button>} */}
