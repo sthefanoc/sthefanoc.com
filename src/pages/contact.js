@@ -20,6 +20,7 @@ export default class Contact extends Component {
       message: "",
       verificationSum: "",
       verificationSumResult: 0,
+      sumVerified: false,
     }
   }
 
@@ -74,6 +75,12 @@ export default class Contact extends Component {
       Number(this.state.verificationSumResult) ==
       Number(this.state.verificationSum)
     ) {
+      console.log("SUM VERIFICATION WAS: ", this.state.sumVerified)
+      this.setState({
+        sumVerified: true,
+      })
+      console.log("SUM VERIFICATION IS NOW: ", this.state.sumVerified)
+      console.log("STATE OF THINGS ", this.state)
       const sumChecker = document.querySelector("#sumChecker")
       sumChecker.style.display = "none"
       const sendMessageBtn = document.querySelector("#send-message")
@@ -238,7 +245,12 @@ export default class Contact extends Component {
   }
 
   render() {
-    const { status } = this.state
+    const {
+      status,
+      sumVerified,
+      verificationSum,
+      verificationSumResult,
+    } = this.state
 
     return (
       <PrimaryLayout>
@@ -402,7 +414,7 @@ export default class Contact extends Component {
                     {/* <button type="submit" className="btn" >Send message</button> */}
                     {status === "SUCCESS" ? (
                       <p>Message sent!</p>
-                    ) : (
+                    ) : verificationSum == verificationSumResult ? (
                       <button
                         type="submit"
                         // onClick={this.showAlert}
@@ -418,7 +430,30 @@ export default class Contact extends Component {
                       >
                         SEND MESSAGE
                       </button>
+                    ) : (
+                      <div style={{ fontSize: "smaller", fontStyle: "italic" }}>
+                        Verify sum to continue
+                      </div>
                     )}
+                    {/* {verificationSum == verificationSumResult ? (
+                      <button
+                        type="submit"
+                        // onClick={this.showAlert}
+                        className="btn g-recaptcha"
+                        id="send-message"
+                        data-sitekey={process.env.SITE_RECAPTCHA_KEY}
+                        data-callback="onSubmit"
+                        data-action="submit"
+                        style={{
+                          pointerEvents: "none",
+                          backgroundColor: "gray",
+                        }}
+                      >
+                        SEND MESSAGE
+                      </button>
+                    ) : (
+                      <div>Please check the sum</div>
+                    )} */}
                     {/* {status === "SUCCESS" ? <p>Message sent!</p> : <button type="submit" className="btn" >Send message</button>} */}
                     {status === "ERROR" && <p>Ooops! There was an error.</p>}
                     {/* <button type="submit" className="btn">Send message</button> */}
