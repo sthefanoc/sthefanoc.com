@@ -86,6 +86,10 @@ export default class Contact extends Component {
       const sendMessageBtn = document.querySelector("#send-message")
       sendMessageBtn.style.pointerEvents = ""
       sendMessageBtn.style.removeProperty("background-color")
+
+      const form = document.querySelector("#protected-form")
+      form.action = "https://formspree.io/xleplbpw"
+      console.log("Action added")
     } else {
       alert("Please verify the sum.")
     }
@@ -240,7 +244,13 @@ export default class Contact extends Component {
     }
 
     this.onSubmitCaptcha = token => {
-      document.getElementById("protected-form").submit()
+      if (this.state.verificationSum == this.state.verificationSumResult) {
+        document.getElementById("protected-form").submit()
+        console.log("Sum verified! Form sent")
+      } else {
+        alert("Ops. Sum not verified. Please check.")
+        console.log("Error on sum")
+      }
     }
   }
 
@@ -307,7 +317,7 @@ export default class Contact extends Component {
             <div className="row">
               <form
                 // onSubmit={this.submitForm}
-                action="https://formspree.io/xleplbpw"
+                // action="https://formspree.io/xleplbpw"
                 method="POST"
                 className="contact-form padd-15"
                 id="protected-form"
