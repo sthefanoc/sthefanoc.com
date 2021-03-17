@@ -163,7 +163,8 @@ export default class Contact extends Component {
       // sendMessageBtn.scrollIntoView(false);
       // location.href="#send-message"
       let sendMessageBtn = document.querySelector("#send-message")
-      let y = sendMessageBtn.getBoundingClientRect().top + window.scrollY
+      let verifySumBtn = document.querySelector("#verificationSum")
+      let y = verifySumBtn.getBoundingClientRect().top + window.scrollY
       window.scroll({
         top: y,
         behavior: "smooth",
