@@ -1,7 +1,7 @@
 <h1 align="center">SthefanoC.com - Personal Website</h1>
 
 <p align="center">
-  <img width="100%" alt="Be the Hero Project Reaact - Semana Omnistack" src="/static/images/SthefanoC.com- personal website - Header.png">
+  <img width="100%" alt="SthefanoC Personal Website" src="/static/images/SthefanoC.com- personal website - Header.png">
 </p>
 
 # SthefanoC.com - My personal website
@@ -9,7 +9,7 @@
 A personal website that serves as a playground to experiment with different technologies and also a way to showcase my skills and publicize my services.
 
 <p align="center">
-  <img width="100%" alt="Be the Hero Project Reaact - Semana Omnistack" src="/static/images/SthefanoC- PersonalWebsite.gif">
+  <img width="100%" alt="SthefanoC's personal website" src="/static/images/SthefanoC- PersonalWebsite.webp">
 </p>
 
 ## Getting Started

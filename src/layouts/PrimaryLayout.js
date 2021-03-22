@@ -3,10 +3,9 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 import SEO from "../components/SEO"
 
-
 const PrimaryLayout = props => {
   return (
-    <div>
+    <div id="main">
       <SEO />
       <Header></Header>
       <main>
