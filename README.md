@@ -1,3 +1,11 @@
+| [![LinkedIn][linkedin-shield]][linkedin-url] | ![Twitter Follow](https://img.shields.io/twitter/follow/Sthefano_C?style=social) | <br />
+
+
+
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/sthefanocarvalho
+
 <h1 align="center">SthefanoC.com - Personal Website</h1>
 
 <p align="center">

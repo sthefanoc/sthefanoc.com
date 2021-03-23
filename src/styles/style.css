@@ -1437,13 +1437,18 @@ pre {
   margin: 1em 0;
 }
 
-  code {
+  pre{
+    max-width: 90%;
+    overflow: auto;
   font-family: Courier, 'New Courier', monospace;
   padding: 15px 15px 15px 15px;
   border-radius: 5px;
   background-color: #4b4b4b;
   margin-left: 20px;
   color: #fff;
+}
+pre code{
+  
 }
 
 .blog .container .blog-item {
