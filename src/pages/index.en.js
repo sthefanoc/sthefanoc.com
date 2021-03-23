@@ -1,7 +1,7 @@
 import React from "react"
 import PrimaryLayout from "../layouts/PrimaryLayout"
 import profilePicture from "../../static/images/sthefanoc.webp"
-import newProfilePicture from "../../static/images/profile.jpg"
+import newProfilePicture from "../../static/images/profile.webp"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faGithub,
@@ -13,18 +13,22 @@ import {
 import ReactTooltip from "react-tooltip"
 
 export default function Home({ data }) {
-  console.log("This is the Home page")
   return (
     <PrimaryLayout>
       <section className="home section" id="home">
         <div className="container">
           <div className="intro">
-            {/* <img src={profilePicture} alt="profile" className="shadow-dark" /> */}
             <img
-              src="https://avatars.githubusercontent.com/u/61240448?s=460&u=348826da5bcbb40598fef86b01a7083fe79f2c6e&v=4"
+              style={{ maxWidth: "30vw" }}
+              src={newProfilePicture}
               alt="profile"
               className="shadow-dark"
             />
+            {/* <img
+              src="https://avatars.githubusercontent.com/u/61240448?s=460&u=348826da5bcbb40598fef86b01a7083fe79f2c6e&v=4"
+              alt="profile"
+              className="shadow-dark"
+            /> */}
 
             {/* https://avatars.githubusercontent.com/u/61240448?s=460&u=348826da5bcbb40598fef86b01a7083fe79f2c6e&v=4 */}
             <h1>Sthefano Carvalho</h1>

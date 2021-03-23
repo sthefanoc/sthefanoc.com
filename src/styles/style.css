@@ -1740,9 +1740,10 @@ pre code{
   height: auto;
   /* position: relative; */
 }
-.blog-post .blog-post-text .wp-block-image img {
+.blog-post .blog-post-text img {
   border-radius: 10px;
   border: 1px solid #d4d4e3;
+  width: fit-content;
 }
 .related-posts {
   padding-bottom: 20px;
