@@ -1,4 +1,4 @@
-<a href="https://twitter.com/intent/follow?screen_name=Sthefano_C" target="_blank"><img alt="Follow SthefanoC on Twitter" src="/static/images/twitter.scg"></a>
+<a href="https://twitter.com/intent/follow?screen_name=Sthefano_C" target="_blank"><img alt="Follow SthefanoC on Twitter" src="/static/images/twitter.svg"></a>
 
 [<img src="/static/images/linkedin.svg" alt="Connect with Sthefano Carvalho on LinkedIn"/>](https://www.linkedin.com/in/sthefanocarvalho/)
 
