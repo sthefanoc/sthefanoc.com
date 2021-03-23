@@ -1,6 +1,6 @@
-[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/Sthefano_C.svg?style=social&label=Follow%20%40Sthefano_C)](https://twitter.com/Sthefano_C)
+<a href="https://twitter.com/intent/follow?screen_name=Sthefano_C" target="_blank"><img alt="Follow SthefanoC on Twitter" src="/static/images/twitter.scg"></a>
 
-[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/sthefanocarvalho/)
+[<img src="/static/images/linkedin.svg" alt="Connect with Sthefano Carvalho on LinkedIn"/>](https://www.linkedin.com/in/sthefanocarvalho/)
 
 <h1 align="center">SthefanoC.com - Personal Website</h1>
 
