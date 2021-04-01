@@ -1475,9 +1475,8 @@ pre code{
 }
 .blog .blog-item-inner .blog-img img {
   width: 100%;
-  height: 100%;
-  object-fit: fill;
-  height: 250px;
+  object-fit: cover;
+  height: auto;
   display: block;
   transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
@@ -1760,6 +1759,7 @@ pre code{
   /* background-color: gray; */
   position: relative;
   margin-bottom: 50px;
+  margin-left: 30px;
 }
 .related-posts h3::before {
   content: "";

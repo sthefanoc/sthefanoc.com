@@ -6,7 +6,8 @@ import BlogPost from "../components/BlogPost"
 import SEO from "../components/SEO"
 import innertext from "innertext"
 // import twitterSVG from "../../static/images/twitter.svg"
-import twitterSVG from "../../static/images/profile.webp"
+import twitterSVG from "../../static/images/twitter.svg"
+import linkedinSVG from "../../static/images/linkedin.svg"
 
 const BlogPostLayout = ({ data }) => {
   const post = data.wordpressPost
@@ -24,23 +25,30 @@ const BlogPostLayout = ({ data }) => {
   })
 
   useEffect(() => {
-    console.log("carreguei!")
+    // Update IMG SRC
     const imgs = document.querySelectorAll("img")
 
     const twitterImg = Array.from(imgs).filter(
       item => item.alt == "Follow SthefanoC on Twitter"
     )[0]
+    if (twitterImg) {
+      twitterImg.src = twitterSVG
+    }
 
-    console.log("this is the new image", twitterImg)
+    const linkedinImg = Array.from(imgs).filter(
+      item => item.alt == "Connect with Sthefano Carvalho on LinkedIn"
+    )[0]
+    if (linkedinImg) {
+      linkedinImg.src = linkedinSVG
+    }
 
-    // twitterImg.innerHTML =
-    //   '<a href="https://twitter.com/intent/follow?screen_name=Sthefano_C" target="_blank"><img alt="Follow SthefanoC on Twitter" src="/static/images/twitter.svg"></a>'
+    // Update links to blank
 
-    twitterImg.src = "/static/images/twitter.svg"
-
-    console.log("this is the FINAL image", twitterImg)
-
-    console.log(`New twitter path on ${twitterSVG}`)
+    const links = document.querySelector("#blog-post").querySelectorAll("a")
+    console.log(links)
+    Array.from(links).map(link => {
+      link.target = "_blank"
+    })
   }, [])
 
   return (
@@ -79,7 +87,7 @@ const BlogPostLayout = ({ data }) => {
               image={withPrefix("images/another-blog-post-sthefanoc.png")}
               title={post.title}
               date={post.date}
-              date={post.date}
+              slug={post.slug}
               excerpt={post.excerpt}
               keywords={post.categories.map(res => res.name).join(", ")}
               categories={post.categories.map(res => res.slug).join(", ")}
