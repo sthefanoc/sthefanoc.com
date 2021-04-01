@@ -187,7 +187,8 @@ export default class Contact extends Component {
       this.state.subject = sendMeYourPhoneSubject.value
       this.state.message = sendMeYourPhoneMessage.value
       let sendMessageBtn = document.querySelector("#send-message")
-      let y = sendMessageBtn.getBoundingClientRect().top + window.scrollY
+      let verifySumBtn = document.querySelector("#verificationSum")
+      let y = verifySumBtn.getBoundingClientRect().top + window.scrollY
       window.scroll({
         top: y,
         behavior: "smooth",

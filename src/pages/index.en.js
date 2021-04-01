@@ -19,7 +19,7 @@ export default function Home({ data }) {
         <div className="container">
           <div className="intro">
             <img
-              style={{ maxWidth: "30vw" }}
+              // style={{ maxWidth: "30vw" }}
               src={newProfilePicture}
               alt="profile"
               className="shadow-dark"
