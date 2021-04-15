@@ -2,7 +2,7 @@ import React from "react"
 import { StaticQuery, graphql, withPrefix } from "gatsby"
 import { Helmet } from "react-helmet"
 import { Component } from "react"
-import webSiteImage from "./../../src/images/SthefanoC-PersonalWebsite.webp"
+import webSiteImage from "./../../src/images/SthefanoC-ProjectsPage.png"
 
 // const SEO = ({title, description, keywords, image}) => {
 class SEO extends Component {
