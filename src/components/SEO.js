@@ -56,7 +56,7 @@ class SEO extends Component {
             title: title || defaultTitle,
             description: description || defaultDescription,
             // image: `${image ? image : url + defaultImage}`,
-            image: webSiteImage,
+            image: `${url + webSiteImage}`,
             keywords: keywords || defaultKeywords,
           }
           return (
