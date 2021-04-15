@@ -62,9 +62,17 @@ class SEO extends Component {
           return (
             <Helmet>
               <title>{seo.title}</title>
-              <meta name="description" content={seo.description} />
-              <meta name="keywords" content={seo.keywords} />
-              <meta name="image" content={seo.image} />
+              <meta
+                name="description"
+                property="og:description"
+                content={seo.description}
+              />
+              <meta
+                name="keywords"
+                property="og:keywords"
+                content={seo.keywords}
+              />
+              <meta name="image" property="og:image" content={seo.image} />
               <meta name="robots" content="index,follow" />
               <html lang="en" />
               {/* <Color /> */}
