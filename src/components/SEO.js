@@ -67,13 +67,7 @@ class SEO extends Component {
               <html lang="en" />
               {/* <Color /> */}
 
-              {/* <link 
-                            rel="stylesheet" 
-                            className="alternate-style" 
-                            title={this.state.skinColor} 
-                            href={withPrefix(`styles/${this.state.skinColor}.css`)} 
-                            type="text/css" 
-                        /> */}
+
               <link
                 rel="stylesheet"
                 className="alternate-style"
