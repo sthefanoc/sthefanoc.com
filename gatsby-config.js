@@ -4,6 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 const path = require("path")
+
 const languages = require("./src/data/languages")
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
@@ -20,7 +21,7 @@ module.exports = {
       "Sthefano Carvalho website. Product Developer and Growth. Focused on creating valuable solutions to society.",
     keywords:
       "sthefano, sthefanoc, development, fullstack, growth, growth marketing, react, react developer",
-    image: "/static/images/SthefanoC- PersonalWebsite.webp",
+    image: './static/images/SthefanoC-PersonalWebsite.webp',
     url: "https://sthefanoc.com/",
     author: "SthefanoC",
     social: [

@@ -2,6 +2,7 @@ import React from "react"
 import { StaticQuery, graphql, withPrefix } from "gatsby"
 import { Helmet } from "react-helmet"
 import { Component } from "react"
+import webSiteImage from "./../../src/images/SthefanoC-PersonalWebsite.webp"
 
 // const SEO = ({title, description, keywords, image}) => {
 class SEO extends Component {
@@ -54,7 +55,8 @@ class SEO extends Component {
           const seo = {
             title: title || defaultTitle,
             description: description || defaultDescription,
-            image: `${image ? image : url + defaultImage}`,
+            // image: `${image ? image : url + defaultImage}`,
+            image: webSiteImage,
             keywords: keywords || defaultKeywords,
           }
           return (
@@ -66,7 +68,6 @@ class SEO extends Component {
               <meta name="robots" content="index,follow" />
               <html lang="en" />
               {/* <Color /> */}
-
 
               <link
                 rel="stylesheet"
